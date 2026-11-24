@@ -4,7 +4,7 @@ Revision package for the manuscript by A. Kalev, I. Bermejo-Moreno and I. Hen
 (previous draft: "A memory-efficient method for solving high-dimensional differential equations", v5).
 
 ```
-manuscript/      revised LaTeX source (v9: selected_responses_v9.tex), bibliography (refs_v6.bib), figures; build the PDF with build.sh
+manuscript/      revised LaTeX source (v11: selected_responses_v11.tex, bibliography refs.bib; the earlier v9 source selected_responses_v9.tex uses refs_v6.bib), figures; build the PDF with build.sh
 code/src/        walker.cpp  (C++17, single file: walker, certificates, models, exports, local solver)
 code/walker      compiled binary (built locally, not tracked)
 code/python/     pmrlti.py (harness), reference.py (dense/mpmath references), verify_formulas.py (audit checks),
@@ -27,7 +27,7 @@ pip install numpy scipy mpmath matplotlib pytest
 ## Reproduce
 
 ```
-cd code/python && python3 verify_formulas.py          # 38 formula checks  -> data/gate1_formula_checks.json
+cd code/python && python3 verify_formulas.py          # 31 formula checks  -> data/gate1_formula_checks.json (--with-td: +7 checks of the dropped time-dependent appendix)
 cd tests && python3 -m pytest -v                       # 46 tests (walker + local solvers), ~3.5 min -> data/test_log_v8.txt
 cd tests && python3 kernel_long_grid.py                # kernel rounding over 1e2..1e5 samples -> data/kernel_long_grid.json
 cd bench
