@@ -1,0 +1,22 @@
+{
+ "records": [
+  {
+   "a": 3.0,
+   "eps": 0.0,
+   "spectral_abscissa_exact": -0.7506265366472573,
+   "bound_gershgorin_sym": -0.7506265366472573
+  },
+  {
+   "a": 3.0,
+   "eps": 0.1,
+   "spectral_abscissa_exact": 0.11784546715953913,
+   "bound_gershgorin_sym": 0.24481857836307508
+  },
+  {
+   "a": 3.0,
+   "eps": 0.3,
+   "spectral_abscissa_exact": 0.7018762938298102,
+   "bound_gershgorin_sym": 0.8467400594537702
+  }
+ ]
+}

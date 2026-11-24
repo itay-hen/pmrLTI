@@ -1,0 +1,24 @@
+{'sC': 0.0, 'normA_bound': 25.638058326665817, 'mu': 0.44733437211749033, 'method': 'walker', 'run_s': 0.102938, 'peak_kb': 4596, 'cert_f': 5.361587515083823e-07, 'visited': 112429, 'Slev': 2}
+{'sC': 0.0, 'normA_bound': 25.638058326665817, 'mu': 0.44733437211749033, 'method': 'expmv (full)', 'run_s': 5.425198585000544, 'peak_kb': 92476, 'imports_kb': 58340, 'dev': 6.883778537469798e-08, 'nfev': 0}
+{'sC': 0.0, 'normA_bound': 25.638058326665817, 'mu': 0.44733437211749033, 'method': 'bdf (full)', 'run_s': 122.64708523199988, 'peak_kb': 441704, 'imports_kb': 58268, 'dev': 6.883780442890064e-08, 'nfev': 498}
+{'sC': 0.0, 'normA_bound': 25.638058326665817, 'mu': 0.44733437211749033, 'method': 'ball+expmv', 'R': 7, 'ball_nodes': 113, 'cert_f': 3.195863406708927e-07, 'run_s': 0.16045022100115602, 'peak_kb': 58744, 'imports_kb': 57836, 'dev': 6.883775237331857e-08, 'nfev': 0}
+{'sC': 0.0, 'normA_bound': 25.638058326665817, 'mu': 0.44733437211749033, 'method': 'ball+bdf', 'R': 7, 'ball_nodes': 113, 'cert_f': 3.195863406708927e-07, 'run_s': 0.30917469799896935, 'peak_kb': 78408, 'imports_kb': 57740, 'dev': 6.883775262311875e-08, 'nfev': 810}
+{'sC': 1.0, 'normA_bound': 193.04856151671098, 'mu': 0.4473343721174903, 'method': 'walker', 'run_s': 0.074949, 'peak_kb': 4668, 'cert_f': 2.525514455843609e-07, 'visited': 112429, 'Slev': 4}
+{'sC': 1.0, 'normA_bound': 193.04856151671098, 'mu': 0.4473343721174903, 'method': 'expmv (full)', 'run_s': 6.370943076000913, 'peak_kb': 92484, 'imports_kb': 58312, 'dev': 3.242525113689165e-08, 'nfev': 0}
+{'sC': 1.0, 'normA_bound': 193.04856151671098, 'mu': 0.4473343721174903, 'method': 'bdf (full)', 'run_s': 132.38719597700037, 'peak_kb': 312504, 'imports_kb': 58380, 'dev': 3.242529830055352e-08, 'nfev': 552}
+{'sC': 1.0, 'normA_bound': 193.04856151671098, 'mu': 0.4473343721174903, 'method': 'ball+expmv', 'R': 7, 'ball_nodes': 113, 'cert_f': 1.505374893133456e-07, 'run_s': 0.20030787699943176, 'peak_kb': 58652, 'imports_kb': 57756, 'dev': 3.242523563540267e-08, 'nfev': 0}
+{'sC': 1.0, 'normA_bound': 193.04856151671098, 'mu': 0.4473343721174903, 'method': 'ball+bdf', 'R': 7, 'ball_nodes': 113, 'cert_f': 1.505374893133456e-07, 'run_s': 0.48713492499882705, 'peak_kb': 78232, 'imports_kb': 57856, 'dev': 3.2425236225208653e-08, 'nfev': 883}
+{'sC': 2.0, 'normA_bound': 1921.2451797727038, 'mu': 0.44733437211749033, 'method': 'walker', 'run_s': 0.084553, 'peak_kb': 5140, 'cert_f': 1.1055993837143749e-07, 'visited': 112429, 'Slev': 8}
+{'sC': 2.0, 'normA_bound': 1921.2451797727038, 'mu': 0.44733437211749033, 'method': 'expmv (full)', 'run_s': 91.89172388200132, 'peak_kb': 106012, 'imports_kb': 58512, 'dev': 1.4194865231159648e-08, 'nfev': 0}
+{'sC': 2.0, 'normA_bound': 1921.2451797727038, 'mu': 0.44733437211749033, 'method': 'bdf (full)', 'run_s': 143.97326310300014, 'peak_kb': 318664, 'imports_kb': 58324, 'dev': 1.4194873472830882e-08, 'nfev': 620}
+{'sC': 2.0, 'normA_bound': 1921.2451797727038, 'mu': 0.44733437211749033, 'method': 'ball+expmv', 'R': 7, 'ball_nodes': 113, 'cert_f': 6.590108998411959e-08, 'run_s': 0.4087982519995421, 'peak_kb': 58824, 'imports_kb': 57916, 'dev': 1.4194858448390857e-08, 'nfev': 0}
+{'sC': 2.0, 'normA_bound': 1921.2451797727038, 'mu': 0.44733437211749033, 'method': 'ball+bdf', 'R': 7, 'ball_nodes': 113, 'cert_f': 6.590108998411959e-08, 'run_s': 0.36957820799943875, 'peak_kb': 78356, 'imports_kb': 57776, 'dev': 1.4194858516045072e-08, 'nfev': 1008}
+Traceback (most recent call last):
+  File "/home/claude/pmr_lti/bench/bench_stiff.py", line 14, in <module>
+    w = walker(model, dt, T, S, B, [("kernel", []), ("step", [0.0])], Q=600, tau=1e-10, dist="analytic")
+  File "/home/claude/pmr_lti/bench/common.py", line 22, in walker
+    return run_walker(spec_text(model, dt, T, sensors, sources, patterns, **kw), workdir=tmpdir("w_"))
+  File "/home/claude/pmr_lti/code/python/pmrlti.py", line 85, in run_walker
+    raise RuntimeError(open(os.path.join(workdir, "err.txt")).read())
+RuntimeError: horizon table too short
+

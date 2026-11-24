@@ -1,0 +1,2 @@
+{'target_reached': True, 'tau': 1e-12, 'cert_f': 5.7664527276200514e-05, 'visited': 1108378753, 'traversal_s': 1332.574916, 'peak_rss_kb': 4712, 'search_attempts': [{'tau': 1e-12, 'cert': 5.7664527276200514e-05, 'visited': 1108378753, 'traversal_s': 1332.574916, 'aborted': False}], 'search_total_s': 1332.574916}
+{'R': 5, 'cert_f': 3.339592082292222e-05, 'status': 'run', 'nodes': 30537761, 'nnz': 61075520, 'local_build_s': 559.526078, 'local_solve_s': 3857.145037, 'local_peak_kb': 3011104, 'local_matvecs': 12052, 'diff_step': 2.867808143736106e-10}

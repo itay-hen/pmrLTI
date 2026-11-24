@@ -1,0 +1,31 @@
+\section{Verification}\label{app:verification}
+
+Two independent layers of checks accompany the code. The first (\texttt{verify\_formulas.py}, 38 checks) tests the formulas themselves with a slow reference implementation: divided differences against 60-digit evaluations of the Opitz exponential (relative error $\le4\times10^{-16}$ for distinct, repeated, nearly coincident at $10^{-9}$, and complex nodes); the walk expansion and the orientation of hop coefficients against dense exponentials; Proposition~\ref{prop:forcing} by adaptive quadrature, including exactly resonant rates and $m=2,3$; responses to steps, exponentials, ramps and cosines against augmented exponentials; delayed pulses and piecewise-linear inputs through the truncated-power basis against quadrature; the sensitivity identity $\partial_{d_i}f_t[\mathcal{D}]=m_if_t[\mathcal{D},d_i]$ by finite differences; and the time-dependent statements of Appendix~\ref{app:td}.
+
+The second layer (\texttt{tests/test\_walker.py}, 32 tests, and \texttt{tests/test\_local\_solvers.py}, 14 tests) runs the C++ walker against dense references (SciPy \texttt{expm} of the system or of the augmented system, or exact propagation across breakpoints) and asserts, for every output on the grid, that the observed error lies below the a posteriori certificate plus a rounding allowance of $10^{-12}$ times the output scale; tests with exact or near-exact walk sets also assert a relative error below $10^{-11}$. The local-solver tests check the adaptive certificate of Proposition~\ref{prop:local} on sign-indefinite random networks with collocated and separated sensors, the certified time truncation of the local Taylor integrator (including decay rates spread over three decades), that the restricted generator keeps the original diagonal, and that balls built on the undirected graph certify directed cycles, for which balls of directed reachability would not. Table~\ref{tab:tests} lists what the walker tests cover. A third script, \texttt{tests/kernel\_long\_grid.py}, measures the rounding of the temporal kernel over $10^2$ to $10^5$ output samples (Sec.~\ref{sec:accuracy}).
+
+\begin{table}[h]
+\caption{Coverage of the walker test suite. Each line is one or more tests; all pass.}\label{tab:tests}
+\begin{ruledtabular}
+\footnotesize
+\begin{tabular}{p{0.36\linewidth}p{0.56\linewidth}}
+case & checks\\\hline
+pure diagonal $A$ & exact local responses, no hop is taken\\
+$A=0$ & step, ramp and $s^2/2$ normalization ($t$, $t^2/2$, $t^3/6$)\\
+two states, distinct diagonal & kernel, step, ramp\\
+repeated diagonal, resonant forcing & appended node equal to a diagonal entry, twice repeated\\
+nearly coincident complex nodes & spacing $10^{-9}$; conjugate-pair cosine, imaginary residue $\le10^{-13}$\\
+Jordan block & $e^{-\lambda t}t^{n-1}/(n-1)!$, finite walk set\\
+directed cycle & repeated visits to states and edges\\
+random sparse (4 real, 4 complex) & several sensors, sources and patterns\\
+stable nonnormal chain & $\|e^{A}\|_2>5$, certificate still dominates\\
+initial state with forcing & zero-input plus step response\\
+delayed inputs & finite pulse, 12-level zero-order hold, piecewise quadratic\\
+stiff, long horizon & decay rates $0.5$ to $900$, $t\le100$, at least eight squaring levels\\
+several patterns & shared appended prefixes, complex patterns on a real model\\
+certificate sweep & uniform, finite-horizon and combined forms, three thresholds\\
+implicit models & grid and random network against their exported matrices; distance oracle\\
+Feistel network & bijection, symmetric couplings, row sums\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}

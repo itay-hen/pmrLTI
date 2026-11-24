@@ -1,0 +1,34 @@
+\begin{table*}[t]
+\footnotesize\setlength{\tabcolsep}{1.35pt}
+\caption{Walk sum versus the two certified local truncations at matched targets for the step response (forced certificate, unit input; collocated sensor and actuator, $t\le5$, $T=100$; all methods also compute the impulse kernel). Distance information is shared: Manhattan distance on the grid, a breadth-first map of radius 3 on the networks. Walk sum: certificate reached, walk prefixes visited, time of the traversal at the final threshold, cumulative time of the threshold search from the first attempt for that model (including map construction), the same cumulative time without a distance map (separate runs with a 900~s budget; ``='' where the oracle is analytic), and peak memory. Ball: radius, states, time from scratch (build, certificate, certified time integration) and peak memory. Adaptive set: states, time from scratch and peak memory. Memory is the peak of the whole process; an empty process peaks at about 4.0~MB. Rows marked $^*$ were re-timed three times on an otherwise idle machine and show medians; the spread between identical runs was up to about 40\% for sub-second walk-sum searches and a few percent for the local methods. $^\dagger$Target not reached within the 1800~s search budget (900~s without a map); best certificate shown. $^\ddagger$Not run: predicted size exceeds memory. $^\S$Stopped at the node limit without reaching the target.}\label{tab:crossover}
+\begin{ruledtabular}
+\begin{tabular}{lcc|cccccc|cccc|ccc}
+ & & & \multicolumn{6}{c|}{walk sum} & \multicolumn{4}{c|}{certified ball} & \multicolumn{3}{c}{adaptive set}\\
+graph & $\mu$ & target & cert. & prefixes & final [s] & total [s] & no map [s] & MB & $R$ & states & [s] & MB & states & [s] & MB\\\hline
+net, $\Delta=4$ & 0.36 & $1\times10^{-3}$ & $3.2\times10^{-5}$ & $1.1\times10^{2}$ & $<0.01$ & $<0.01$ & $<0.01$ & 4.6 & 2 & 17 & $<0.01$ & 4.2 & 5 & $<0.01$ & 4.2 \\
+net, $\Delta=4$ & 0.36 & $1\times10^{-4}$ & $3.2\times10^{-5}$ & $1.1\times10^{2}$ & $<0.01$ & $<0.01$ & $<0.01$ & 4.6 & 3 & 53 & $<0.01$ & 4.2 & 17 & $<0.01$ & 4.2 \\
+net, $\Delta=4$ & 0.36 & $1\times10^{-5}$ & $6.5\times10^{-6}$ & $4.7\times10^{2}$ & $<0.01$ & $<0.01$ & $<0.01$ & 4.6 & 4 & 161 & $<0.01$ & 4.2 & 45 & $<0.01$ & 4.2 \\
+net, $\Delta=4$ & 0.53 & $1\times10^{-3}$ & $3.2\times10^{-4}$ & $5.2\times10^{2}$ & $<0.01$ & $<0.01$ & $<0.01$ & 4.6 & 4 & 161 & $<0.01$ & 4.2 & 51 & $<0.01$ & 4.2 \\
+net, $\Delta=4$ & 0.53 & $1\times10^{-4}$ & $8.7\times10^{-5}$ & $2.6\times10^{3}$ & $<0.01$ & $<0.01$ & 0.01 & 4.5 & 5 & 485 & $<0.01$ & 4.3 & 161 & $<0.01$ & 4.3 \\
+net, $\Delta=4$ & 0.53 & $1\times10^{-5}$$^*$ & $7.7\times10^{-6}$ & $8.1\times10^{4}$ & 0.02 & 0.05 & 0.48 & 4.6 & 7 & 4373 & 0.03 & 4.7 & 1199 & $<0.01$ & 4.5 \\
+net, $\Delta=16$ & 0.40 & $1\times10^{-3}$ & $6.8\times10^{-5}$ & $2.7\times10^{2}$ & $<0.01$ & $<0.01$ & $<0.01$ & 4.8 & 1 & 17 & $<0.01$ & 4.2 & 17 & $<0.01$ & 4.4 \\
+net, $\Delta=16$ & 0.40 & $1\times10^{-4}$ & $6.8\times10^{-5}$ & $2.7\times10^{2}$ & $<0.01$ & $<0.01$ & $<0.01$ & 4.8 & 3 & 3857 & 0.08 & 4.6 & 257 & $<0.01$ & 4.5 \\
+net, $\Delta=16$ & 0.40 & $1\times10^{-5}$$^*$ & $9.5\times10^{-6}$ & $4.8\times10^{3}$ & $<0.01$ & 0.01 & 0.93 & 4.8 & 4 & 57857 & 1.29 & 10.7 & 3857 & 0.08 & 5.0 \\
+net, $\Delta=16$ & 0.57 & $1\times10^{-3}$ & $6.3\times10^{-4}$ & $2.4\times10^{3}$ & $<0.01$ & $<0.01$ & 0.04 & 4.7 & 3 & 3857 & 0.09 & 4.6 & 257 & $<0.01$ & 4.5 \\
+net, $\Delta=16$ & 0.57 & $1\times10^{-4}$$^*$ & $6.1\times10^{-5}$ & $9.1\times10^{5}$ & 0.85 & 1.08 & 129 & 4.8 & 5 & $8.7\times10^{5}$ & 17 & 100.8 & 57857 & 1.39 & 14.4 \\
+net, $\Delta=16$ & 0.57 & $1\times10^{-5}$ & $1.002\times10^{-5}$$^{\dagger}$ & $2.9\times10^{8}$ & -- & 1802$^{\dagger}$ & 1029$^{\dagger}$ & 4.8 & 7 & $2.0\times10^{8}$$^{\ddagger}$ & -- & -- & $2.0\times10^{7}$$^{\S}$ & -- & -- \\
+net, $\Delta=32$ & 0.40 & $1\times10^{-3}$ & $2.7\times10^{-5}$ & $1.1\times10^{3}$ & $<0.01$ & $<0.01$ & $<0.01$ & 6.0 & 1 & 33 & $<0.01$ & 4.2 & 33 & $<0.01$ & 5.8 \\
+net, $\Delta=32$ & 0.40 & $1\times10^{-4}$ & $2.7\times10^{-5}$ & $1.1\times10^{3}$ & $<0.01$ & 0.02 & 0.05 & 6.0 & 2 & 1025 & 0.05 & 4.3 & 806 & 0.07 & 5.8 \\
+net, $\Delta=32$ & 0.40 & $1\times10^{-5}$$^*$ & $3.6\times10^{-6}$ & $3.4\times10^{4}$ & 0.09 & 0.15 & 39 & 6.0 & 3 & 31777 & 1.44 & 7.4 & 31774 & 1.51 & 10.5 \\
+net, $\Delta=32$ & 0.57 & $1\times10^{-3}$ & $5.3\times10^{-4}$ & $1.1\times10^{3}$ & $<0.01$ & 0.02 & 0.06 & 6.0 & 2 & 1025 & 0.05 & 4.3 & 903 & 0.06 & 5.8 \\
+net, $\Delta=32$ & 0.57 & $1\times10^{-4}$$^*$ & $6.5\times10^{-5}$ & $9.3\times10^{5}$ & 2.03 & 2.43 & 900$^{\dagger}$ & 6.0 & 5 & $3.1\times10^{7}$ & 1816 & 3028.3 & $2.7\times10^{5}$ & 13 & 53.1 \\
+net, $\Delta=32$ & 0.57 & $1\times10^{-5}$ & $2.434\times10^{-5}$$^{\dagger}$ & $3.6\times10^{7}$ & -- & 1805$^{\dagger}$ & -- & 6.0 & 7 & $2.9\times10^{10}$$^{\ddagger}$ & -- & -- & $2.0\times10^{7}$$^{\S}$ & -- & -- \\
+grid & 0.45 & $1\times10^{-3}$ & $1.2\times10^{-4}$ & $2.6\times10^{2}$ & $<0.01$ & $<0.01$ & = & 4.6 & 3 & 25 & $<0.01$ & 4.2 & 13 & $<0.01$ & 4.3 \\
+grid & 0.45 & $1\times10^{-4}$ & $7.5\times10^{-5}$ & $4.7\times10^{2}$ & $<0.01$ & $<0.01$ & = & 4.6 & 4 & 41 & $<0.01$ & 4.2 & 21 & $<0.01$ & 4.3 \\
+grid & 0.45 & $1\times10^{-5}$ & $5.6\times10^{-6}$ & $8.1\times10^{3}$ & $<0.01$ & 0.02 & = & 4.6 & 5 & 61 & $<0.01$ & 4.2 & 40 & $<0.01$ & 4.2 \\
+grid & 0.62 & $1\times10^{-3}$ & $8.3\times10^{-4}$ & $3.1\times10^{3}$ & $<0.01$ & $<0.01$ & = & 4.5 & 6 & 85 & $<0.01$ & 4.2 & 25 & $<0.01$ & 4.3 \\
+grid & 0.62 & $1\times10^{-4}$$^*$ & $7.0\times10^{-5}$ & $2.7\times10^{5}$ & 0.21 & 0.33 & = & 4.6 & 8 & 145 & $<0.01$ & 4.2 & 57 & $<0.01$ & 4.3 \\
+grid & 0.62 & $1\times10^{-5}$$^*$ & $9.9\times10^{-6}$ & $9.9\times10^{6}$ & 6.51 & 11 & = & 4.6 & 10 & 221 & $<0.01$ & 4.2 & 81 & $<0.01$ & 4.3 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}

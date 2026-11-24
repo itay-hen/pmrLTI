@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\footnotesize\setlength{\tabcolsep}{2.6pt}
+\caption{Separated actuator and sensor: step response at a sensor $d$ hops from the actuator, certified to 10\% and 1\% of its peak (the peak was estimated by adaptive runs with a certificate below 3\% of it). Distance information: breadth-first map of radius 4 on the networks, Manhattan distance on the grid. Walk sum: certificate, walk prefixes, cumulative time of the threshold search from scratch, peak memory. Ball (around the actuator, containing the sensor) and adaptive set: states, time from scratch and peak memory. $^\dagger$Target not reached within 1800~s. $^\S$Adaptive set stopped at its node limit without reaching the target.}\label{tab:noncol}
+\begin{ruledtabular}
+\begin{tabular}{lcccc|cccc|cccc|ccc}
+ & & & & & \multicolumn{4}{c|}{walk sum} & \multicolumn{4}{c|}{certified ball} & \multicolumn{3}{c}{adaptive set}\\
+graph & $\mu$ & $d$ & peak & target & cert. & prefixes & [s] & MB & $R$ & states & [s] & MB & states & [s] & MB\\\hline
+net, $\Delta=4$ & 0.36 & 2 & $2.8\times10^{-4}$ & 10\% & $2.9\times10^{-6}$ & $3.0\times10^{2}$ & $<0.01$ & 4.4 & 4 & 161 & $<0.01$ & 4.1 & 20 & $<0.01$ & 4.1 \\
+net, $\Delta=4$ & 0.36 & 2 & $2.8\times10^{-4}$ & 1\% & $1.3\times10^{-6}$ & $5.5\times10^{2}$ & $<0.01$ & 4.5 & 5 & 485 & $<0.01$ & 4.2 & 59 & $<0.01$ & 4.2 \\
+net, $\Delta=4$ & 0.36 & 4 & $9.7\times10^{-7}$ & 10\% & $4.0\times10^{-8}$ & $5.7\times10^{3}$ & $<0.01$ & 4.4 & 8 & 13121 & 0.11 & 5.6 & 494 & $<0.01$ & 4.3 \\
+net, $\Delta=4$ & 0.36 & 4 & $9.7\times10^{-7}$ & 1\% & $8.5\times10^{-9}$ & $2.4\times10^{4}$ & 0.01 & 4.5 & 9 & 39365 & 0.39 & 8.5 & 1452 & 0.02 & 4.4 \\
+net, $\Delta=16$ & 0.40 & 1 & $3.6\times10^{-4}$ & 10\% & $1.6\times10^{-5}$ & $1.4\times10^{3}$ & $<0.01$ & 7.2 & 4 & 57857 & 1.14 & 10.6 & 257 & 0.01 & 7.0 \\
+net, $\Delta=16$ & 0.40 & 1 & $3.6\times10^{-4}$ & 1\% & $3.0\times10^{-6}$ & $1.2\times10^{4}$ & 0.05 & 7.2 & 5 & $8.7\times10^{5}$ & 25 & 100.7 & 3857 & 0.15 & 7.2 \\
+net, $\Delta=16$ & 0.40 & 2 & $6.4\times10^{-6}$ & 10\% & $6.1\times10^{-7}$ & $8.3\times10^{4}$ & 0.18 & 7.1 & 6 & $1.3\times10^{7}$ & 676 & 1274.4 & 56224 & 1.84 & 16.1 \\
+grid & 0.45 & 2 & $5.6\times10^{-4}$ & 10\% & $2.6\times10^{-5}$ & $1.1\times10^{3}$ & $<0.01$ & 4.5 & 5 & 61 & $<0.01$ & 4.2 & 20 & $<0.01$ & 4.1 \\
+grid & 0.45 & 2 & $5.6\times10^{-4}$ & 1\% & $5.3\times10^{-6}$ & $7.4\times10^{3}$ & $<0.01$ & 4.5 & 7 & 113 & $<0.01$ & 4.1 & 44 & $<0.01$ & 4.3 \\
+grid & 0.45 & 4 & $4.3\times10^{-6}$ & 10\% & $3.9\times10^{-7}$ & $4.3\times10^{4}$ & 0.02 & 4.4 & 9 & 181 & $<0.01$ & 4.2 & 56 & $<0.01$ & 4.2 \\
+grid & 0.45 & 4 & $4.3\times10^{-6}$ & 1\% & $3.1\times10^{-8}$ & $9.9\times10^{5}$ & 0.72 & 4.5 & 11 & 265 & $<0.01$ & 4.2 & 75 & $<0.01$ & 4.2 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}

@@ -1,0 +1,769 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "cores": 2,
+  "memtotal": "8220244 kB",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "kernel": "6.18.44-fc-v153"
+ },
+ "dt": 0.05,
+ "T": 100,
+ "NNZ_LIMIT": 260000000.0,
+ "records": [
+  {
+   "family": "permnet K=2 l0=12.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=12.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.35714285714285715,
+   "eps": 0.001,
+   "walker": {
+    "tau": 1e-05,
+    "cert_f": 6.876273726281535e-05,
+    "cert_h": 0.0012992182657422427,
+    "visited": 237,
+    "contributions": 33,
+    "max_depth": 4,
+    "traversal_s": 0.000227,
+    "wall_s": 0.00870745700012776,
+    "peak_rss_kb": 4584,
+    "dd_workspace_bytes": 5456,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 6.876273726281535e-05,
+      "visited": 237,
+      "traversal_s": 0.000227,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.000227
+   },
+   "ball": {
+    "R": 2,
+    "cert_f": 0.00017084740117385164,
+    "predicted_nodes": 17,
+    "predicted_nnz": 85,
+    "local_status": "run",
+    "nodes": 17,
+    "nnz": 32,
+    "local_build_s": 1.6e-05,
+    "local_solve_s": 0.000353,
+    "local_wall_s": 0.004031742999359267,
+    "local_peak_kb": 4056,
+    "local_matvecs": 3695,
+    "diff_step": 1.0633358135392346e-06,
+    "diff_kernel": 2.65724979199404e-06,
+    "scale_step": 0.0540078418860703,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.000112,
+    "scipy_export_peak_kb": 3976,
+    "scipy_solve_s": 0.1769585490001191,
+    "scipy_peak_kb": 58624,
+    "scipy_imports_kb": 57724,
+    "scipy_diff_step": 1.0633358135600512e-06
+   }
+  },
+  {
+   "family": "permnet K=2 l0=12.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=12.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.35714285714285715,
+   "eps": 0.0001,
+   "walker": {
+    "tau": 1e-05,
+    "cert_f": 6.876273726281535e-05,
+    "cert_h": 0.0012992182657422427,
+    "visited": 237,
+    "contributions": 33,
+    "max_depth": 4,
+    "traversal_s": 0.000235,
+    "wall_s": 0.0118323259994213,
+    "peak_rss_kb": 4548,
+    "dd_workspace_bytes": 5456,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 6.876273726281535e-05,
+      "visited": 237,
+      "traversal_s": 0.000235,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.000235
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 2.1791760353807608e-05,
+    "predicted_nodes": 53,
+    "predicted_nnz": 265,
+    "local_status": "run",
+    "nodes": 53,
+    "nnz": 104,
+    "local_build_s": 2.9e-05,
+    "local_solve_s": 0.001014,
+    "local_wall_s": 0.004166089999671385,
+    "local_peak_kb": 4028,
+    "local_matvecs": 3700,
+    "diff_step": 1.2395013095564678e-06,
+    "diff_kernel": 3.080675624088716e-06,
+    "scale_step": 0.054008018051566326,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.000194,
+    "scipy_export_peak_kb": 4028,
+    "scipy_solve_s": 0.20083305099979043,
+    "scipy_peak_kb": 58644,
+    "scipy_imports_kb": 57748,
+    "scipy_diff_step": 1.239501309535651e-06
+   }
+  },
+  {
+   "family": "permnet K=2 l0=12.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=12.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.35714285714285715,
+   "eps": 1e-05,
+   "walker": {
+    "tau": 1.5626691244311828e-07,
+    "cert_f": 9.761406489489258e-06,
+    "cert_h": 0.00018443415889636823,
+    "visited": 1468,
+    "contributions": 136,
+    "max_depth": 6,
+    "traversal_s": 0.000892,
+    "wall_s": 0.00936638200073503,
+    "peak_rss_kb": 4544,
+    "dd_workspace_bytes": 7464,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 6.876273726281535e-05,
+      "visited": 237,
+      "traversal_s": 0.000258,
+      "aborted": false
+     },
+     {
+      "tau": 7.271380109389331e-07,
+      "cert": 2.326589805770988e-05,
+      "visited": 738,
+      "traversal_s": 0.000372,
+      "aborted": false
+     },
+     {
+      "tau": 1.5626691244311828e-07,
+      "cert": 9.761406489489258e-06,
+      "visited": 1468,
+      "traversal_s": 0.000892,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.001522
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 2.7795612696183176e-06,
+    "predicted_nodes": 161,
+    "predicted_nnz": 805,
+    "local_status": "run",
+    "nodes": 161,
+    "nnz": 320,
+    "local_build_s": 9e-05,
+    "local_solve_s": 0.002768,
+    "local_wall_s": 0.006406307999895944,
+    "local_peak_kb": 4080,
+    "local_matvecs": 3700,
+    "diff_step": 5.281718935476465e-07,
+    "diff_kernel": 1.2759666331808514e-06,
+    "scale_step": 0.054008020261660426,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.000198,
+    "scipy_export_peak_kb": 4032,
+    "scipy_solve_s": 0.1909638310007722,
+    "scipy_peak_kb": 58600,
+    "scipy_imports_kb": 57688,
+    "scipy_diff_step": 5.281718936656077e-07
+   }
+  },
+  {
+   "family": "permnet K=2 l0=6.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=6.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.5263157894736842,
+   "eps": 0.001,
+   "walker": {
+    "tau": 1e-05,
+    "cert_f": 0.0006006223186698286,
+    "cert_h": 0.007178308873284789,
+    "visited": 1121,
+    "contributions": 33,
+    "max_depth": 5,
+    "traversal_s": 0.000331,
+    "wall_s": 0.008647057999951357,
+    "peak_rss_kb": 4580,
+    "dd_workspace_bytes": 5288,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0006006223186698286,
+      "visited": 1121,
+      "traversal_s": 0.000331,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.000331
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 0.00028810739565936157,
+    "predicted_nodes": 161,
+    "predicted_nnz": 805,
+    "local_status": "run",
+    "nodes": 161,
+    "nnz": 320,
+    "local_build_s": 0.000116,
+    "local_solve_s": 0.001577,
+    "local_wall_s": 0.0060175030002938,
+    "local_peak_kb": 4068,
+    "local_matvecs": 2256,
+    "diff_step": 3.2468495825388466e-05,
+    "diff_kernel": 5.031442552458614e-05,
+    "scale_step": 0.08815248011432182,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.000274,
+    "scipy_export_peak_kb": 4056,
+    "scipy_solve_s": 0.21519181900021067,
+    "scipy_peak_kb": 58548,
+    "scipy_imports_kb": 57648,
+    "scipy_diff_step": 3.2468495825332955e-05
+   }
+  },
+  {
+   "family": "permnet K=2 l0=6.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=6.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.5263157894736842,
+   "eps": 0.0001,
+   "walker": {
+    "tau": 5.907985639120811e-08,
+    "cert_f": 8.270385114871608e-05,
+    "cert_h": 0.000988431115697525,
+    "visited": 21285,
+    "contributions": 430,
+    "max_depth": 8,
+    "traversal_s": 0.005979,
+    "wall_s": 0.014337032999719668,
+    "peak_rss_kb": 4572,
+    "dd_workspace_bytes": 9128,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0006006223186698286,
+      "visited": 1121,
+      "traversal_s": 0.000324,
+      "aborted": false
+     },
+     {
+      "tau": 8.32469897401295e-07,
+      "cert": 0.00021135881540290387,
+      "visited": 4899,
+      "traversal_s": 0.001823,
+      "aborted": false
+     },
+     {
+      "tau": 1.9693285463736038e-07,
+      "cert": 0.00016162676620208878,
+      "visited": 8151,
+      "traversal_s": 0.002604,
+      "aborted": false
+     },
+     {
+      "tau": 5.907985639120811e-08,
+      "cert": 8.270385114871608e-05,
+      "visited": 21285,
+      "traversal_s": 0.005979,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.01073
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 7.98081428419284e-05,
+    "predicted_nodes": 485,
+    "predicted_nnz": 2425,
+    "local_status": "run",
+    "nodes": 485,
+    "nnz": 968,
+    "local_build_s": 0.000232,
+    "local_solve_s": 0.006854,
+    "local_wall_s": 0.01222136300020793,
+    "local_peak_kb": 4104,
+    "local_matvecs": 2256,
+    "diff_step": 2.7433670828497236e-06,
+    "diff_kernel": 3.6482062670770707e-06,
+    "scale_step": 0.08815248526830266,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.000542,
+    "scipy_export_peak_kb": 4088,
+    "scipy_solve_s": 0.32165351300045586,
+    "scipy_peak_kb": 58592,
+    "scipy_imports_kb": 57612,
+    "scipy_diff_step": 2.743367082946868e-06
+   }
+  },
+  {
+   "family": "permnet K=2 l0=6.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=6.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.5263157894736842,
+   "eps": 1e-05,
+   "walker": {
+    "tau": 1.7224024983131496e-10,
+    "cert_f": 9.027060169010743e-06,
+    "cert_h": 0.00010788647723646536,
+    "visited": 678871,
+    "contributions": 19362,
+    "max_depth": 10,
+    "traversal_s": 0.339759,
+    "wall_s": 0.3508563019995563,
+    "peak_rss_kb": 4584,
+    "dd_workspace_bytes": 11144,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 5.907985639120811e-08,
+      "cert": 8.270385114871608e-05,
+      "visited": 21285,
+      "traversal_s": 0.006171,
+      "aborted": false
+     },
+     {
+      "tau": 3.571771783938582e-09,
+      "cert": 3.1105724017208194e-05,
+      "visited": 91335,
+      "traversal_s": 0.029405,
+      "aborted": false
+     },
+     {
+      "tau": 5.741341661043832e-10,
+      "cert": 1.3549382394053337e-05,
+      "visited": 335841,
+      "traversal_s": 0.095161,
+      "aborted": false
+     },
+     {
+      "tau": 1.7224024983131496e-10,
+      "cert": 9.027060169010743e-06,
+      "visited": 678871,
+      "traversal_s": 0.339759,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.47049599999999997
+   },
+   "ball": {
+    "R": 7,
+    "cert_f": 6.123966424592229e-06,
+    "predicted_nodes": 4373,
+    "predicted_nnz": 21865,
+    "local_status": "run",
+    "nodes": 4373,
+    "nnz": 8744,
+    "local_build_s": 0.004304,
+    "local_solve_s": 0.090897,
+    "local_wall_s": 0.10111218200017902,
+    "local_peak_kb": 4600,
+    "local_matvecs": 3741,
+    "diff_step": 4.986876389612149e-08,
+    "diff_kernel": 5.3967648487604036e-08,
+    "scale_step": 0.0881524854441926,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.003108,
+    "scipy_export_peak_kb": 4460,
+    "scipy_solve_s": 0.39567637300024217,
+    "scipy_peak_kb": 59616,
+    "scipy_imports_kb": 57760,
+    "scipy_diff_step": 4.9868763493665647e-08
+   }
+  },
+  {
+   "family": "permnet K=8 l0=40.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.4,
+   "eps": 0.001,
+   "walker": {
+    "tau": 1e-05,
+    "cert_f": 0.00025833943791428714,
+    "cert_h": 0.01684246710513655,
+    "visited": 273,
+    "contributions": 17,
+    "max_depth": 2,
+    "traversal_s": 0.000222,
+    "wall_s": 0.007022677999884763,
+    "peak_rss_kb": 4644,
+    "dd_workspace_bytes": 3704,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.00025833943791428714,
+      "visited": 273,
+      "traversal_s": 0.000222,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.000222
+   },
+   "ball": {
+    "R": 1,
+    "cert_f": 0.0006544458490277429,
+    "predicted_nodes": 17,
+    "predicted_nnz": 289,
+    "local_status": "run",
+    "nodes": 17,
+    "nnz": 32,
+    "local_build_s": 2.2e-05,
+    "local_solve_s": 0.000621,
+    "local_wall_s": 0.003691496000101324,
+    "local_peak_kb": 4032,
+    "local_matvecs": 8197,
+    "diff_step": 4.713979129909035e-07,
+    "diff_kernel": 4.77376334158397e-06,
+    "scale_step": 0.015423843382643587,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.00011,
+    "scipy_export_peak_kb": 4044,
+    "scipy_solve_s": 0.2636440420001236,
+    "scipy_peak_kb": 58648,
+    "scipy_imports_kb": 57744,
+    "scipy_diff_step": 4.7139791299610767e-07
+   }
+  },
+  {
+   "family": "permnet K=8 l0=40.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.4,
+   "eps": 0.0001,
+   "walker": {
+    "tau": 1.935438135333762e-06,
+    "cert_f": 7.647153998041456e-05,
+    "cert_h": 0.00498557017464207,
+    "visited": 4343,
+    "contributions": 17,
+    "max_depth": 3,
+    "traversal_s": 0.005075,
+    "wall_s": 0.01701475499976368,
+    "peak_rss_kb": 4648,
+    "dd_workspace_bytes": 3704,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.00025833943791428714,
+      "visited": 273,
+      "traversal_s": 0.000401,
+      "aborted": false
+     },
+     {
+      "tau": 1.935438135333762e-06,
+      "cert": 7.647153998041456e-05,
+      "visited": 4343,
+      "traversal_s": 0.005075,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.005476
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 1.6753813735110223e-05,
+    "predicted_nodes": 3857,
+    "predicted_nnz": 65569,
+    "local_status": "run",
+    "nodes": 3857,
+    "nnz": 7712,
+    "local_build_s": 0.004337,
+    "local_solve_s": 0.160787,
+    "local_wall_s": 0.1779539150002165,
+    "local_peak_kb": 4476,
+    "local_matvecs": 9244,
+    "diff_step": 9.271759363466137e-07,
+    "diff_kernel": 8.96945528804094e-06,
+    "scale_step": 0.015424299160666944,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.010274,
+    "scipy_export_peak_kb": 4404,
+    "scipy_solve_s": 0.6160678699998243,
+    "scipy_peak_kb": 59452,
+    "scipy_imports_kb": 57712,
+    "scipy_diff_step": 9.271759363153886e-07
+   }
+  },
+  {
+   "family": "permnet K=8 l0=40.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.4,
+   "eps": 1e-05,
+   "walker": {
+    "tau": 5.428726546212627e-10,
+    "cert_f": 6.399868364978333e-06,
+    "cert_h": 0.00041724009808411227,
+    "visited": 1099693,
+    "contributions": 513,
+    "max_depth": 5,
+    "traversal_s": 0.670861,
+    "wall_s": 0.6794317439998849,
+    "peak_rss_kb": 4648,
+    "dd_workspace_bytes": 5792,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1.935438135333762e-06,
+      "cert": 7.647153998041456e-05,
+      "visited": 4343,
+      "traversal_s": 0.00573,
+      "aborted": false
+     },
+     {
+      "tau": 1.2654630309716893e-07,
+      "cert": 7.097159444473634e-05,
+      "visited": 7225,
+      "traversal_s": 0.011844,
+      "aborted": false
+     },
+     {
+      "tau": 8.915278294593419e-09,
+      "cert": 2.173125295178771e-05,
+      "visited": 69905,
+      "traversal_s": 0.0636,
+      "aborted": false
+     },
+     {
+      "tau": 2.0512573100070625e-09,
+      "cert": 1.889261959085166e-05,
+      "visited": 176841,
+      "traversal_s": 0.173346,
+      "aborted": false
+     },
+     {
+      "tau": 5.428726546212627e-10,
+      "cert": 6.399868364978333e-06,
+      "visited": 1099693,
+      "traversal_s": 0.670861,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.925381
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 2.680610197617636e-06,
+    "predicted_nodes": 57857,
+    "predicted_nnz": 983569,
+    "local_status": "run",
+    "nodes": 57857,
+    "nnz": 115712,
+    "local_build_s": 0.117651,
+    "local_solve_s": 2.961596,
+    "local_wall_s": 3.08442955099963,
+    "local_peak_kb": 10716,
+    "local_matvecs": 9243,
+    "diff_step": 1.2351781552427665e-08,
+    "diff_kernel": 1.1144865675618253e-07,
+    "scale_step": 0.015424299172458274,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.198695,
+    "scipy_export_peak_kb": 9500,
+    "scipy_solve_s": 4.311761953999849,
+    "scipy_peak_kb": 72044,
+    "scipy_imports_kb": 57620,
+    "scipy_diff_step": 1.2351781548958218e-08
+   }
+  },
+  {
+   "family": "permnet K=8 l0=20.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.5714285714285714,
+   "eps": 0.001,
+   "walker": {
+    "tau": 9e-07,
+    "cert_f": 0.0009571181987038216,
+    "cert_h": 0.040249258574727324,
+    "visited": 29453,
+    "contributions": 473,
+    "max_depth": 4,
+    "traversal_s": 0.022616,
+    "wall_s": 0.031108965999919747,
+    "peak_rss_kb": 4596,
+    "dd_workspace_bytes": 5624,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0013319069552589506,
+      "visited": 4369,
+      "traversal_s": 0.002993,
+      "aborted": false
+     },
+     {
+      "tau": 3e-06,
+      "cert": 0.0013314505327800307,
+      "visited": 4377,
+      "traversal_s": 0.003277,
+      "aborted": false
+     },
+     {
+      "tau": 9e-07,
+      "cert": 0.0009571181987038216,
+      "visited": 29453,
+      "traversal_s": 0.022616,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 0.028886000000000002
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 0.0006307831522189994,
+    "predicted_nodes": 3857,
+    "predicted_nnz": 65569,
+    "local_status": "run",
+    "nodes": 3857,
+    "nnz": 7712,
+    "local_build_s": 0.004177,
+    "local_solve_s": 0.180702,
+    "local_wall_s": 0.18966974999966624,
+    "local_peak_kb": 4432,
+    "local_matvecs": 6439,
+    "diff_step": 5.732484678021288e-07,
+    "diff_kernel": 3.272743435894787e-06,
+    "scale_step": 0.024101139162992124,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 0.009448,
+    "scipy_export_peak_kb": 4408,
+    "scipy_solve_s": 0.5639019099999132,
+    "scipy_peak_kb": 59348,
+    "scipy_imports_kb": 57608,
+    "scipy_diff_step": 5.732484678229455e-07
+   }
+  },
+  {
+   "family": "permnet K=8 l0=20.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "tau": 1.7136430937485544e-11,
+    "cert_f": 7.536048383000314e-05,
+    "cert_h": 0.0031691003306572514,
+    "visited": 151742147,
+    "contributions": 19489,
+    "max_depth": 7,
+    "traversal_s": 100.462783,
+    "wall_s": 100.47213241999998,
+    "peak_rss_kb": 4632,
+    "dd_workspace_bytes": 7752,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 9e-07,
+      "cert": 0.0009571181987038216,
+      "visited": 29453,
+      "traversal_s": 0.023852,
+      "aborted": false
+     },
+     {
+      "tau": 4.701613662862257e-08,
+      "cert": 0.0005831520561553475,
+      "visited": 85023,
+      "traversal_s": 0.085456,
+      "aborted": false
+     },
+     {
+      "tau": 4.0312073096847495e-09,
+      "cert": 0.0002660438562374953,
+      "visited": 1118492,
+      "traversal_s": 0.819364,
+      "aborted": false
+     },
+     {
+      "tau": 7.576208236295678e-10,
+      "cert": 0.00019895004501055725,
+      "visited": 6295848,
+      "traversal_s": 4.59527,
+      "aborted": false
+     },
+     {
+      "tau": 1.9040478819428382e-10,
+      "cert": 0.00011909526707577535,
+      "visited": 17866398,
+      "traversal_s": 12.063898,
+      "aborted": false
+     },
+     {
+      "tau": 5.7121436458285144e-11,
+      "cert": 0.00011872212896965897,
+      "visited": 18269587,
+      "traversal_s": 12.161782,
+      "aborted": false
+     },
+     {
+      "tau": 1.7136430937485544e-11,
+      "cert": 7.536048383000314e-05,
+      "visited": 151742147,
+      "traversal_s": 100.462783,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 130.212405
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 6.725551310623234e-05,
+    "predicted_nodes": 867857,
+    "predicted_nnz": 14753569,
+    "local_status": "run",
+    "nodes": 867857,
+    "nnz": 1735712,
+    "local_build_s": 5.346652,
+    "local_solve_s": 54.513098,
+    "local_wall_s": 59.871207954000056,
+    "local_peak_kb": 102964,
+    "local_matvecs": 6439,
+    "diff_step": 9.159589638846333e-09,
+    "diff_kernel": 4.496791884201542e-08,
+    "scale_step": 0.024101139784959924,
+    "consistent": true,
+    "scipy_status": "run",
+    "scipy_export_s": 8.511489,
+    "scipy_export_peak_kb": 88288,
+    "scipy_solve_s": 89.3531871819996,
+    "scipy_peak_kb": 252524,
+    "scipy_imports_kb": 57700,
+    "scipy_diff_step": 9.159589631907439e-09
+   }
+  }
+ ]
+}

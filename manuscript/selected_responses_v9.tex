@@ -1,0 +1,54 @@
+\documentclass[aps,pra,superscriptaddress,floatfix,longbibliography,twocolumn]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{algpseudocode}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\bibliographystyle{apsrev4-2}
+\newcommand{\bx}{{\bf x}}
+\newcommand{\bu}{{\bf u}}
+\newcommand{\by}{{\bf y}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bc}{{\bf c}}
+\newcommand{\bs}{{\bf s}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bz}{{\bf z}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\be}{{\bf e}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\title{Selected input--output responses of large linear systems from divided-difference walk sums}
+\author{Amir Kalev}
+\affiliation{Information Sciences Institute, University of Southern California, Arlington, VA 22203, USA}
+\author{Ivan Bermejo-Moreno}
+\affiliation{Department of Aerospace and Mechanical Engineering, Viterbi School of Engineering, University of Southern California, Los Angeles, CA 90089, USA}
+\author{Itay Hen}
+\email{itayhen@isi.edu}
+\affiliation{Information Sciences Institute, University of Southern California, Marina del Rey, California 90292, USA}
+\affiliation{Department of Physics and Astronomy and Center for Quantum Information Science \& Technology, University of Southern California, Los Angeles, California 90089, USA}
+
+\begin{abstract}
+We consider the computation of a few input--output responses $\by=C\bx$ of a linear time-invariant system $\dot\bx=A\bx+B\bu$ whose state dimension is too large for the state vector to be stored, or large enough that storing it dominates the cost. Starting from the off-diagonal expansion of the matrix exponential, in which an entry of $e^{tA}$ is a sum over walks on the graph of couplings weighted by divided differences of the exponential at the visited diagonal entries, we derive the walk form of forced responses, a divided-difference kernel that returns each walk's temporal factor on a whole time grid, and bounds that certify the truncation error of pruned traversals in terms of the ratio $\mu$ of couplings to local decay rates. The same bounds certify local truncations to a ball or to an adaptively grown set of states. In a C++ implementation the whole process used a few megabytes for implicitly specified networks with up to $2^{64}$ states. With the same distance information for all methods and the walk sum charged for its full threshold search, the walk sum reached a certified truncation error of $10^{-4}$ on a random network of degree 32 with $\mu=0.57$ in 2.4~s and 6~MB, against 13~s and 53~MB for the adaptive local truncation. Over three graph seeds and three actuator locations per seed, at degrees 16 and 32, the adaptive truncation took 1.5 to 19 times longer. The runtime advantage also held in the tested degree-16 transfer responses between separated actuator and sensor states. On lattices local truncation was faster by orders of magnitude, and the cost of the walk sum grows steeply as $\mu$ approaches one.
+\end{abstract}
+\maketitle
+
+\input{sec_intro}
+\input{sec_theory}
+\input{sec_setup}
+\input{sec_results}
+\input{sec_discussion}
+
+\begin{acknowledgments}
+We acknowledge support from ARL. [Award details to be supplied by the authors.]
+\end{acknowledgments}
+
+\appendix
+\input{sec_appendix_td}
+\input{sec_appendix_verif}
+\input{sec_appendix_repro}
+
+\bibliography{refs_v6}
+\end{document}

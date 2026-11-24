@@ -1,0 +1,242 @@
+%% ---------------------------------------------------------------------------------------------
+\section{Problem and access model}\label{sec:problem}
+
+We consider the continuous-time linear time-invariant system
+\begin{equation}\label{eq:lti}
+\begin{aligned}
+\dot\bx(t)&=A\bx(t)+B\bu(t),\qquad \bx(0)=\bx_0,\\
+\by(t)&=C\bx(t)+F\bu(t),
+\end{aligned}
+\end{equation}
+with $A\in\mathbb{C}^{N\times N}$, $B\in\mathbb{C}^{N\times m}$, $C\in\mathbb{C}^{p\times N}$ and direct feedthrough $F\in\mathbb{C}^{p\times m}$. The target regime has $m,p\ll N$, sparse rows of $C$ and sparse columns of $B$ and $\bx_0$. Real systems are the main special case; complex arithmetic enters only through complex diagonal entries, complex couplings, or complex input rates. A prescribed forcing $\bb(t)$ is the case $B\bu(t)=\bb(t)$.
+
+The quantities we compute are, on a uniform grid $t_k=k\,\Delta t$, $k=0,\dots,T$:
+(i) zero-input responses $C e^{tA}\bx_0$;
+(ii) entries of the impulse-response kernel $K(t)=Ce^{tA}B$;
+(iii) forced responses for inputs that are exponential polynomials, their delayed and piecewise combinations, and sinusoids; and
+(iv) batches of such inputs and observation times evaluated in a single pass.
+Forward response evaluation is the only task addressed. Controller synthesis, closed-loop operation and controllability analysis are outside the scope of this paper.
+
+\paragraph*{Access model.} Write $A=D+R$ with $D=\mathrm{diag}(d_1,\dots,d_N)$ and $R$ zero on the diagonal. The directed edge $j\to i$ carries the weight $R_{ij}$. The algorithm needs three oracles: the diagonal entry $d_j$; the list of incoming edges of a state $j$, that is, the nonzero entries of row $j$ of $R$; and entry access to the supports of the rows of $C$ and the columns of $B$ and $\bx_0$. Row access is what a compressed-sparse-row matrix provides, so no transpose is formed. We distinguish two settings. In the \emph{explicit} setting $A$ is stored, and its storage is part of the memory bill of every method. In the \emph{implicit} setting the oracles are local formulas, as for the structured models of Sec.~\ref{sec:numerics}, and nothing of size $N$ is stored. The cost of an oracle call is taken to be independent of $N$; for the implicit models used here it is a few hash evaluations. The error bounds of Sec.~\ref{sec:error} also need a few global constants (the largest real part of a diagonal entry, the largest coupling row sum, the comparison ratio $\mu$ defined there). For an explicit model they come from one pass over $A$; for an implicit model they follow either from the ranges of the model parameters, which gives valid upper bounds at no cost, or from a streaming pass over all states in $O(N)$ time and $O(1)$ memory. Optional distance information (a lower bound on the number of hops from the input support to a state) sharpens the truncation certificates of Sec.~\ref{sec:error}; it is analytic for lattices and otherwise obtained by a breadth-first search whose memory we report separately.
+
+%% ---------------------------------------------------------------------------------------------
+\section{Walk-sum representation of input--output responses}\label{sec:representation}
+
+\subsection{Divided differences}
+For complex nodes $z_0,\dots,z_q$ (repetitions allowed) let $f_t[z_0,\dots,z_q]$ denote the divided difference of $z\mapsto e^{tz}$. Repeated nodes are part of the definition, not an exceptional case: with $\Gamma$ a contour enclosing all nodes,
+\begin{equation}\label{eq:dd_contour}
+f_t[z_0,\dots,z_q]=\frac{1}{2\pi i}\oint_\Gamma \frac{e^{tz}\,dz}{\prod_{r=0}^q (z-z_r)} .
+\end{equation}
+We use the following standard facts~\cite{deboor2005,higham2008,opitz1964}.
+\begin{enumerate}
+\item[(D1)] Hermite--Genocchi: $f_t[z_0,\dots,z_q]=t^q\int_{\Sigma_q}\exp\!\big(t\sum_r\sigma_r z_r\big)\,d\sigma$, where $\Sigma_q$ is the standard simplex with total measure $1/q!$.
+\item[(D2)] Laplace transform: $\int_0^\infty e^{-st}f_t[z_0,\dots,z_q]\,dt=\prod_r (s-z_r)^{-1}$ for $\mathrm{Re}\,s>\max_r\mathrm{Re}\,z_r$.
+\item[(D3)] Shift: $f_t[z_0+c,\dots,z_q+c]=e^{ct}f_t[z_0,\dots,z_q]$.
+\item[(D4)] Opitz: if $Z$ is lower bidiagonal with diagonal $(z_0,\dots,z_q)$ and unit subdiagonal, then $(e^{tZ})_{rm}=f_t[z_m,\dots,z_r]$ for $r\ge m$.
+\end{enumerate}
+From (D1), $|f_t[z]|\le f_t[\mathrm{Re}\,z]\le e^{\omega t}t^q/q!$ with $\omega=\max_r\mathrm{Re}\,z_r$; for real nodes $f_t$ is positive and nondecreasing in each node.
+
+\subsection{The walk expansion}
+A walk $p=(j_0,j_1,\dots,j_q)$ of length $|p|=q$ is a sequence of states with $R_{j_rj_{r-1}}\neq0$. Its weight and node list are
+\begin{equation}
+w_p=\prod_{r=1}^q R_{j_r j_{r-1}},\qquad \mathcal{D}_p=(d_{j_0},\dots,d_{j_q}).
+\end{equation}
+The coefficient of each hop is the matrix entry in the row of its destination, $R_{j_rj_{r-1}}$, consistent with $DP\,\be_j=D_{kk}\be_k$ when a permutation $P$ maps $\be_j$ to $\be_k$. The length-zero walk $p=(i)$ contributes $\delta_{ij}e^{td_i}$.
+
+\begin{proposition}[walk expansion]\label{prop:walk}
+For every $t\ge0$,
+\begin{equation}\label{eq:walk}
+(e^{tA})_{ij}=\sum_{q=0}^{\infty}\ \sum_{p:\,j\to i,\ |p|=q} w_p\, f_t[\mathcal{D}_p],
+\end{equation}
+and the double series converges absolutely, $\sum_q\sum_{p:j\to i,|p|=q}|w_p|\,|f_t[\mathcal{D}_p]|\le e^{\omega t}e^{\beta t}$ with $\omega=\max_j\mathrm{Re}\,d_j$ and $\beta=\max_i\sum_j|R_{ij}|$.
+\end{proposition}
+\begin{proof}
+For $\mathrm{Re}\,s>\omega+\beta$ the Neumann series $(sI-A)^{-1}=\sum_{q\ge0}[(sI-D)^{-1}R]^q(sI-D)^{-1}$ converges in the row-sum norm, and the $(i,j)$ entry of its $q$-th term is $\sum_{p:j\to i,|p|=q}w_p\prod_r(s-d_{j_r})^{-1}$. By (D2) each product is the Laplace transform of $f_t[\mathcal{D}_p]$. The bound $|f_t[\mathcal{D}_p]|\le e^{\omega t}t^q/q!$ and $\sum_{|p|=q}|w_p|\le\beta^q$ give absolute convergence of the time-domain series, uniformly for $t$ in compact sets, which justifies termwise transformation; uniqueness of the Laplace transform gives \eqref{eq:walk}.
+\end{proof}
+This expansion and its use for single entries of $f(A)$ are due to Barash, G\"uttel and Hen~\cite{barash2022}, building on the off-diagonal series of Refs.~\cite{albash2017,gupta2020pmr}; the proof above handles complex and repeated nodes without separate limiting arguments. Along each walk the diagonal dynamics is integrated exactly, which is why the number of coupling events needed (the walk length) is governed by the size of the couplings relative to the local decay rates, not by $\|A\|$. Exact integration of the diagonal does not by itself make a stiff problem easy: what matters is how many coupling events contribute, which Sec.~\ref{sec:error} bounds.
+
+For sparse $\bc^\top$ (a row of $C$) and a sparse source vector $\bs$ (a column of $B$, or $\bx_0$),
+\begin{equation}\label{eq:io_walk}
+\bc^\top e^{tA}\bs=\sum_{q\ge0}\sum_{|p|=q} c_{j_q}\,w_p\,s_{j_0}\,f_t[\mathcal{D}_p].
+\end{equation}
+Only walks that start in $\mathrm{supp}(\bs)$ and end in $\mathrm{supp}(\bc)$ contribute.
+
+\subsection{Forcing calculus}
+\begin{proposition}[appended nodes]\label{prop:forcing}
+For any nodes $\mathcal{D}$, any $\gamma\in\mathbb{C}$ and integer $m\ge0$,
+\begin{equation}\label{eq:forcing}
+\int_0^t f_{t-s}[\mathcal{D}]\,\frac{s^m}{m!}e^{\gamma s}\,ds=f_t[\mathcal{D},\underbrace{\gamma,\dots,\gamma}_{m+1}].
+\end{equation}
+\end{proposition}
+\begin{proof}
+Both sides are continuous in $t$. Their Laplace transforms are $\prod_{x\in\mathcal{D}}(s-x)^{-1}\cdot(s-\gamma)^{-(m+1)}$, by the convolution theorem on the left and by (D2) on the right.
+\end{proof}
+The normalization is the one that makes the appended block a single confluent group: a step input appends one zero, a ramp $s$ appends two zeros, and $s^m/m!$ appends $m+1$ zeros. For a single node, $f_t[x,0^{(k)}]=t^k\varphi_k(tx)$ with the usual $\varphi$-functions of exponential integrators~\cite{hochbruck2010,niesen2012}, so Eq.~\eqref{eq:forcing} is the walk-by-walk version of the familiar $\varphi$-function representation of forced responses. Equivalently, an input generated by $\dot\bz=S\bz$, $u=L\bz$, can be absorbed into the augmented generator $\left(\begin{smallmatrix}A&BL\\0&S\end{smallmatrix}\right)$~\cite{vanloan1978,almohy2011}; for $S$ the Opitz matrix of the appended nodes, Eq.~\eqref{eq:forcing} is the walk expansion of that augmented system. The practical difference is that appending nodes reuses the walk enumeration: all input patterns are evaluated in the same traversal at a marginal cost measured in Sec.~\ref{sec:batch}.
+
+Table~\ref{tab:inputs} lists the input forms handled exactly. Sinusoids enter through conjugate pairs; for a real system the imaginary parts of the two pattern responses cancel to rounding, which we check numerically.
+
+\begin{table}[t]
+\caption{Input forms and the nodes appended to each walk. All entries are exact. The response to a delayed atom at $\tau$ is the undelayed one evaluated at $t-\tau$ and set to zero for $t<\tau$.}\label{tab:inputs}
+\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+input $u(s)$ & appended nodes & walk factor\\\hline
+impulse $\delta(s)$ & none & $f_t[\mathcal{D}_p]$\\
+step $H(s)$ & $0$ & $f_t[\mathcal{D}_p,0]$\\
+$s^m/m!$ & $0^{(m+1)}$ & $f_t[\mathcal{D}_p,0,\dots,0]$\\
+$e^{\gamma s}$, $\gamma\in\mathbb{C}$ & $\gamma$ & $f_t[\mathcal{D}_p,\gamma]$\\
+$s^me^{\gamma s}/m!$ & $\gamma^{(m+1)}$ & $f_t[\mathcal{D}_p,\gamma,\dots,\gamma]$\\
+$\cos\Omega s$, real $A$ & $i\Omega$ & $\mathrm{Re}\,f_t[\mathcal{D}_p,i\Omega]$\\
+$(s-\tau)_+^m/m!$ & $0^{(m+1)}$ & $f_{t-\tau}[\mathcal{D}_p,0,\dots,0]\,H(t-\tau)$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\subsection{Delayed and piecewise inputs without restarting}\label{sec:piecewise}
+Time invariance makes delayed inputs free: the response to an atom switched on at $\tau$ is the undelayed atom response shifted by $\tau$. A held level on $[a,b)$ is the difference of two delayed steps. A piecewise polynomial input is written in the truncated-power basis,
+\begin{equation}\label{eq:truncpow}
+u(s)=\sum_k\sum_{m}a_{km}\frac{(s-\tau_k)_+^m}{m!},
+\end{equation}
+where $a_{km}$ is the jump of $u^{(m)}$ at the knot $\tau_k$, and its response is $\sum_{k,m}a_{km}\,g_m(t-\tau_k)$ with $g_m$ the response to $s^m/m!$. No state is reconstructed at the knots. When the knots lie on the output grid, the shifts are index shifts. In particular, the response to any zero-order-hold input is the discrete convolution of its increments with the step response $g_0$ on the grid, and a first-order hold uses $g_1$. Off-grid knots require the kernels on a second grid. Inputs outside Table~\ref{tab:inputs} are approximated, for example by a zero-order hold $u_h$; the resulting output error is bounded by $\|u-u_h\|_\infty$ times the gain bound $|\bc|^\top(I-M)^{-1}H^{-1}|\bb|$ of Theorem~\ref{thm:uniform} below, and is kept separate from the truncation error.
+
+We use right-continuous inputs. The state response is continuous across input discontinuities; the feedthrough term $F\bu(t)$ is evaluated pointwise and is never smoothed.
+
+%% ---------------------------------------------------------------------------------------------
+\section{Algorithm}\label{sec:algorithm}
+
+\subsection{Backward, output-oriented traversal}
+For each state $i$ in the support of the sensor rows we enumerate walks backward, by depth-first search over incoming edges, starting from $i$. A path on the stack, $(u_0=i,u_1,\dots,u_q)$, is the reversed walk $u_q\to\dots\to u_0$. Whenever the current state $u_q$ lies in the support of a source vector (a column of $B$ or $\bx_0$), the walk contributes to every output row $a$ with $C_{ai}\ne0$, every source column $b$ with $s_{u_q b}\neq0$ and every input pattern. Backward traversal never loops over the possible initial states: the source vectors are queried only at the states the search actually reaches. Multiple sensor rows sharing a support state share a traversal, and multiple input columns share every traversal. Forward traversal from the actuators is the mirror image and is preferable when $m\ll p$; we use the backward form throughout.
+
+Zero edge weights are skipped. Duplicate transition channels (two terms of a permutation-matrix representation that connect the same pair of states) are enumerated as separate edges whose weights add up to the matrix entry, so nothing is lost or double counted. Cycles need no special treatment: revisiting a state is an ordinary walk with a repeated node in $\mathcal{D}_p$.
+
+\subsection{Divided differences on a time grid}\label{sec:kernel}
+The temporal factor of a path is needed on the whole grid $t_k=k\Delta t$. We evaluate it as the exact solution of the path's bidiagonal system. Shift all nodes by a constant $c_0\ge\max\mathrm{Re}$ of every node that can occur (model diagonal and appended input nodes), $y_r=d_{u_r}-c_0$, so that $\mathrm{Re}\,y_r\le0$; by (D3) the shift is undone by the scalar $e^{c_0t_k}$ at the end. Let $Z_r$ be the Opitz matrix of $(y_0,\dots,y_r)$ and $F^{(r)}(h)=e^{hZ_r}$. By (D4) its last row holds $f_h[y_m,\dots,y_r]$, $m\le r$, and the prefix divided differences on the grid,
+$v_r(k)=f_{t_k}[y_0,\dots,y_r]$, satisfy the exact recursion
+\begin{equation}\label{eq:traj}
+v_r(k)=\sum_{m=0}^{r}F^{(r)}_{rm}(\Delta t)\,v_m(k-1),\qquad v_r(0)=\delta_{r0}.
+\end{equation}
+Appending a node to the path therefore requires one new row of $F$ and one new trajectory; nothing about shorter prefixes changes. The new row is computed at a base step $\delta_0=\Delta t/2^S$, with $S$ the smallest integer such that $\delta_0(Y+1)\le1/2$, $Y=\max_r|y_r|$, by the Taylor recursion $\rho^{(n)}=\rho^{(n-1)}\delta_0Z_r/n$ started from $\be_r^\top$; one step costs $O(\min(n,r))$ and we stop at $n=r+J$ with $J=16$. The truncation is far below the unit roundoff for every entry, including tiny ones far below the diagonal. To see this, write $d=r-m$; the entry is $F_{rm}(\delta_0)=\delta_0^{d}\sum_{k\ge0}\delta_0^k h_k(y_m,\dots,y_r)/(k+d)!$, where $h_k$ is the complete homogeneous symmetric polynomial of degree $k$. Since $|h_k|\le\binom{k+d}{d}Y^k$, the term of order $k$ is at most $(\delta_0^d/d!)\,(\delta_0Y)^k/k!$. The leading term is $\delta_0^d/d!$, and the terms dropped at $n=r+J$ (those with $k>m+J\ge J$) sum to at most $2\cdot2^{-(J+1)}/(J+1)!\approx4\times10^{-20}$ of it. For real nodes ($y\le0$ after the shift) the entry itself is at least $(2-e^{1/2})\approx0.35$ times its leading term, so the relative truncation error of every entry is below $10^{-19}$. The row is then squared $S$ times using the rows of shorter prefixes stored on the stack, $F_{rm}(2h)=\sum_{l=m}^{r}F_{rl}(h)F_{lm}(h)$, at $O(r^2)$ per level. Repeated and clustered nodes need no special handling; Opitz's matrix makes confluence routine. Complex nodes use the same recursions in complex arithmetic. The positivity argument below does not apply to them, and their accuracy rests on the tests of Sec.~\ref{sec:accuracy} and Appendix~\ref{app:verification}, not on an analysis.
+
+For real nodes every quantity in the squaring and in Eq.~\eqref{eq:traj} is nonnegative. The base-step Taylor series does alternate in sign, since $y\le0$, but by the estimate above the sum of the magnitudes of its terms is at most $e^{1/2}$ times the leading term, and the entry is at least $2-e^{1/2}$ times it, so cancellation there amplifies rounding errors by at most $e^{1/2}/(2-e^{1/2})\approx4.7$. Positivity in the later stages removes cancellation but not the accumulation of rounding errors, which we estimate to first order in the unit roundoff $u$. The base row carries a componentwise relative error of order $(r+J)u$. Each squaring doubles the relative error inherited from its factors and adds $O(ru)$, so $F(\Delta t)$ carries $O(2^S(r+J)u)$; the factor $2^S\approx2\Delta t\,Y$ is the relative condition number of $e^{\Delta t\,y}$ and is not specific to the method. The recursion~\eqref{eq:traj} then adds these errors over $k$ sequential steps, so $v_r(k)$ carries a relative error of order $k\,2^S(r+J)u$. This is an estimate, not a rigorous bound. We test it in Sec.~\ref{sec:accuracy} on grids of up to $10^5$ samples, where the observed relative errors grow roughly linearly with $k$ and stay far below it. After the shift $|f_{t}[y_0,\dots,y_r]|\le t^r/r!$, which grows only polynomially in $t$ but can still be large for long walks on long horizons; in the experiments reported here the shifted factors stayed well inside the floating-point range. The final scale $e^{c_0t_k}$ and the products of edge weights and inverse decay rates are ordinary floating-point numbers that can overflow or underflow for extreme parameters; the implementation does not rescale them, and none did in the experiments reported here.
+
+The cost of extending a path by one node is $O(r(r+J)+Sr^2+Tr)$ operations and the working storage is $(S+1)(r+1)+T+1$ numbers per stack level. The scheme is a time-marching variant of the scaling-and-squaring evaluation of divided differences~\cite{mccurdy1984,caliari2007,zivcovich2019}. It differs from the incremental add-and-remove method used for single times in Refs.~\cite{gupta2020dd,barash2022} in that it returns the whole grid at once and, for real nodes, uses only nonnegative quantities in its squaring and stepping stages.
+
+All temporal work is lazy. Rows and trajectories are computed only when a prefix reaches a source state, and only for the stack levels that changed since the last contribution. Most visited prefixes do not end at a source, so most of the traversal costs only edge enumeration and the pruning test below. Appended input nodes are pushed temporarily on top of the stack; consecutive patterns that share a prefix of appended nodes share its rows.
+
+\subsection{Pseudocode and storage}
+\begin{figure}[t]
+\small
+\noindent\rule{\linewidth}{0.4pt}\\[-2pt]
+\textbf{Algorithm 1.} Selected responses by backward walk enumeration (one sensor state $i$).\\[-6pt]
+\noindent\rule{\linewidth}{0.4pt}
+\begin{algorithmic}[1]
+\State $u_0\gets i$; $W_0\gets1$; valid $\gets-1$; certificate $\epsilon\gets0$
+\Procedure{Visit}{$q$}
+  \State gather in-edges $\{(k,R_{u_qk})\}$ and $d_{u_q}$; $y_q\gets d_{u_q}-c_0$; $P_q\gets P_{q-1}/h_{u_q}$; valid $\gets\min(\text{valid},q-1)$
+  \If{$u_q\in\mathrm{supp}(\text{sources})$}
+     \State compute rows and trajectories for levels valid$+1..q$; valid $\gets q$
+     \For{each pattern $E$} push $E$, compute its levels, accumulate $C_{ai}W_q s_{u_qb}\,v_{q+|E|}(\cdot)$ \EndFor
+  \EndIf
+  \For{each in-edge $(k,R_{u_qk})$, $R_{u_qk}\neq0$}
+     \State $W\gets W_qR_{u_qk}$; $b\gets$ subtree bound for prefix $(u_0,\dots,u_q,k)$ \Comment{Sec.~\ref{sec:error}}
+     \If{$q+1>Q$ \textbf{or} $b\le\tau$} $\epsilon\gets\epsilon+b$ \Comment{discard subtree, keep its bound}
+     \Else\ $u_{q+1}\gets k$; $W_{q+1}\gets W$; \Call{Visit}{$q+1$}
+     \EndIf
+  \EndFor
+\EndProcedure
+\State \Call{Visit}{0}; multiply accumulated outputs by $e^{c_0t_k}$; report outputs and $\epsilon$
+\end{algorithmic}
+\noindent\rule{\linewidth}{0.4pt}
+\caption{Pseudocode of the traversal. $P_q$ is the product of $h^{-1}$ over the path, $W_q$ the product of edge weights, and ``valid'' the deepest stack level whose temporal data are current.}\label{alg:walk}
+\end{figure}
+Algorithm~1 (Fig.~\ref{alg:walk}) summarizes the method. Its storage splits as follows. (1) Model and input storage: for an explicit model, $A$ in compressed rows; for an implicit model, a few parameters; plus the sparse supports of $C$, $B$, $\bx_0$. (2) Working memory: the path stack ($Q_{\rm eff}$ state indices, weights and prefix products), the in-edge buffers ($Q_{\rm eff}$ times the in-degree), and the divided-difference workspace, $\sum_{r\le Q_{\rm eff}}[(S+1)(r+1)+T+1]$ numbers, where $Q_{\rm eff}$ is the deepest level actually reached. (3) Optional acceleration storage: a breadth-first distance map, when used. (4) Outputs: $p\times m\times n_{\rm pat}\times(T+1)$ accumulators, kept in compensated (Neumaier) summation together with the sums of absolute values used as a cancellation indicator. Nothing of size $N$ is allocated in the implicit setting, apart from the $O(\log N)$ bits of each stored index. The work is $O(\Delta)$ per visited prefix for pruning tests, with $\Delta$ the in-degree, plus the lazily incurred temporal work above. The number of visited walk prefixes, which counts a state once for every walk that reaches it, is the quantity that decides practicality, and it is measured, not assumed, in Sec.~\ref{sec:numerics}.
+
+%% ---------------------------------------------------------------------------------------------
+\section{Error control}\label{sec:error}
+
+A sequence of small signed terms does not certify a small remainder, so every truncation in this paper is accompanied by a bound on everything discarded. The bounds rest on two elementary facts about divided differences with nodes in the left half plane.
+
+\begin{lemma}\label{lem:dd}
+Let $\mathrm{Re}\,z_r=-h_r<0$ for $r=0,\dots,q$. Then
+(i) $\int_0^\infty|f_t[z_0,\dots,z_q]|\,dt\le\prod_{r=0}^q h_r^{-1}$, and
+(ii) $\sup_{t\ge0}|f_t[z_0,\dots,z_q]|\le\min_k\prod_{r\neq k}h_r^{-1}$.
+\end{lemma}
+\begin{proof}
+(i) $|f_t[z]|\le f_t[-h]$ by (D1), and $\int_0^\infty f_t[-h]\,dt=\prod_r h_r^{-1}$ by (D2) at $s=0$. (ii) By Proposition~\ref{prop:forcing} with $m=0$, $f_t[z]=\int_0^tf_{t-s}[z\setminus z_k]e^{z_ks}ds$, so $|f_t[z]|\le\int_0^\infty|f_\tau[z\setminus z_k]|d\tau$, and (i) applies.
+\end{proof}
+
+\subsection{Uniform-in-time bounds}
+Let $H=\mathrm{diag}(h_j)$ with $h_j=-\mathrm{Re}\,d_j$, and define the comparison matrix $M=H^{-1}|R|$, whose entries $|R_{ij}|/h_i$ compare the coupling into state $i$ with the decay rate of $i$. Let $y_Q$ denote the walk sum restricted to $|p|\le Q$.
+\begin{theorem}\label{thm:uniform}
+Assume $h_j>0$ for all $j$. For all $t\ge0$,
+\begin{align}
+|\bc^\top e^{tA}\bx_0-y_Q(t)|&\le\sum_{q>Q}|\bc|^\top M^q|\bx_0|,\label{eq:uni_zi}\\
+|y^{\rm f}(t)-y_Q(t)|&\le\|u\|_\infty\sum_{q>Q}|\bc|^\top M^qH^{-1}|\bb|,\label{eq:uni_f}
+\end{align}
+where $y^{\rm f}(t)=\int_0^t\bc^\top e^{(t-s)A}\bb\,u(s)\,ds$ is the forced response and $y_Q$ in each line the corresponding walk sum.
+If $\mu:=\|M\|_\infty=\max_i\sum_j|R_{ij}|/h_i<1$, the right-hand sides are at most
+\begin{equation*}
+\frac{\mu^{Q+1}}{1-\mu}\|\bc\|_1\|\bx_0\|_\infty\quad\text{and}\quad\frac{\mu^{Q+1}}{1-\mu}\|u\|_\infty\|\bc\|_1\|H^{-1}\bb\|_\infty .
+\end{equation*}
+\end{theorem}
+\begin{proof}
+For a walk $p$ from $j_0$ to $j_q$, Lemma~\ref{lem:dd}(ii) with the source node left out gives $|c_{j_q}w_px_{0,j_0}f_t[\mathcal{D}_p]|\le|c_{j_q}|\prod_{r=1}^{q}\big(|R_{j_rj_{r-1}}|/h_{j_r}\big)|x_{0,j_0}|$, and the sum over walks of length $q$ is $|\bc|^\top M^q|\bx_0|$. For the forced response, $|\int_0^tf_{t-s}[\mathcal{D}_p]u(s)ds|\le\|u\|_\infty\prod_{r=0}^qh_{j_r}^{-1}$ by Lemma~\ref{lem:dd}(i), and the sum is $|\bc|^\top M^qH^{-1}|\bb|$.
+\end{proof}
+With uniform decay $h_j\ge\alpha$ and coupling $\sum_j|R_{ij}|\le\beta<\alpha$, the forced bound reduces to $\|C\|_\infty\|B\|_\infty U(\beta/\alpha)^{Q+1}/(\alpha-\beta)$ and the zero-input bound to $\|C\|_\infty\|\bx_0\|_\infty\rho^{Q+1}/(1-\rho)$, $\rho=\beta/\alpha$. Under these conditions a sufficient walk depth exists that is independent of $N$ and of the time horizon. It is an absolute bound: an output that decays to zero or crosses zero is not certified to relative accuracy. The comparison argument also bounds the propagated error of an approximated input by $\|u-u_h\|_\infty|\bc|^\top(I-M)^{-1}H^{-1}|\bb|$ (Sec.~\ref{sec:piecewise}). A positive diagonal similarity $W^{-1}AW$ leaves the walk sum unchanged and can make $\|W^{-1}MW\|_\infty<1$ when $\|M\|_\infty\ge1$, with $\bc$ and $\bs$ replaced by $W^\top\bc$ and $W^{-1}\bs$; we do not use weights in the experiments, and an optimized weight vector of length $N$ would itself be a state-sized object.
+
+Theorem~\ref{thm:uniform} does not care about normality. Its hypotheses involve only $|R|$ and the real parts of the diagonal, so a stable nonnormal system with large transient growth is covered as long as $\mu<1$; conversely, a stable system with $\mu\ge1$ is simply not certified by it.
+
+\subsection{Finite-horizon bounds}
+Without decay assumptions, $|f_t[\mathcal{D}_p]|\le e^{\omega t}t^q/q!$ gives the a priori bound
+\begin{equation}\label{eq:horizon}
+\|e^{tA}-E_Q(t)\|_\infty\le e^{\omega t}\sum_{q>Q}\frac{(\beta t)^q}{q!},
+\end{equation}
+with $E_Q$ the truncated walk sum, $\omega=\max\mathrm{Re}\,d_j$ and $\beta=\|R\|_\infty$; the forced version replaces $t^q/q!$ by $e^{\max(\omega,0)t}t^{q+1}/(q+1)!$. The tails are summed in the log domain from the largest term downward. These bounds are often pessimistic but are the only ones available when $\mu\ge1$.
+
+\subsection{Pruning with an a posteriori certificate}\label{sec:certificate}
+A fixed depth cut wastes work on negligible branches and stops too early on important ones. Algorithm~1 instead bounds, for every child it considers, the total contribution of the entire subtree of walks that share that prefix, and discards the subtree when the bound falls below a threshold $\tau$. The certificate is the sum of the bounds of all discarded subtrees, accumulated during the traversal.
+
+Consider the prefix $(u_0=i,\dots,u_q=j,u_{q+1}=k)$ with weight $W=\prod_rR_{u_ru_{r+1}}$ and $P=\prod_{r=0}^{q}h_{u_r}^{-1}$ (all nodes except $k$). Every walk in its subtree consists of the prefix and a completion of $r\ge0$ further hops ending at a source, with $r=0$ possible only if $k$ is a source. Let $\delta_k$ be a lower bound on the number of hops of any walk from the source support to $k$ ($\delta_k=1$ if nothing better is known). The directed distance along the edges $j\to i$ is such a bound, and so is the distance on the underlying undirected graph, which is never larger. Lemma~\ref{lem:dd}, the inequality $\sum_l|R_{kl}|\le\mu h_k$, and the argument of Theorem~\ref{thm:uniform} give
+\begin{align}
+\mathcal{B}_{\rm zi}&=|c_i|\,|W|\,P\Big(|s_k|+\frac{\mu^{\max(\delta_k,1)}}{1-\mu}\|\bs\|_\infty\Big),\label{eq:branch_zi}\\
+\mathcal{B}_{\rm f}&=|c_i|\,|W|\,P\Big(\frac{|s_k|}{h_k}+\frac{\mu^{\max(\delta_k,1)}}{1-\mu}\|H^{-1}\bs\|_\infty\Big),\label{eq:branch_f}
+\end{align}
+for the zero-input (or kernel) and forced responses respectively. The factor $h_k^{-1}$ of the child cancels except in the source term, so the pruning test does not even require the child's diagonal entry; this matters for implicit models in which evaluating $d_k$ costs as much as listing the edges of $k$. The finite-horizon analogue uses $|f_t|\le e^{\omega t}t^n/n!$ and $\sum_l|R_{kl}|\le\beta$:
+$\mathcal{B}^{\rm hor}=|c_i||W|\big(|s_k|g(q+1)+\beta^{\max(\delta_k,1)}G(q+1+\max(\delta_k,1))\|\bs\|_\infty\big)$ with $g(n)=\sup_{0\le t\le t_T}e^{\omega t}t^n/n!$ and $G(n)=\sum_{l\ge0}\beta^lg(n+l)$, tabulated once (with the integrated $g$ for forced responses). When both forms are available the smaller one is used for each subtree.
+
+\begin{theorem}\label{thm:certificate}
+Let $\mathcal{P}$ be the set of subtrees discarded by Algorithm~1. Then for every $t$ on the grid, $|y(t)-\hat y(t)|\le\sum_{\pi\in\mathcal{P}}\mathcal{B}_\pi$, with $\mathcal{B}_{\rm zi}$ for zero-input and kernel responses and $\|u\|_\infty\mathcal{B}_{\rm f}$ for forced responses.
+\end{theorem}
+\begin{proof}
+The discarded subtrees are disjoint, since no retained prefix extends a discarded one, and together with the retained walks they exhaust all walks from the sources to $i$. Each $\mathcal{B}_\pi$ bounds the sum of the absolute contributions of the walks in its subtree by the estimates above.
+\end{proof}
+The certificate is valid for any input with the stated supremum, because the retained walk set does not depend on the input; this is what allows one traversal to serve many input waveforms. For several sensor states the bounds are scaled by $\max_a|C_{ai}|$ and summed. The bounds depend on the distance information through $\delta_k$. Without it every completion is charged as if it could end at a source after one more hop. A lower bound on the hop distance to the sources is analytic on a lattice; on a general implicit graph it comes from a breadth-first search to some radius $r_d$ around the sources, beyond which $\delta_k\ge r_d+1$. That map is stored, and its size is that of a ball of radius $r_d$, so distance information is itself a memory-for-time trade (Sec.~\ref{sec:crossover}).
+
+\subsection{Certified local truncations}\label{sec:local}
+The same comparison bounds certify local methods, which keep the principal submatrix $A_{SS}$ of $A$ on a retained set $S$ that contains the sensor and source supports. The diagonal entries are the original $d_j$, and only the couplings between retained states are kept. In particular, for a network model the leakage through removed couplings stays in the diagonal; the restricted matrix is not the Laplacian of the induced subgraph. The response of $A_{SS}$ is then exactly the sum of the walks that never leave $S$, and its error is the sum over walks that leave $S$ at least once.
+
+Let the ball of radius $R$ consist of the states within distance $R$ of the source support, with distances $d(\cdot,\cdot)$ measured on the underlying undirected coupling graph. Every discarded walk then visits a state at distance at least $R+1$ from the sources, which takes at least $R+1$ hops to reach and at least $R+1-d$ hops to leave for a sensor at distance $d$, so it has length at least $2R+2-d$, and Theorem~\ref{thm:uniform} or Eq.~\eqref{eq:horizon} with $Q=2R+1-d$ bounds the error. A ball of directed reachability does not have this property: for $A=-I+\tfrac12P$ with $P$ a directed three-cycle, the two-state reachable ball around state 0 discards return walks of length three, and its stationary error $1/7$ exceeds the value $\mu^4/(1-\mu)=1/8$ that the formula would give. The implementation therefore builds balls on the undirected graph; for the models of Sec.~\ref{sec:numerics}, whose couplings have symmetric support, this coincides with following incoming edges. For an arbitrary retained set, decompose each discarded walk at its first step out of $S$.
+\begin{proposition}\label{prop:local}
+Let $\mu<1$, let $S$ contain the supports of $\bc$ and $\bs$, and let $\bz^\top=|\bc|_S^\top(I-M_{SS})^{-1}$, so that $z_k$ sums the comparison weights of all walks inside $S$ from the sensors to $k$. Then for all $t\ge0$
+\begin{equation}\label{eq:local_cert}
+|y(t)-y_S(t)|\le\frac{\nu}{1-\mu}\sum_{k\in S}z_k\sum_{l\notin S}M_{kl}\,\mu^{\max(\delta_l,1)},
+\end{equation}
+with $\nu=\|\bs\|_\infty$ for zero-input and kernel responses and $\nu=\|u\|_\infty\|H^{-1}\bs\|_\infty$ for forced responses.
+\end{proposition}
+\begin{proof}
+A discarded walk is a walk inside $S$ from the sensor to some $k\in S$, a hop to $l\notin S$, and a completion from $l$ to a source of at least $\max(\delta_l,1)$ hops. The comparison weights of Theorem~\ref{thm:uniform} factor accordingly; summing the first factor over walks gives $z_k$, and summing the last over completions gives at most $\mu^{\max(\delta_l,1)}\nu/(1-\mu)$ as in Eqs.~\eqref{eq:branch_zi} and \eqref{eq:branch_f}.
+\end{proof}
+The vector $\bz$ is the solution of a stationary linear system on $S$. Jacobi iteration $\bz\leftarrow|\bc|_S+M_{SS}^\top\bz$ started from zero, or from the solution on a smaller retained set, which also lies below, increases monotonically and converges with factor $\mu$ in the 1-norm, because $\|M_{SS}^\top\|_1=\|M_{SS}\|_\infty\le\mu$. The right-hand side of Eq.~\eqref{eq:local_cert} is a weighted sum $\bm{a}^\top\bz$ with $a_k=\nu(1-\mu)^{-1}\sum_{l\notin S}M_{kl}\mu^{\max(\delta_l,1)}$. After the $n$th step $\bz^{(n)}\le\bz$ componentwise and $\|\bz-\bz^{(n)}\|_1\le\mu(1-\mu)^{-1}\|\bz^{(n)}-\bz^{(n-1)}\|_1$, so we certify
+\begin{equation}\label{eq:local_cert_n}
+\bm{a}^\top\bz\le\bm{a}^\top\bz^{(n)}+\|\bm{a}\|_\infty\frac{\mu}{1-\mu}\|\bz^{(n)}-\bz^{(n-1)}\|_1 ,
+\end{equation}
+which is what the implementation computes. The iteration stops when the second term is below $10^{-3}$ of the first, or when the increments stop shrinking at the rounding floor, in which case the second term is simply larger. This gives an adaptive local method. Starting from the sensor and source states, every outside neighbor $l$ of a retained state $k$ whose single-hop share $z_kM_{kl}\mu^{\max(\delta_l,1)}\nu/(1-\mu)$ of the certificate exceeds a threshold is added, together with its own qualifying neighbors (a push-style closure); $\bz$ is recomputed, and the threshold is lowered by a factor of four until Eq.~\eqref{eq:local_cert} is below the target. On a lattice the stationary sums $z_k$ merge all walks that reach $k$, which walk enumeration cannot do. On a tree, walks that backtrack still merge, but at the depths that matter for the networks tested here far fewer walks merge than on a lattice, and the retained set is of similar size to the set of prefixes the traversal visits.
+
+Both local methods need a time integrator on $A_{SS}$. We use Taylor steps of the augmented generator $\hat A=\left(\begin{smallmatrix}A_{SS}&\bb\\0&0\end{smallmatrix}\right)$ with substeps $h\le2/\|\hat A\|_\infty$, so that the terms of each Taylor series sum in magnitude to at most $e^2$ times the iterate. Each substep is truncated after the smallest number of terms whose remainder bound $\rho_m(h\|\hat A\|_\infty)\|\bw\|_\infty$, $\rho_m(x)=\sum_{l>m}x^l/l!$, is below a per-step tolerance. The local errors are propagated by $e^{(t-s)A_{SS}}$, whose $\infty$-norm is at most $e^{\gamma(t-s)}$ with $\gamma=\max_a(\mathrm{Re}\,d_a+\sum_{b\in S}|R_{ab}|)\le0$ when $\mu<1$, so the time-truncation error of the output is at most $\|\bc\|_1$ times the sum of the local remainders. We give this time-truncation error the part of the target that the spatial certificate leaves free. The time integration of the local methods is thus certified up to rounding, like the walk sum, and does no more work than the target requires.
+
+\subsection{Error budget}\label{sec:budget}
+The computed output differs from the exact one by four contributions,
+\begin{equation}\label{eq:budget}
+|y-\hat y|\le\varepsilon_{\rm trunc}+\varepsilon_{\rm temporal}+\varepsilon_{\rm sum}+\varepsilon_{\rm input}.
+\end{equation}
+The truncation of the walk set, $\varepsilon_{\rm trunc}$, is bounded rigorously by Theorem~\ref{thm:certificate}. The representation of the input, $\varepsilon_{\rm input}$, is zero for the inputs of Table~\ref{tab:inputs} and for zero-order holds, and is otherwise bounded by the gain bound of Sec.~\ref{sec:piecewise}. The evaluation of the temporal factors, $\varepsilon_{\rm temporal}$, is controlled by the first-order estimate of Sec.~\ref{sec:kernel} and by tests, not by a rigorous bound. The summation error $\varepsilon_{\rm sum}$ is reduced by compensated summation and monitored with the indicator $\kappa(t)=\sum_p|\text{contribution}_p(t)|/|y(t)|$, accumulated alongside the outputs. When all contributions have one sign, as for real systems with nonnegative couplings, $\kappa=1$ and the summation error is of order $u$ relative to the output. Oscillatory and sign-indefinite couplings produce $\kappa>1$, and rounding errors are amplified by up to that factor; Sec.~\ref{sec:hard} reports $\kappa$ for a lightly damped oscillator network. Throughout the paper, ``certificate'' therefore means a certified bound on the truncation error, with floating-point errors assessed separately. The same applies to the local comparators, whose time truncation is certified and whose rounding is not.

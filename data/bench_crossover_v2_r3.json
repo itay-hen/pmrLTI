@@ -1,0 +1,2127 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "cores": 2,
+  "memtotal": "8220244 kB",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "kernel": "6.18.44-fc-v153"
+ },
+ "dt": 0.05,
+ "T": 100,
+ "dist_R": 3,
+ "search_budget_s": 1800.0,
+ "records": [
+  {
+   "family": "permnet K=2 l0=12.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=12.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.35714285714285715,
+   "eps": 0.001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 3.184006172046349e-05,
+    "cert_h": 0.0006015931217438108,
+    "prefixes": 113,
+    "contributions": 33,
+    "max_depth": 4,
+    "traversal_s": 0.000184,
+    "wall_s": 0.008085712000138301,
+    "peak_rss_kb": 4680,
+    "model_bytes": 1952,
+    "dist_s": 1.4e-05,
+    "setup_s": 0.000261,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 3.184006172046349e-05,
+      "visited": 113,
+      "traversal_s": 0.000184,
+      "setup_s": 0.000333,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.000517,
+    "cumulative_search_s": 0.000517
+   },
+   "ball": {
+    "R": 2,
+    "cert_f": 0.00017084740117385164,
+    "predicted_nodes": 17,
+    "status": "run",
+    "nodes": 17,
+    "nnz": 32,
+    "build_s": 1.9e-05,
+    "solve_s": 0.000235,
+    "total_s": 0.000254,
+    "peak_rss_kb": 4324,
+    "matvecs": 998,
+    "substeps": 1,
+    "temporal_bound_step": 0.000277999,
+    "diff_step_vs_walker": 1.0633358135392346e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 5,
+    "nnz": 8,
+    "cert_f": 0.000553061,
+    "cert_h": 0.0104497,
+    "rounds": 1,
+    "solves": 2,
+    "build_s": 3.9e-05,
+    "solve_s": 0.000154,
+    "total_s": 0.000193,
+    "peak_rss_kb": 4304,
+    "matvecs": 1005,
+    "temporal_bound_step": 0.000277999,
+    "target_reached": true,
+    "diff_step_vs_walker": 1.1643831382544823e-05,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=2 l0=12.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=12.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.35714285714285715,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 3.184006172046349e-05,
+    "cert_h": 0.0006015931217438108,
+    "prefixes": 113,
+    "contributions": 33,
+    "max_depth": 4,
+    "traversal_s": 0.000142,
+    "wall_s": 0.008235345000230154,
+    "peak_rss_kb": 4680,
+    "model_bytes": 1952,
+    "dist_s": 1.7e-05,
+    "setup_s": 0.000256,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 3.184006172046349e-05,
+      "visited": 113,
+      "traversal_s": 0.000142,
+      "setup_s": 0.000309,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.000451,
+    "cumulative_search_s": 0.000968
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 2.1791760353807608e-05,
+    "predicted_nodes": 53,
+    "status": "run",
+    "nodes": 53,
+    "nnz": 104,
+    "build_s": 4.9e-05,
+    "solve_s": 0.000609,
+    "total_s": 0.000658,
+    "peak_rss_kb": 4332,
+    "matvecs": 1140,
+    "substeps": 1,
+    "temporal_bound_step": 4.9822e-05,
+    "diff_step_vs_walker": 1.2395013095634067e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 17,
+    "nnz": 32,
+    "cert_f": 3.95284e-05,
+    "cert_h": 0.000746859,
+    "rounds": 1,
+    "solves": 2,
+    "build_s": 4.8e-05,
+    "solve_s": 0.00021,
+    "total_s": 0.000258,
+    "peak_rss_kb": 4348,
+    "matvecs": 1139,
+    "temporal_bound_step": 3.11464e-05,
+    "target_reached": true,
+    "diff_step_vs_walker": 1.0633358135392346e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=2 l0=12.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=12.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.35714285714285715,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 4.711046144222628e-07,
+    "cert_f": 6.474068714331197e-06,
+    "cert_h": 0.00012232247670975147,
+    "prefixes": 473,
+    "contributions": 33,
+    "max_depth": 5,
+    "traversal_s": 0.00042,
+    "wall_s": 0.010625620000155322,
+    "peak_rss_kb": 4668,
+    "model_bytes": 1952,
+    "dist_s": 2.2e-05,
+    "setup_s": 0.000499,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 3.184006172046349e-05,
+      "visited": 113,
+      "traversal_s": 0.000243,
+      "setup_s": 0.000566,
+      "aborted": false
+     },
+     {
+      "tau": 1.5703487147408761e-06,
+      "cert": 1.3322711964317455e-05,
+      "visited": 232,
+      "traversal_s": 0.000331,
+      "setup_s": 0.000512,
+      "aborted": false
+     },
+     {
+      "tau": 4.711046144222628e-07,
+      "cert": 6.474068714331197e-06,
+      "visited": 473,
+      "traversal_s": 0.00042,
+      "setup_s": 0.000575,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.002647,
+    "cumulative_search_s": 0.003615
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 2.7795612696183176e-06,
+    "predicted_nodes": 161,
+    "status": "run",
+    "nodes": 161,
+    "nnz": 320,
+    "build_s": 0.000108,
+    "solve_s": 0.002084,
+    "total_s": 0.002192,
+    "peak_rss_kb": 4308,
+    "matvecs": 1387,
+    "substeps": 1,
+    "temporal_bound_step": 9.99804e-07,
+    "diff_step_vs_walker": 1.241711403657253e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 45,
+    "nnz": 88,
+    "cert_f": 8.81329e-06,
+    "cert_h": 0.00016652,
+    "rounds": 1,
+    "solves": 2,
+    "build_s": 0.000164,
+    "solve_s": 0.000699,
+    "total_s": 0.0008629999999999999,
+    "peak_rss_kb": 4332,
+    "matvecs": 1417,
+    "temporal_bound_step": 5.29853e-07,
+    "target_reached": true,
+    "diff_step_vs_walker": 1.2192255731610646e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=2 l0=6.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=6.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.5263157894736842,
+   "eps": 0.001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 0.0003237609665945995,
+    "cert_h": 0.003869413684919763,
+    "prefixes": 525,
+    "contributions": 33,
+    "max_depth": 5,
+    "traversal_s": 0.000444,
+    "wall_s": 0.01042241200002536,
+    "peak_rss_kb": 4668,
+    "model_bytes": 1952,
+    "dist_s": 2.1e-05,
+    "setup_s": 0.000627,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0003237609665945995,
+      "visited": 525,
+      "traversal_s": 0.000444,
+      "setup_s": 0.0007,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.001144,
+    "cumulative_search_s": 0.001144
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 0.00028810739565936157,
+    "predicted_nodes": 161,
+    "status": "run",
+    "nodes": 161,
+    "nnz": 320,
+    "build_s": 0.000134,
+    "solve_s": 0.001607,
+    "total_s": 0.001741,
+    "peak_rss_kb": 4348,
+    "matvecs": 944,
+    "substeps": 1,
+    "temporal_bound_step": 0.000134277,
+    "diff_step_vs_walker": 3.2468495825388466e-05,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 51,
+    "nnz": 100,
+    "cert_f": 0.000222992,
+    "cert_h": 0.00266507,
+    "rounds": 3,
+    "solves": 3,
+    "build_s": 0.000159,
+    "solve_s": 0.0007,
+    "total_s": 0.000859,
+    "peak_rss_kb": 4296,
+    "matvecs": 940,
+    "temporal_bound_step": 0.00011488,
+    "target_reached": true,
+    "diff_step_vs_walker": 3.219479314776896e-05,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=2 l0=6.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=6.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.5263157894736842,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 4.633047694962685e-07,
+    "cert_f": 8.718560245139628e-05,
+    "cert_h": 0.0010419945517268978,
+    "prefixes": 2576,
+    "contributions": 265,
+    "max_depth": 6,
+    "traversal_s": 0.003216,
+    "wall_s": 0.014876500999889686,
+    "peak_rss_kb": 4596,
+    "model_bytes": 1952,
+    "dist_s": 2.1e-05,
+    "setup_s": 0.000619,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0003237609665945995,
+      "visited": 525,
+      "traversal_s": 0.000458,
+      "setup_s": 0.000812,
+      "aborted": false
+     },
+     {
+      "tau": 1.5443492316542285e-06,
+      "cert": 0.0001390840067933387,
+      "visited": 1498,
+      "traversal_s": 0.002519,
+      "setup_s": 0.0006479999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 4.633047694962685e-07,
+      "cert": 8.718560245139628e-05,
+      "visited": 2576,
+      "traversal_s": 0.003216,
+      "setup_s": 0.000701,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.008354,
+    "cumulative_search_s": 0.009498
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 7.98081428419284e-05,
+    "predicted_nodes": 485,
+    "status": "run",
+    "nodes": 485,
+    "nnz": 968,
+    "build_s": 0.000283,
+    "solve_s": 0.004513,
+    "total_s": 0.004796,
+    "peak_rss_kb": 4368,
+    "matvecs": 1249,
+    "substeps": 1,
+    "temporal_bound_step": 3.71897e-06,
+    "diff_step_vs_walker": 3.205460574612351e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 161,
+    "nnz": 320,
+    "cert_f": 5.67806e-05,
+    "cert_h": 0.00067861,
+    "rounds": 5,
+    "solves": 4,
+    "build_s": 0.000415,
+    "solve_s": 0.001612,
+    "total_s": 0.002027,
+    "peak_rss_kb": 4368,
+    "matvecs": 1111,
+    "temporal_bound_step": 1.21584e-05,
+    "target_reached": true,
+    "diff_step_vs_walker": 3.200306593773017e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=2 l0=6.0",
+   "model": "permnet nbits=64 K=2 g0=1.0 ag=0.5 l0=6.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 4,
+   "mu": 0.5263157894736842,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1.4834111884956927e-09,
+    "cert_f": 7.684645820103292e-06,
+    "cert_h": 9.184267644376724e-05,
+    "prefixes": 80998,
+    "contributions": 2363,
+    "max_depth": 10,
+    "traversal_s": 0.058867,
+    "wall_s": 0.07024830600039422,
+    "peak_rss_kb": 4632,
+    "model_bytes": 1952,
+    "dist_s": 1.8e-05,
+    "setup_s": 0.000543,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 4.633047694962685e-07,
+      "cert": 8.718560245139628e-05,
+      "visited": 2576,
+      "traversal_s": 0.003022,
+      "setup_s": 0.0006399999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 2.6570027416771538e-08,
+      "cert": 2.686715688424446e-05,
+      "visited": 14378,
+      "traversal_s": 0.02058,
+      "setup_s": 0.0006320000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 4.944703961652309e-09,
+      "cert": 1.330358527350736e-05,
+      "visited": 33519,
+      "traversal_s": 0.035449,
+      "setup_s": 0.0006169999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 1.4834111884956927e-09,
+      "cert": 7.684645820103292e-06,
+      "visited": 80998,
+      "traversal_s": 0.058867,
+      "setup_s": 0.000616,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.120423,
+    "cumulative_search_s": 0.129921
+   },
+   "ball": {
+    "R": 7,
+    "cert_f": 6.123966424592229e-06,
+    "predicted_nodes": 4373,
+    "status": "run",
+    "nodes": 4373,
+    "nnz": 8744,
+    "build_s": 0.002983,
+    "solve_s": 0.046526,
+    "total_s": 0.049509,
+    "peak_rss_kb": 4752,
+    "matvecs": 1408,
+    "substeps": 1,
+    "temporal_bound_step": 6.37804e-07,
+    "diff_step_vs_walker": 3.3112470278207073e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 1199,
+    "nnz": 2396,
+    "cert_f": 7.57102e-06,
+    "cert_h": 9.04847e-05,
+    "rounds": 9,
+    "solves": 7,
+    "build_s": 0.002842,
+    "solve_s": 0.011584,
+    "total_s": 0.014426000000000001,
+    "peak_rss_kb": 4564,
+    "matvecs": 1412,
+    "temporal_bound_step": 3.16426e-07,
+    "target_reached": true,
+    "diff_step_vs_walker": 3.3110169819772217e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=8 l0=40.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.4,
+   "eps": 0.001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 6.807453376759978e-05,
+    "cert_h": 0.004438126462358841,
+    "prefixes": 273,
+    "contributions": 17,
+    "max_depth": 2,
+    "traversal_s": 0.000427,
+    "wall_s": 0.008936010000070382,
+    "peak_rss_kb": 4912,
+    "model_bytes": 123968,
+    "dist_s": 0.000555,
+    "setup_s": 0.000477,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 6.807453376759978e-05,
+      "visited": 273,
+      "traversal_s": 0.000427,
+      "setup_s": 0.00108,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.001507,
+    "cumulative_search_s": 0.001507
+   },
+   "ball": {
+    "R": 1,
+    "cert_f": 0.0006544458490277429,
+    "predicted_nodes": 17,
+    "status": "run",
+    "nodes": 17,
+    "nnz": 32,
+    "build_s": 3.8e-05,
+    "solve_s": 0.00046,
+    "total_s": 0.000498,
+    "peak_rss_kb": 4296,
+    "matvecs": 3405,
+    "substeps": 3,
+    "temporal_bound_step": 4.65759e-05,
+    "diff_step_vs_walker": 4.713979129909035e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 17,
+    "nnz": 32,
+    "cert_f": 0.000334346,
+    "cert_h": 0.0217977,
+    "rounds": 1,
+    "solves": 2,
+    "build_s": 0.000695,
+    "solve_s": 0.000393,
+    "total_s": 0.001088,
+    "peak_rss_kb": 4524,
+    "matvecs": 3097,
+    "temporal_bound_step": 0.000397985,
+    "target_reached": true,
+    "diff_step_vs_walker": 4.713979129909035e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=8 l0=40.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.4,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 6.807453376759978e-05,
+    "cert_h": 0.004438126462358841,
+    "prefixes": 273,
+    "contributions": 17,
+    "max_depth": 2,
+    "traversal_s": 0.000367,
+    "wall_s": 0.009906286999921576,
+    "peak_rss_kb": 4900,
+    "model_bytes": 123968,
+    "dist_s": 0.000565,
+    "setup_s": 0.000474,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 6.807453376759978e-05,
+      "visited": 273,
+      "traversal_s": 0.000367,
+      "setup_s": 0.00109,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.001457,
+    "cumulative_search_s": 0.002964
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 1.6753813735110223e-05,
+    "predicted_nodes": 3857,
+    "status": "run",
+    "nodes": 3857,
+    "nnz": 7712,
+    "build_s": 0.004118,
+    "solve_s": 0.076074,
+    "total_s": 0.080192,
+    "peak_rss_kb": 4760,
+    "matvecs": 4050,
+    "substeps": 3,
+    "temporal_bound_step": 1.44336e-05,
+    "diff_step_vs_walker": 9.271759363466137e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 257,
+    "nnz": 512,
+    "cert_f": 3.66415e-05,
+    "cert_h": 0.00238885,
+    "rounds": 4,
+    "solves": 3,
+    "build_s": 0.001835,
+    "solve_s": 0.005207,
+    "total_s": 0.007042,
+    "peak_rss_kb": 4600,
+    "matvecs": 4049,
+    "temporal_bound_step": 8.47112e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 9.248579054908085e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=8 l0=40.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.4,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1.273179669438182e-07,
+    "cert_f": 9.48232594579091e-06,
+    "cert_h": 0.0006182012475971788,
+    "prefixes": 4779,
+    "contributions": 427,
+    "max_depth": 4,
+    "traversal_s": 0.007475,
+    "wall_s": 0.016225294999912876,
+    "peak_rss_kb": 4816,
+    "model_bytes": 123968,
+    "dist_s": 0.000528,
+    "setup_s": 0.000442,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 6.807453376759978e-05,
+      "visited": 273,
+      "traversal_s": 0.000451,
+      "setup_s": 0.0010249999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 7.344890553447701e-07,
+      "cert": 2.8844674203322745e-05,
+      "visited": 1879,
+      "traversal_s": 0.002459,
+      "setup_s": 0.001006,
+      "aborted": false
+     },
+     {
+      "tau": 1.273179669438182e-07,
+      "cert": 9.48232594579091e-06,
+      "visited": 4779,
+      "traversal_s": 0.007475,
+      "setup_s": 0.001051,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.013467,
+    "cumulative_search_s": 0.016431
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 2.680610197617636e-06,
+    "predicted_nodes": 57857,
+    "status": "run",
+    "nodes": 57857,
+    "nnz": 115712,
+    "build_s": 0.111338,
+    "solve_s": 1.444586,
+    "total_s": 1.5559239999999999,
+    "peak_rss_kb": 10872,
+    "matvecs": 4393,
+    "substeps": 3,
+    "temporal_bound_step": 2.75607e-06,
+    "diff_step_vs_walker": 9.670221902922937e-08,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 3857,
+    "nnz": 7712,
+    "cert_f": 3.98552e-06,
+    "cert_h": 0.000259836,
+    "rounds": 8,
+    "solves": 5,
+    "build_s": 0.017508,
+    "solve_s": 0.082444,
+    "total_s": 0.099952,
+    "peak_rss_kb": 5120,
+    "matvecs": 4393,
+    "temporal_bound_step": 1.71603e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 9.669042769916425e-08,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=8 l0=20.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.5714285714285714,
+   "eps": 0.001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 0.0006291294530313955,
+    "cert_h": 0.02645649624709858,
+    "prefixes": 2350,
+    "contributions": 17,
+    "max_depth": 3,
+    "traversal_s": 0.003207,
+    "wall_s": 0.012214589999985037,
+    "peak_rss_kb": 4840,
+    "model_bytes": 123968,
+    "dist_s": 0.000579,
+    "setup_s": 0.000538,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0006291294530313955,
+      "visited": 2350,
+      "traversal_s": 0.003207,
+      "setup_s": 0.001213,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.00442,
+    "cumulative_search_s": 0.00442
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 0.0006307831522189994,
+    "predicted_nodes": 3857,
+    "status": "run",
+    "nodes": 3857,
+    "nnz": 7712,
+    "build_s": 0.005962,
+    "solve_s": 0.080354,
+    "total_s": 0.08631599999999999,
+    "peak_rss_kb": 4724,
+    "matvecs": 2533,
+    "substeps": 2,
+    "temporal_bound_step": 0.000138496,
+    "diff_step_vs_walker": 8.269548563574758e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 257,
+    "nnz": 512,
+    "cert_f": 0.000866397,
+    "cert_h": 0.0364342,
+    "rounds": 5,
+    "solves": 4,
+    "build_s": 0.002505,
+    "solve_s": 0.005731,
+    "total_s": 0.008236,
+    "peak_rss_kb": 4636,
+    "matvecs": 2548,
+    "temporal_bound_step": 8.51072e-05,
+    "target_reached": true,
+    "diff_step_vs_walker": 8.219632773982799e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=8 l0=20.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 3.268207622043211e-09,
+    "cert_f": 6.0717795549444214e-05,
+    "cert_h": 0.0025533379852839388,
+    "prefixes": 914799,
+    "contributions": 621,
+    "max_depth": 6,
+    "traversal_s": 1.093748,
+    "wall_s": 1.1029135939998014,
+    "peak_rss_kb": 4884,
+    "model_bytes": 123968,
+    "dist_s": 0.000583,
+    "setup_s": 0.00047,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0006291294530313955,
+      "visited": 2350,
+      "traversal_s": 0.0032,
+      "setup_s": 0.0011539999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 7.947489941709159e-07,
+      "cert": 0.0003282873263296462,
+      "visited": 5560,
+      "traversal_s": 0.008269,
+      "setup_s": 0.001106,
+      "aborted": false
+     },
+     {
+      "tau": 1.2104472674234115e-07,
+      "cert": 0.00015469426747258873,
+      "visited": 56990,
+      "traversal_s": 0.072192,
+      "setup_s": 0.001092,
+      "aborted": false
+     },
+     {
+      "tau": 3.6313418022702346e-08,
+      "cert": 0.00013600174908641636,
+      "visited": 72636,
+      "traversal_s": 0.092762,
+      "setup_s": 0.0011090000000000002,
+      "aborted": false
+     },
+     {
+      "tau": 1.0894025406810704e-08,
+      "cert": 0.00012146520310299378,
+      "visited": 127025,
+      "traversal_s": 0.156843,
+      "setup_s": 0.001082,
+      "aborted": false
+     },
+     {
+      "tau": 3.268207622043211e-09,
+      "cert": 6.0717795549444214e-05,
+      "visited": 914799,
+      "traversal_s": 1.093748,
+      "setup_s": 0.001099,
+      "aborted": false
+     }
+    ],
+    "search_s": 1.4336559999999998,
+    "cumulative_search_s": 1.438076
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 6.725551310623234e-05,
+    "predicted_nodes": 867857,
+    "status": "run",
+    "nodes": 867857,
+    "nnz": 1735712,
+    "build_s": 4.787095,
+    "solve_s": 26.842094,
+    "total_s": 31.629189,
+    "peak_rss_kb": 103244,
+    "matvecs": 2982,
+    "substeps": 2,
+    "temporal_bound_step": 4.69593e-06,
+    "diff_step_vs_walker": 2.5738326056568006e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 57857,
+    "nnz": 115712,
+    "cert_f": 8.90818e-05,
+    "cert_h": 0.00374612,
+    "rounds": 18,
+    "solves": 12,
+    "build_s": 1.163438,
+    "solve_s": 0.903688,
+    "total_s": 2.067126,
+    "peak_rss_kb": 14696,
+    "matvecs": 3000,
+    "temporal_bound_step": 4.2602e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 2.5737570201467275e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=8 l0=20.0",
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 16,
+   "mu": 0.5714285714285714,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": false,
+    "tau": 4.3246440504903965e-13,
+    "cert_f": 1.0015072124423619e-05,
+    "cert_h": 0.00042115929686256887,
+    "prefixes": 293245174,
+    "contributions": 747563,
+    "max_depth": 8,
+    "traversal_s": 366.26441,
+    "wall_s": 366.2741233399993,
+    "peak_rss_kb": 4888,
+    "model_bytes": 123968,
+    "dist_s": 0.000575,
+    "setup_s": 0.000502,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 3.268207622043211e-09,
+      "cert": 6.0717795549444214e-05,
+      "visited": 914799,
+      "traversal_s": 1.217518,
+      "setup_s": 0.002166,
+      "aborted": false
+     },
+     {
+      "tau": 2.6913095184605457e-10,
+      "cert": 4.919635753381305e-05,
+      "visited": 1711167,
+      "traversal_s": 2.6036,
+      "setup_s": 0.0011,
+      "aborted": false
+     },
+     {
+      "tau": 2.735273151686878e-11,
+      "cert": 2.3200188280626693e-05,
+      "visited": 18078438,
+      "traversal_s": 23.052905,
+      "setup_s": 0.0015300000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 5.894937400079134e-12,
+      "cert": 2.0446552356409564e-05,
+      "visited": 42798678,
+      "traversal_s": 53.583681,
+      "setup_s": 0.001124,
+      "aborted": false
+     },
+     {
+      "tau": 1.4415480168301323e-12,
+      "cert": 1.0231331196880679e-05,
+      "visited": 277502267,
+      "traversal_s": 346.701292,
+      "setup_s": 0.001055,
+      "aborted": false
+     },
+     {
+      "tau": 4.3246440504903965e-13,
+      "cert": 1.0015072124423619e-05,
+      "visited": 293245174,
+      "traversal_s": 366.26441,
+      "setup_s": 0.0011229999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 1.297393215147119e-13,
+      "cert": 1e+308,
+      "visited": 819131730,
+      "traversal_s": 1006.644922,
+      "setup_s": 0.001191,
+      "aborted": true
+     }
+    ],
+    "search_s": 1800.077617,
+    "cumulative_search_s": 1801.5156929999998
+   },
+   "ball": {
+    "R": 7,
+    "cert_f": 7.170933509036016e-06,
+    "predicted_nodes": 195267857,
+    "status": "not run (predicted size exceeds memory limit)"
+   },
+   "adaptive": {
+    "status": "stopped at node limit",
+    "nodes": 20000000,
+    "nnz": 39999998,
+    "cert_f": 1.53998e-05,
+    "cert_h": 0.000647601,
+    "rounds": 35,
+    "solves": 24,
+    "build_s": 1859.285217,
+    "solve_s": 3e-06,
+    "total_s": 1859.2852200000002,
+    "peak_rss_kb": 2918504,
+    "matvecs": 0,
+    "temporal_bound_step": -1,
+    "propagated": false,
+    "target_reached": false,
+    "rerun_note": "first attempt stopped by hand at 1.5 h (Jacobi at rounding floor)",
+    "consistent": null
+   }
+  },
+  {
+   "family": "permnet K=16 l0=80.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=80.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 32,
+   "mu": 0.4,
+   "eps": 0.001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 2.6762770434324314e-05,
+    "cert_h": 0.0035052290546093556,
+    "prefixes": 1057,
+    "contributions": 33,
+    "max_depth": 2,
+    "traversal_s": 0.00326,
+    "wall_s": 0.01724885800103948,
+    "peak_rss_kb": 6108,
+    "model_bytes": 1017792,
+    "dist_s": 0.005018,
+    "setup_s": 0.000688,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 2.6762770434324314e-05,
+      "visited": 1057,
+      "traversal_s": 0.00326,
+      "setup_s": 0.005745,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.009004999999999999,
+    "cumulative_search_s": 0.009004999999999999
+   },
+   "ball": {
+    "R": 1,
+    "cert_f": 0.0003257642189449145,
+    "predicted_nodes": 33,
+    "status": "run",
+    "nodes": 33,
+    "nnz": 64,
+    "build_s": 0.000166,
+    "solve_s": 0.001047,
+    "total_s": 0.0012129999999999999,
+    "peak_rss_kb": 4336,
+    "matvecs": 6093,
+    "substeps": 5,
+    "temporal_bound_step": 9.30856e-05,
+    "diff_step_vs_walker": 5.854398741744066e-08,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 33,
+    "nnz": 64,
+    "cert_f": 0.000168279,
+    "cert_h": 0.0220402,
+    "rounds": 2,
+    "solves": 2,
+    "build_s": 0.005541,
+    "solve_s": 0.000979,
+    "total_s": 0.00652,
+    "peak_rss_kb": 5888,
+    "matvecs": 5591,
+    "temporal_bound_step": 0.000717672,
+    "target_reached": true,
+    "diff_step_vs_walker": 5.854398741744066e-08,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=16 l0=80.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=80.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 32,
+   "mu": 0.4,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 2.6762770434324314e-05,
+    "cert_h": 0.0035052290546093556,
+    "prefixes": 1057,
+    "contributions": 33,
+    "max_depth": 2,
+    "traversal_s": 0.005596,
+    "wall_s": 0.024482209999405313,
+    "peak_rss_kb": 6156,
+    "model_bytes": 1017792,
+    "dist_s": 0.007226,
+    "setup_s": 0.000812,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 2.6762770434324314e-05,
+      "visited": 1057,
+      "traversal_s": 0.005596,
+      "setup_s": 0.008083,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.013679,
+    "cumulative_search_s": 0.022684
+   },
+   "ball": {
+    "R": 2,
+    "cert_f": 5.212227503118632e-05,
+    "predicted_nodes": 1025,
+    "status": "run",
+    "nodes": 1025,
+    "nnz": 2048,
+    "build_s": 0.001995,
+    "solve_s": 0.044941,
+    "total_s": 0.046936,
+    "peak_rss_kb": 4428,
+    "matvecs": 7954,
+    "substeps": 6,
+    "temporal_bound_step": 1.55963e-05,
+    "diff_step_vs_walker": 1.140479314121548e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 806,
+    "nnz": 1610,
+    "cert_f": 4.32668e-05,
+    "cert_h": 0.00566683,
+    "rounds": 5,
+    "solves": 3,
+    "build_s": 0.016857,
+    "solve_s": 0.04955,
+    "total_s": 0.066407,
+    "peak_rss_kb": 5924,
+    "matvecs": 7137,
+    "temporal_bound_step": 8.32597e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 1.0762092812841711e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=16 l0=80.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=80.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 32,
+   "mu": 0.4,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 2.5572687937716704e-08,
+    "cert_f": 3.623817916984681e-06,
+    "cert_h": 0.00047462619321867513,
+    "prefixes": 33842,
+    "contributions": 50,
+    "max_depth": 4,
+    "traversal_s": 0.257879,
+    "wall_s": 0.2741520599993237,
+    "peak_rss_kb": 6088,
+    "model_bytes": 1017792,
+    "dist_s": 0.005861,
+    "setup_s": 0.000549,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 2.6762770434324314e-05,
+      "visited": 1057,
+      "traversal_s": 0.007373,
+      "setup_s": 0.010851999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 1.8682669689485145e-06,
+      "cert": 2.6762770434324314e-05,
+      "visited": 1057,
+      "traversal_s": 0.009658,
+      "setup_s": 0.013054999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 3.4904214672640694e-07,
+      "cert": 2.0473531032982116e-05,
+      "visited": 2768,
+      "traversal_s": 0.011301,
+      "setup_s": 0.009411999999999998,
+      "aborted": false
+     },
+     {
+      "tau": 8.524229312572235e-08,
+      "cert": 1.215916084733121e-05,
+      "visited": 14412,
+      "traversal_s": 0.051775,
+      "setup_s": 0.005906000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 2.5572687937716704e-08,
+      "cert": 3.623817916984681e-06,
+      "visited": 33842,
+      "traversal_s": 0.257879,
+      "setup_s": 0.00645,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.38366100000000003,
+    "cumulative_search_s": 0.406345
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 8.339564004989814e-06,
+    "predicted_nodes": 31777,
+    "status": "run",
+    "nodes": 31777,
+    "nnz": 63552,
+    "build_s": 0.085247,
+    "solve_s": 1.807881,
+    "total_s": 1.8931280000000001,
+    "peak_rss_kb": 7636,
+    "matvecs": 9218,
+    "substeps": 6,
+    "temporal_bound_step": 3.81284e-07,
+    "diff_step_vs_walker": 1.1201130236011825e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 31774,
+    "nnz": 63546,
+    "cert_f": 2.1204e-06,
+    "cert_h": 0.000277717,
+    "rounds": 13,
+    "solves": 8,
+    "build_s": 0.697016,
+    "solve_s": 1.778432,
+    "total_s": 2.475448,
+    "peak_rss_kb": 10832,
+    "matvecs": 8590,
+    "temporal_bound_step": 3.41824e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 1.1201130086652133e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=16 l0=40.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 32,
+   "mu": 0.5714285714285714,
+   "eps": 0.001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 0.0005304826347597993,
+    "cert_h": 0.04492602042886625,
+    "prefixes": 1057,
+    "contributions": 33,
+    "max_depth": 2,
+    "traversal_s": 0.009568,
+    "wall_s": 0.03299824499845272,
+    "peak_rss_kb": 6160,
+    "model_bytes": 1017792,
+    "dist_s": 0.00775,
+    "setup_s": 0.001045,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0005304826347597993,
+      "visited": 1057,
+      "traversal_s": 0.009568,
+      "setup_s": 0.008855,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.018423000000000002,
+    "cumulative_search_s": 0.018423000000000002
+   },
+   "ball": {
+    "R": 2,
+    "cert_f": 0.0009592277072499944,
+    "predicted_nodes": 1025,
+    "status": "run",
+    "nodes": 1025,
+    "nnz": 2048,
+    "build_s": 0.003151,
+    "solve_s": 0.047253,
+    "total_s": 0.050404000000000004,
+    "peak_rss_kb": 4408,
+    "matvecs": 5366,
+    "substeps": 4,
+    "temporal_bound_step": 1.94036e-05,
+    "diff_step_vs_walker": 1.0153753410083177e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 903,
+    "nnz": 1804,
+    "cert_f": 0.000562064,
+    "cert_h": 0.0476006,
+    "rounds": 5,
+    "solves": 3,
+    "build_s": 0.024068,
+    "solve_s": 0.036897,
+    "total_s": 0.060965,
+    "peak_rss_kb": 5936,
+    "matvecs": 4922,
+    "temporal_bound_step": 7.85336e-05,
+    "target_reached": true,
+    "diff_step_vs_walker": 9.860860855932102e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=16 l0=40.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 32,
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 6.7211458750398685e-09,
+    "cert_f": 6.510159406315694e-05,
+    "cert_h": 0.00551338602470459,
+    "prefixes": 934706,
+    "contributions": 2049,
+    "max_depth": 4,
+    "traversal_s": 3.343451,
+    "wall_s": 3.367981196999608,
+    "peak_rss_kb": 6068,
+    "model_bytes": 1017792,
+    "dist_s": 0.008284,
+    "setup_s": 0.001043,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0005304826347597993,
+      "visited": 1057,
+      "traversal_s": 0.017815,
+      "setup_s": 0.00953,
+      "aborted": false
+     },
+     {
+      "tau": 9.425379215785233e-07,
+      "cert": 0.00018931685426682674,
+      "visited": 27499,
+      "traversal_s": 0.114538,
+      "setup_s": 0.005881,
+      "aborted": false
+     },
+     {
+      "tau": 2.4893132870518033e-07,
+      "cert": 0.00014482870608456726,
+      "visited": 33825,
+      "traversal_s": 0.193998,
+      "setup_s": 0.005914,
+      "aborted": false
+     },
+     {
+      "tau": 7.46793986115541e-08,
+      "cert": 0.00014335605020307054,
+      "visited": 35321,
+      "traversal_s": 0.224387,
+      "setup_s": 0.009265,
+      "aborted": false
+     },
+     {
+      "tau": 2.240381958346623e-08,
+      "cert": 0.00012203179956751777,
+      "visited": 106974,
+      "traversal_s": 0.531463,
+      "setup_s": 0.006263,
+      "aborted": false
+     },
+     {
+      "tau": 6.7211458750398685e-09,
+      "cert": 6.510159406315694e-05,
+      "visited": 934706,
+      "traversal_s": 3.343451,
+      "setup_s": 0.009397,
+      "aborted": false
+     }
+    ],
+    "search_s": 4.471902,
+    "cumulative_search_s": 4.490325
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 3.339592082292222e-05,
+    "predicted_nodes": 30537761,
+    "status": "run",
+    "nodes": 30537761,
+    "nnz": 61075520,
+    "build_s": 518.703869,
+    "solve_s": 1838.79445,
+    "total_s": 2357.4983190000003,
+    "peak_rss_kb": 3100952,
+    "matvecs": 5768,
+    "substeps": 4,
+    "temporal_bound_step": 9.59961e-06,
+    "diff_step_vs_walker": 1.6192420302166277e-08,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 272662,
+    "nnz": 545322,
+    "cert_f": 8.85489e-05,
+    "cert_h": 0.00749912,
+    "rounds": 16,
+    "solves": 9,
+    "build_s": 11.695657,
+    "solve_s": 12.700581,
+    "total_s": 24.396238,
+    "peak_rss_kb": 54388,
+    "matvecs": 5792,
+    "temporal_bound_step": 4.56296e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 1.6181911753274103e-08,
+    "consistent": true
+   }
+  },
+  {
+   "family": "permnet K=16 l0=40.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "deg": 32,
+   "mu": 0.5714285714285714,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "bfs",
+    "distR": 3
+   },
+   "walker": {
+    "target_reached": false,
+    "tau": 9.00080644501294e-12,
+    "cert_f": 2.4344763638260762e-05,
+    "cert_h": 0.002061732612687035,
+    "prefixes": 36165207,
+    "contributions": 146132,
+    "max_depth": 6,
+    "traversal_s": 124.678766,
+    "wall_s": 124.69788520600014,
+    "peak_rss_kb": 6108,
+    "model_bytes": 1017792,
+    "dist_s": 0.005018,
+    "setup_s": 0.000554,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 6.7211458750398685e-09,
+      "cert": 6.510159406315694e-05,
+      "visited": 934706,
+      "traversal_s": 3.110689,
+      "setup_s": 0.005927000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 5.162044011180042e-10,
+      "cert": 5.8489509593426425e-05,
+      "visited": 1252249,
+      "traversal_s": 4.409046,
+      "setup_s": 0.0054529999999999995,
+      "aborted": false
+     },
+     {
+      "tau": 4.4127947447863357e-11,
+      "cert": 2.4513329842968267e-05,
+      "visited": 34604820,
+      "traversal_s": 118.054988,
+      "setup_s": 0.007939,
+      "aborted": false
+     },
+     {
+      "tau": 9.00080644501294e-12,
+      "cert": 2.4344763638260762e-05,
+      "visited": 36165207,
+      "traversal_s": 124.678766,
+      "setup_s": 0.005613,
+      "aborted": false
+     },
+     {
+      "tau": 1.848612411842659e-12,
+      "cert": 1e+308,
+      "visited": 475363790,
+      "traversal_s": 1549.905275,
+      "setup_s": 0.009724,
+      "aborted": true
+     }
+    ],
+    "search_s": 1800.19342,
+    "cumulative_search_s": 1804.683745
+   },
+   "ball": {
+    "R": 7,
+    "cert_f": 3.5607479094827513e-06,
+    "predicted_nodes": 29346788385,
+    "status": "not run (predicted size exceeds memory limit)"
+   },
+   "adaptive": {
+    "status": "stopped at node limit",
+    "nodes": 20000000,
+    "nnz": 39999998,
+    "cert_f": 2.85819e-05,
+    "cert_h": 0.00242057,
+    "rounds": 23,
+    "solves": 14,
+    "build_s": 1054.19128,
+    "solve_s": 5e-06,
+    "total_s": 1054.191285,
+    "peak_rss_kb": 2955632,
+    "matvecs": 0,
+    "temporal_bound_step": -1,
+    "target_reached": false,
+    "diff_step_vs_walker": 0.011887048150159518,
+    "consistent": null
+   }
+  },
+  {
+   "family": "grid l0=8.0",
+   "model": "grid L=1000001 k0=1.0 ak=0.5 l0=8.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+   "deg": 4,
+   "mu": 0.45454545454545453,
+   "eps": 0.001,
+   "dist": {
+    "dist": "analytic"
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-05,
+    "cert_f": 0.00011731130371408577,
+    "cert_h": 0.0017076761420469593,
+    "prefixes": 262,
+    "contributions": 41,
+    "max_depth": 4,
+    "traversal_s": 0.000235,
+    "wall_s": 0.009488891002547462,
+    "peak_rss_kb": 4688,
+    "model_bytes": 104,
+    "dist_s": 1e-06,
+    "setup_s": 0.000452,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.00011731130371408577,
+      "visited": 262,
+      "traversal_s": 0.000235,
+      "setup_s": 0.000503,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.0007379999999999999,
+    "cumulative_search_s": 0.0007379999999999999
+   },
+   "ball": {
+    "R": 3,
+    "cert_f": 0.00022950615573160497,
+    "predicted_nodes": 25,
+    "status": "run",
+    "nodes": 25,
+    "nnz": 72,
+    "build_s": 2.6e-05,
+    "solve_s": 0.000303,
+    "total_s": 0.000329,
+    "peak_rss_kb": 4288,
+    "matvecs": 914,
+    "substeps": 1,
+    "temporal_bound_step": 0.000377975,
+    "diff_step_vs_walker": 8.614944427678961e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 13,
+    "nnz": 32,
+    "cert_f": 0.000185804,
+    "cert_h": 0.00270472,
+    "rounds": 1,
+    "solves": 2,
+    "build_s": 3.3e-05,
+    "solve_s": 0.000186,
+    "total_s": 0.000219,
+    "peak_rss_kb": 4360,
+    "matvecs": 906,
+    "temporal_bound_step": 0.000284154,
+    "target_reached": true,
+    "diff_step_vs_walker": 6.605368111173293e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "grid l0=8.0",
+   "model": "grid L=1000001 k0=1.0 ak=0.5 l0=8.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+   "deg": 4,
+   "mu": 0.45454545454545453,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "analytic"
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 3e-06,
+    "cert_f": 7.483795336417875e-05,
+    "cert_h": 0.001089400453609365,
+    "prefixes": 468,
+    "contributions": 41,
+    "max_depth": 5,
+    "traversal_s": 0.000388,
+    "wall_s": 0.007833846997527871,
+    "peak_rss_kb": 4676,
+    "model_bytes": 104,
+    "dist_s": 1e-06,
+    "setup_s": 0.000304,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.00011731130371408577,
+      "visited": 262,
+      "traversal_s": 0.00023,
+      "setup_s": 0.00032,
+      "aborted": false
+     },
+     {
+      "tau": 3e-06,
+      "cert": 7.483795336417875e-05,
+      "visited": 468,
+      "traversal_s": 0.000388,
+      "setup_s": 0.000339,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.001277,
+    "cumulative_search_s": 0.002015
+   },
+   "ball": {
+    "R": 4,
+    "cert_f": 4.741862721727376e-05,
+    "predicted_nodes": 41,
+    "status": "run",
+    "nodes": 41,
+    "nnz": 128,
+    "build_s": 3.5e-05,
+    "solve_s": 0.000483,
+    "total_s": 0.000518,
+    "peak_rss_kb": 4320,
+    "matvecs": 1067,
+    "substeps": 1,
+    "temporal_bound_step": 3.95887e-05,
+    "diff_step_vs_walker": 8.663637887193487e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 21,
+    "nnz": 64,
+    "cert_f": 3.77008e-05,
+    "cert_h": 0.000548803,
+    "rounds": 2,
+    "solves": 3,
+    "build_s": 5.4e-05,
+    "solve_s": 0.000298,
+    "total_s": 0.000352,
+    "peak_rss_kb": 4388,
+    "matvecs": 1059,
+    "temporal_bound_step": 2.79148e-05,
+    "target_reached": true,
+    "diff_step_vs_walker": 8.519250895899777e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "grid l0=8.0",
+   "model": "grid L=1000001 k0=1.0 ak=0.5 l0=8.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+   "deg": 4,
+   "mu": 0.45454545454545453,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "analytic"
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1.5072783470344153e-08,
+    "cert_f": 5.634758322033998e-06,
+    "cert_h": 8.202399980303557e-05,
+    "prefixes": 8117,
+    "contributions": 448,
+    "max_depth": 8,
+    "traversal_s": 0.005716,
+    "wall_s": 0.014322544000606285,
+    "peak_rss_kb": 4688,
+    "model_bytes": 104,
+    "dist_s": 1e-06,
+    "setup_s": 0.000266,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 3e-06,
+      "cert": 7.483795336417875e-05,
+      "visited": 468,
+      "traversal_s": 0.000327,
+      "setup_s": 0.000321,
+      "aborted": false
+     },
+     {
+      "tau": 2.004330600411604e-07,
+      "cert": 1.99465208701015e-05,
+      "visited": 1775,
+      "traversal_s": 0.004261,
+      "setup_s": 0.00046800000000000005,
+      "aborted": false
+     },
+     {
+      "tau": 5.024261156781385e-08,
+      "cert": 1.070029308948574e-05,
+      "visited": 3828,
+      "traversal_s": 0.004718,
+      "setup_s": 0.00049,
+      "aborted": false
+     },
+     {
+      "tau": 1.5072783470344153e-08,
+      "cert": 5.634758322033998e-06,
+      "visited": 8117,
+      "traversal_s": 0.005716,
+      "setup_s": 0.000306,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.016607,
+    "cumulative_search_s": 0.018622
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 9.797237028362344e-06,
+    "predicted_nodes": 61,
+    "status": "run",
+    "nodes": 61,
+    "nnz": 200,
+    "build_s": 4.2e-05,
+    "solve_s": 0.000633,
+    "total_s": 0.000675,
+    "peak_rss_kb": 4328,
+    "matvecs": 1534,
+    "substeps": 1,
+    "temporal_bound_step": 1.105e-07,
+    "diff_step_vs_walker": 7.532515504810045e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 40,
+    "nnz": 126,
+    "cert_f": 1.33236e-06,
+    "cert_h": 1.93949e-05,
+    "rounds": 4,
+    "solves": 4,
+    "build_s": 9.5e-05,
+    "solve_s": 0.000418,
+    "total_s": 0.000513,
+    "peak_rss_kb": 4340,
+    "matvecs": 1212,
+    "temporal_bound_step": 3.66496e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 7.519126150878908e-07,
+    "consistent": true
+   }
+  },
+  {
+   "family": "grid l0=4.0",
+   "model": "grid L=1000001 k0=1.0 ak=0.5 l0=4.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+   "deg": 4,
+   "mu": 0.625,
+   "eps": 0.001,
+   "dist": {
+    "dist": "analytic"
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 3e-06,
+    "cert_f": 0.0008307428362419392,
+    "cert_h": 0.007825184813963982,
+    "prefixes": 3102,
+    "contributions": 440,
+    "max_depth": 6,
+    "traversal_s": 0.00271,
+    "wall_s": 0.013577229001384694,
+    "peak_rss_kb": 4648,
+    "model_bytes": 104,
+    "dist_s": 1e-06,
+    "setup_s": 0.000342,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 1e-05,
+      "cert": 0.0013234681032906147,
+      "visited": 1347,
+      "traversal_s": 0.001197,
+      "setup_s": 0.00040399999999999995,
+      "aborted": false
+     },
+     {
+      "tau": 3e-06,
+      "cert": 0.0008307428362419392,
+      "visited": 3102,
+      "traversal_s": 0.00271,
+      "setup_s": 0.000422,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.004733,
+    "cumulative_search_s": 0.004733
+   },
+   "ball": {
+    "R": 6,
+    "cert_f": 0.0003928809547911473,
+    "predicted_nodes": 85,
+    "status": "run",
+    "nodes": 85,
+    "nnz": 288,
+    "build_s": 6.1e-05,
+    "solve_s": 0.0006,
+    "total_s": 0.0006609999999999999,
+    "peak_rss_kb": 4332,
+    "matvecs": 991,
+    "substeps": 1,
+    "temporal_bound_step": 5.74262e-05,
+    "diff_step_vs_walker": 3.489562856992534e-05,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 25,
+    "nnz": 72,
+    "cert_f": 0.000694503,
+    "cert_h": 0.00654187,
+    "rounds": 1,
+    "solves": 2,
+    "build_s": 9.6e-05,
+    "solve_s": 0.000316,
+    "total_s": 0.000412,
+    "peak_rss_kb": 4364,
+    "matvecs": 898,
+    "temporal_bound_step": 0.00030303,
+    "target_reached": true,
+    "diff_step_vs_walker": 3.2070351640947625e-05,
+    "consistent": true
+   }
+  },
+  {
+   "family": "grid l0=4.0",
+   "model": "grid L=1000001 k0=1.0 ak=0.5 l0=4.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+   "deg": 4,
+   "mu": 0.625,
+   "eps": 0.0001,
+   "dist": {
+    "dist": "analytic"
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 2.5951419119380596e-09,
+    "cert_f": 6.965957537882627e-05,
+    "cert_h": 0.0006561585939969758,
+    "prefixes": 272060,
+    "contributions": 24790,
+    "max_depth": 10,
+    "traversal_s": 0.296046,
+    "wall_s": 0.30443832500168355,
+    "peak_rss_kb": 4700,
+    "model_bytes": 104,
+    "dist_s": 1e-06,
+    "setup_s": 0.000382,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 3e-06,
+      "cert": 0.0008307428362419392,
+      "visited": 3102,
+      "traversal_s": 0.002849,
+      "setup_s": 0.000397,
+      "aborted": false
+     },
+     {
+      "tau": 1.8056129220272346e-07,
+      "cert": 0.00031309494528006715,
+      "visited": 17859,
+      "traversal_s": 0.013806,
+      "setup_s": 0.000361,
+      "aborted": false
+     },
+     {
+      "tau": 2.8834910132645106e-08,
+      "cert": 0.0001660934592107141,
+      "visited": 56451,
+      "traversal_s": 0.04543,
+      "setup_s": 0.000427,
+      "aborted": false
+     },
+     {
+      "tau": 8.650473039793532e-09,
+      "cert": 0.00010715368389175534,
+      "visited": 126107,
+      "traversal_s": 0.075565,
+      "setup_s": 0.000435,
+      "aborted": false
+     },
+     {
+      "tau": 2.5951419119380596e-09,
+      "cert": 6.965957537882627e-05,
+      "visited": 272060,
+      "traversal_s": 0.296046,
+      "setup_s": 0.000431,
+      "aborted": false
+     }
+    ],
+    "search_s": 0.435747,
+    "cumulative_search_s": 0.44048
+   },
+   "ball": {
+    "R": 8,
+    "cert_f": 5.994887615831715e-05,
+    "predicted_nodes": 145,
+    "status": "run",
+    "nodes": 145,
+    "nnz": 512,
+    "build_s": 8.6e-05,
+    "solve_s": 0.0011,
+    "total_s": 0.001186,
+    "peak_rss_kb": 4264,
+    "matvecs": 1186,
+    "substeps": 1,
+    "temporal_bound_step": 4.74005e-06,
+    "diff_step_vs_walker": 4.3380254891728365e-06,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 57,
+    "nnz": 192,
+    "cert_f": 2.49583e-05,
+    "cert_h": 0.000235095,
+    "rounds": 4,
+    "solves": 4,
+    "build_s": 0.00012,
+    "solve_s": 0.000499,
+    "total_s": 0.000619,
+    "peak_rss_kb": 4408,
+    "matvecs": 1062,
+    "temporal_bound_step": 5.74262e-05,
+    "target_reached": true,
+    "diff_step_vs_walker": 4.323546641191167e-06,
+    "consistent": true
+   }
+  },
+  {
+   "family": "grid l0=4.0",
+   "model": "grid L=1000001 k0=1.0 ak=0.5 l0=4.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+   "deg": 4,
+   "mu": 0.625,
+   "eps": 1e-05,
+   "dist": {
+    "dist": "analytic"
+   },
+   "walker": {
+    "target_reached": true,
+    "tau": 1.0058130630344271e-11,
+    "cert_f": 9.885577663165977e-06,
+    "cert_h": 9.311723054634834e-05,
+    "prefixes": 9930211,
+    "contributions": 886421,
+    "max_depth": 13,
+    "traversal_s": 10.259029,
+    "wall_s": 10.277568204997806,
+    "peak_rss_kb": 4692,
+    "model_bytes": 104,
+    "dist_s": 1e-06,
+    "setup_s": 0.000507,
+    "aborted": false,
+    "search_attempts": [
+     {
+      "tau": 2.5951419119380596e-09,
+      "cert": 6.965957537882627e-05,
+      "visited": 272060,
+      "traversal_s": 0.280545,
+      "setup_s": 0.000398,
+      "aborted": false
+     },
+     {
+      "tau": 1.8627316473184242e-10,
+      "cert": 2.7779490778814824e-05,
+      "visited": 1493910,
+      "traversal_s": 1.108232,
+      "setup_s": 0.0005510000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 3.3527102101147575e-11,
+      "cert": 1.5093688761320728e-05,
+      "visited": 4509388,
+      "traversal_s": 5.161527,
+      "setup_s": 0.0006490000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 1.0058130630344271e-11,
+      "cert": 9.885577663165977e-06,
+      "visited": 9930211,
+      "traversal_s": 10.259029,
+      "setup_s": 0.000571,
+      "aborted": false
+     }
+    ],
+    "search_s": 16.811502,
+    "cumulative_search_s": 17.251982
+   },
+   "ball": {
+    "R": 10,
+    "cert_f": 9.147472558336968e-06,
+    "predicted_nodes": 221,
+    "status": "run",
+    "nodes": 221,
+    "nnz": 800,
+    "build_s": 0.000156,
+    "solve_s": 0.002016,
+    "total_s": 0.002172,
+    "peak_rss_kb": 4368,
+    "matvecs": 1452,
+    "substeps": 1,
+    "temporal_bound_step": 3.56169e-07,
+    "diff_step_vs_walker": 3.486311099809569e-07,
+    "consistent": true
+   },
+   "adaptive": {
+    "status": "run",
+    "nodes": 81,
+    "nnz": 280,
+    "cert_f": 3.88501e-06,
+    "cert_h": 3.65949e-05,
+    "rounds": 5,
+    "solves": 5,
+    "build_s": 0.000321,
+    "solve_s": 0.001229,
+    "total_s": 0.0015500000000000002,
+    "peak_rss_kb": 4424,
+    "matvecs": 1262,
+    "temporal_bound_step": 4.74005e-06,
+    "target_reached": true,
+    "diff_step_vs_walker": 3.477104824622934e-07,
+    "consistent": true
+   }
+  }
+ ]
+}

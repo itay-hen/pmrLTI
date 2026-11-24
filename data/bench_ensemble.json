@@ -1,0 +1,1488 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "cores": 2,
+  "memtotal": "8220244 kB",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "kernel": "6.18.44-fc-v153"
+ },
+ "dt": 0.05,
+ "T": 100,
+ "eps": 0.0001,
+ "dist": {
+  "dist": "bfs",
+  "distR": 3
+ },
+ "records": [
+  {
+   "deg": 16,
+   "seed": 7,
+   "actuator": 1234567,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 3.779127696389616e-09,
+    "cert_f": 6.649855011168084e-05,
+    "prefixes": 792064,
+    "final_s": 0.746159,
+    "total_s": 0.9484480000000001,
+    "peak_rss_kb": 4892,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.00033856474925979935,
+      "visited": 4857,
+      "traversal_s": 0.007644,
+      "setup_s": 0.001101,
+      "aborted": false
+     },
+     {
+      "tau": 1.4768223835858428e-07,
+      "cert": 0.000175852769740627,
+      "visited": 44563,
+      "traversal_s": 0.050836,
+      "setup_s": 0.001008,
+      "aborted": false
+     },
+     {
+      "tau": 4.19903077376624e-08,
+      "cert": 0.00013690300341645358,
+      "visited": 71236,
+      "traversal_s": 0.065435,
+      "setup_s": 0.001132,
+      "aborted": false
+     },
+     {
+      "tau": 1.259709232129872e-08,
+      "cert": 0.0001253010405993964,
+      "visited": 107362,
+      "traversal_s": 0.073604,
+      "setup_s": 0.000755,
+      "aborted": false
+     },
+     {
+      "tau": 3.779127696389616e-09,
+      "cert": 6.649855011168084e-05,
+      "visited": 792064,
+      "traversal_s": 0.746159,
+      "setup_s": 0.000774,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.5088498590772335e-07
+   },
+   "adaptive": {
+    "nodes": 57857,
+    "cert_f": 8.90818e-05,
+    "temporal_bound_step": 4.2602e-06,
+    "total_s": 1.3878469999999998,
+    "peak_rss_kb": 14684,
+    "hit_maxn": false,
+    "observed_err": 9.152031087839019e-09
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 6.725551310623234e-05,
+    "nodes": 867857,
+    "total_s": 14.392767,
+    "peak_rss_kb": 103248,
+    "temporal_bound_step": 4.69593e-06,
+    "observed_err": 9.159589638846333e-09
+   },
+   "reference": {
+    "tau": 3.779127696389616e-11,
+    "cert_f": 2.328330333426157e-05,
+    "aborted": false,
+    "prefixes": 17914337,
+    "time_s": 14.155616,
+    "peak_step": 0.024101130625370285
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 7,
+   "actuator": 987654321,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.862295898037506e-09,
+    "cert_f": 7.002290250018082e-05,
+    "prefixes": 945125,
+    "final_s": 0.699177,
+    "total_s": 0.9050480000000001,
+    "peak_rss_kb": 4896,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0003991601961279801,
+      "visited": 4738,
+      "traversal_s": 0.005009,
+      "setup_s": 0.000972,
+      "aborted": false
+     },
+     {
+      "tau": 1.252629908618665e-07,
+      "cert": 0.00019693402742353825,
+      "visited": 49346,
+      "traversal_s": 0.034467,
+      "setup_s": 0.000693,
+      "aborted": false
+     },
+     {
+      "tau": 3.180328775597229e-08,
+      "cert": 0.00015973991058418867,
+      "visited": 72464,
+      "traversal_s": 0.049675,
+      "setup_s": 0.000681,
+      "aborted": false
+     },
+     {
+      "tau": 9.540986326791687e-09,
+      "cert": 0.00014271756741690773,
+      "visited": 129028,
+      "traversal_s": 0.112562,
+      "setup_s": 0.0007199999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 2.862295898037506e-09,
+      "cert": 7.002290250018082e-05,
+      "visited": 945125,
+      "traversal_s": 0.699177,
+      "setup_s": 0.001092,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.551751889859344e-07
+   },
+   "adaptive": {
+    "nodes": 372386,
+    "cert_f": 7.43421e-05,
+    "temporal_bound_step": 3.38397e-06,
+    "total_s": 8.471669,
+    "peak_rss_kb": 66380,
+    "hit_maxn": false,
+    "observed_err": 9.000017182902997e-09
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 8.808577133383112e-05,
+    "nodes": 867857,
+    "total_s": 14.613729,
+    "peak_rss_kb": 110040,
+    "temporal_bound_step": 4.7328e-06,
+    "observed_err": 9.002955159154169e-09
+   },
+   "reference": {
+    "tau": 2.862295898037506e-11,
+    "cert_f": 2.740086765512306e-05,
+    "aborted": false,
+    "prefixes": 17974921,
+    "time_s": 15.783573,
+    "peak_step": 0.031522997355564346
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 7,
+   "actuator": 1099511640121,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.9434669065185528e-09,
+    "cert_f": 6.973027434820267e-05,
+    "prefixes": 889780,
+    "final_s": 0.669411,
+    "total_s": 0.9373170000000001,
+    "peak_rss_kb": 4892,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.00038211280271812867,
+      "visited": 4715,
+      "traversal_s": 0.005123,
+      "setup_s": 0.000816,
+      "aborted": false
+     },
+     {
+      "tau": 1.308514125785083e-07,
+      "cert": 0.00020004687509795723,
+      "visited": 43519,
+      "traversal_s": 0.037079,
+      "setup_s": 0.00088,
+      "aborted": false
+     },
+     {
+      "tau": 3.270518785020614e-08,
+      "cert": 0.00015310368906345132,
+      "visited": 72026,
+      "traversal_s": 0.083785,
+      "setup_s": 0.0009660000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 9.811556355061843e-09,
+      "cert": 0.00013810699311208528,
+      "visited": 120896,
+      "traversal_s": 0.137193,
+      "setup_s": 0.001051,
+      "aborted": false
+     },
+     {
+      "tau": 2.9434669065185528e-09,
+      "cert": 6.973027434820267e-05,
+      "visited": 889780,
+      "traversal_s": 0.669411,
+      "setup_s": 0.001013,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.4607579493171605e-07
+   },
+   "adaptive": {
+    "nodes": 330332,
+    "cert_f": 7.41364e-05,
+    "temporal_bound_step": 4.04874e-06,
+    "total_s": 8.204733000000001,
+    "peak_rss_kb": 57028,
+    "hit_maxn": false,
+    "observed_err": 8.916973947420415e-09
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 8.713344596488898e-05,
+    "nodes": 867857,
+    "total_s": 15.443076,
+    "peak_rss_kb": 96500,
+    "temporal_bound_step": 4.26697e-06,
+    "observed_err": 8.920253296434977e-09
+   },
+   "reference": {
+    "tau": 2.9434669065185525e-11,
+    "cert_f": 2.6264011359280874e-05,
+    "aborted": false,
+    "prefixes": 17958058,
+    "time_s": 14.753584,
+    "peak_step": 0.031177341583445886
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 11,
+   "actuator": 1234567,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=11",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 1.808062285300386e-09,
+    "cert_f": 7.886351540850047e-05,
+    "prefixes": 1109491,
+    "final_s": 0.976776,
+    "total_s": 1.423013,
+    "peak_rss_kb": 4896,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0004929948335055405,
+      "visited": 5099,
+      "traversal_s": 0.00603,
+      "setup_s": 0.000816,
+      "aborted": false
+     },
+     {
+      "tau": 1.0142094115766852e-07,
+      "cert": 0.0002157497971588536,
+      "visited": 62488,
+      "traversal_s": 0.066333,
+      "setup_s": 0.000838,
+      "aborted": false
+     },
+     {
+      "tau": 2.3504295830923467e-08,
+      "cert": 0.00019499573677865748,
+      "visited": 79591,
+      "traversal_s": 0.066013,
+      "setup_s": 0.000847,
+      "aborted": false
+     },
+     {
+      "tau": 6.026874284334621e-09,
+      "cert": 0.00013834693130031672,
+      "visited": 358251,
+      "traversal_s": 0.303442,
+      "setup_s": 0.000882,
+      "aborted": false
+     },
+     {
+      "tau": 1.808062285300386e-09,
+      "cert": 7.886351540850047e-05,
+      "visited": 1109491,
+      "traversal_s": 0.976776,
+      "setup_s": 0.001036,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.083775677425015e-07
+   },
+   "adaptive": {
+    "nodes": 543858,
+    "cert_f": 7.54861e-05,
+    "temporal_bound_step": 3.46226e-06,
+    "total_s": 13.238883000000001,
+    "peak_rss_kb": 101320,
+    "hit_maxn": false,
+    "observed_err": 1.4391015323855783e-08
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 9.899675956478799e-05,
+    "nodes": 867857,
+    "total_s": 15.797576999999999,
+    "peak_rss_kb": 103228,
+    "temporal_bound_step": 5.59506e-07,
+    "observed_err": 1.4392791986006515e-08
+   },
+   "reference": {
+    "tau": 1.808062285300386e-11,
+    "cert_f": 3.392995611648775e-05,
+    "aborted": false,
+    "prefixes": 18481237,
+    "time_s": 15.085785,
+    "peak_step": 0.035507111265089264
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 11,
+   "actuator": 987654321,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=11",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.988236056057631e-09,
+    "cert_f": 6.931755924320392e-05,
+    "prefixes": 1031271,
+    "final_s": 0.833108,
+    "total_s": 1.161105,
+    "peak_rss_kb": 4852,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0004112155939885807,
+      "visited": 5415,
+      "traversal_s": 0.00502,
+      "setup_s": 0.0007639999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 1.215907196393639e-07,
+      "cert": 0.00018310408820212194,
+      "visited": 61750,
+      "traversal_s": 0.057324,
+      "setup_s": 0.000849,
+      "aborted": false
+     },
+     {
+      "tau": 3.320262284508479e-08,
+      "cert": 0.00016554847102753824,
+      "visited": 76964,
+      "traversal_s": 0.081374,
+      "setup_s": 0.0011,
+      "aborted": false
+     },
+     {
+      "tau": 9.960786853525437e-09,
+      "cert": 0.00013938046138642078,
+      "visited": 179157,
+      "traversal_s": 0.17989,
+      "setup_s": 0.000895,
+      "aborted": false
+     },
+     {
+      "tau": 2.988236056057631e-09,
+      "cert": 6.931755924320392e-05,
+      "visited": 1031271,
+      "traversal_s": 0.833108,
+      "setup_s": 0.000781,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.8448142107978525e-07
+   },
+   "adaptive": {
+    "nodes": 389975,
+    "cert_f": 7.44099e-05,
+    "temporal_bound_step": 4.022e-06,
+    "total_s": 9.160802,
+    "peak_rss_kb": 69744,
+    "hit_maxn": false,
+    "observed_err": 1.2932492285400166e-08
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 7.310864392547134e-05,
+    "nodes": 867857,
+    "total_s": 15.053101999999999,
+    "peak_rss_kb": 103192,
+    "temporal_bound_step": 4.39628e-06,
+    "observed_err": 1.2935477095715742e-08
+   },
+   "reference": {
+    "tau": 2.988236056057631e-11,
+    "cert_f": 2.8577411306820543e-05,
+    "aborted": false,
+    "prefixes": 18164723,
+    "time_s": 15.381717,
+    "peak_step": 0.026242601052692903
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 11,
+   "actuator": 1099511640121,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=11",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 1.5691218156215648e-09,
+    "cert_f": 8.270190471963976e-05,
+    "prefixes": 1120807,
+    "final_s": 0.952116,
+    "total_s": 1.586897,
+    "peak_rss_kb": 4904,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.000520418278736293,
+      "visited": 5111,
+      "traversal_s": 0.005578,
+      "setup_s": 0.0007900000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 9.607656387744996e-08,
+      "cert": 0.00022440653104057384,
+      "visited": 64148,
+      "traversal_s": 0.054908,
+      "setup_s": 0.000753,
+      "aborted": false
+     },
+     {
+      "tau": 2.1406810985389466e-08,
+      "cert": 0.00020463813681262605,
+      "visited": 81171,
+      "traversal_s": 0.083393,
+      "setup_s": 0.001135,
+      "aborted": false
+     },
+     {
+      "tau": 5.230406052071883e-09,
+      "cert": 0.00013270719079969853,
+      "visited": 467645,
+      "traversal_s": 0.486047,
+      "setup_s": 0.00116,
+      "aborted": false
+     },
+     {
+      "tau": 1.5691218156215648e-09,
+      "cert": 8.270190471963976e-05,
+      "visited": 1120807,
+      "traversal_s": 0.952116,
+      "setup_s": 0.0010170000000000001,
+      "aborted": false
+     }
+    ],
+    "observed_err": 1.8709856482168608e-07
+   },
+   "adaptive": {
+    "nodes": 584648,
+    "cert_f": 7.65639e-05,
+    "temporal_bound_step": 4.36904e-06,
+    "total_s": 15.181614,
+    "peak_rss_kb": 100776,
+    "hit_maxn": false,
+    "observed_err": 1.3957962709254534e-08
+   },
+   "ball": {
+    "R": 6,
+    "cert_f": 3.4183574636604726e-05,
+    "nodes": 13017857,
+    "total_s": 470.70007400000003,
+    "peak_rss_kb": 1304948,
+    "temporal_bound_step": 2.23646e-05,
+    "observed_err": 1.395951752108937e-08
+   },
+   "reference": {
+    "tau": 1.5691218156215648e-11,
+    "cert_f": 3.56626603654922e-05,
+    "aborted": false,
+    "prefixes": 18709560,
+    "time_s": 15.329866,
+    "peak_step": 0.03753766307039048
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 23,
+   "actuator": 1234567,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=23",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.3375581998701957e-09,
+    "cert_f": 7.270129228246637e-05,
+    "prefixes": 1072572,
+    "final_s": 0.832054,
+    "total_s": 1.1792159999999998,
+    "peak_rss_kb": 4888,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0004512254153592751,
+      "visited": 4898,
+      "traversal_s": 0.00503,
+      "setup_s": 0.000832,
+      "aborted": false
+     },
+     {
+      "tau": 1.1080936112649809e-07,
+      "cert": 0.00019963918524471807,
+      "visited": 59934,
+      "traversal_s": 0.049879,
+      "setup_s": 0.0007210000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 2.775240767253878e-08,
+      "cert": 0.0001780858825723347,
+      "visited": 76042,
+      "traversal_s": 0.086352,
+      "setup_s": 0.000801,
+      "aborted": false
+     },
+     {
+      "tau": 7.791860666233986e-09,
+      "cert": 0.00014587214481444666,
+      "visited": 206435,
+      "traversal_s": 0.201791,
+      "setup_s": 0.0009469999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 2.3375581998701957e-09,
+      "cert": 7.270129228246637e-05,
+      "visited": 1072572,
+      "traversal_s": 0.832054,
+      "setup_s": 0.000809,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.6693172489045125e-07
+   },
+   "adaptive": {
+    "nodes": 469800,
+    "cert_f": 7.4696e-05,
+    "temporal_bound_step": 4.37727e-06,
+    "total_s": 11.467459999999999,
+    "peak_rss_kb": 81952,
+    "hit_maxn": false,
+    "observed_err": 1.1840128551210416e-08
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 9.153491298174762e-05,
+    "nodes": 867857,
+    "total_s": 14.445400000000001,
+    "peak_rss_kb": 103200,
+    "temporal_bound_step": 4.60299e-06,
+    "observed_err": 1.1842472225076506e-08
+   },
+   "reference": {
+    "tau": 2.3375581998701957e-11,
+    "cert_f": 3.0775506343021415e-05,
+    "aborted": false,
+    "prefixes": 18146790,
+    "time_s": 14.733564,
+    "peak_step": 0.03279078023740585
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 23,
+   "actuator": 987654321,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=23",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 3.5084044069019278e-09,
+    "cert_f": 6.740784579454044e-05,
+    "prefixes": 796309,
+    "final_s": 0.603602,
+    "total_s": 0.788509,
+    "peak_rss_kb": 4880,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0003436314549929193,
+      "visited": 4802,
+      "traversal_s": 0.006344,
+      "setup_s": 0.0009270000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 1.4550472395209071e-07,
+      "cert": 0.00018662935678005245,
+      "visited": 40583,
+      "traversal_s": 0.039063,
+      "setup_s": 0.000946,
+      "aborted": false
+     },
+     {
+      "tau": 3.8982271187799203e-08,
+      "cert": 0.0001388190583590081,
+      "visited": 70977,
+      "traversal_s": 0.057082,
+      "setup_s": 0.000827,
+      "aborted": false
+     },
+     {
+      "tau": 1.169468135633976e-08,
+      "cert": 0.0001276832170073202,
+      "visited": 104810,
+      "traversal_s": 0.078197,
+      "setup_s": 0.000753,
+      "aborted": false
+     },
+     {
+      "tau": 3.5084044069019278e-09,
+      "cert": 6.740784579454044e-05,
+      "visited": 796309,
+      "traversal_s": 0.603602,
+      "setup_s": 0.000768,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.4436357479520887e-07
+   },
+   "adaptive": {
+    "nodes": 241344,
+    "cert_f": 7.32566e-05,
+    "temporal_bound_step": 3.89489e-06,
+    "total_s": 5.978827,
+    "peak_rss_kb": 44400,
+    "hit_maxn": false,
+    "observed_err": 8.682965811634968e-09
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 7.387958027687054e-05,
+    "nodes": 867857,
+    "total_s": 14.453593,
+    "peak_rss_kb": 103244,
+    "temporal_bound_step": 4.11269e-06,
+    "observed_err": 8.687076179930697e-09
+   },
+   "reference": {
+    "tau": 3.5084044069019277e-11,
+    "cert_f": 2.3619794631991456e-05,
+    "aborted": false,
+    "prefixes": 17913608,
+    "time_s": 14.788398,
+    "peak_step": 0.026456839914679366
+   }
+  },
+  {
+   "deg": 16,
+   "seed": 23,
+   "actuator": 1099511640121,
+   "model": "permnet nbits=64 K=8 g0=1.0 ag=0.5 l0=20.0 al=0.5 C0=1.0 aC=0.5 seed=23",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.893717209247749e-09,
+    "cert_f": 7.04362894759703e-05,
+    "prefixes": 914201,
+    "final_s": 0.710385,
+    "total_s": 0.910359,
+    "peak_rss_kb": 4868,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0003940382827246075,
+      "visited": 4762,
+      "traversal_s": 0.006015,
+      "setup_s": 0.00098,
+      "aborted": false
+     },
+     {
+      "tau": 1.2689122400562513e-07,
+      "cert": 0.0001973276815718123,
+      "visited": 47411,
+      "traversal_s": 0.037415,
+      "setup_s": 0.001033,
+      "aborted": false
+     },
+     {
+      "tau": 3.2152413436086103e-08,
+      "cert": 0.00015748572981667843,
+      "visited": 72788,
+      "traversal_s": 0.055615,
+      "setup_s": 0.000959,
+      "aborted": false
+     },
+     {
+      "tau": 9.64572403082583e-09,
+      "cert": 0.0001401669239096327,
+      "visited": 130786,
+      "traversal_s": 0.096365,
+      "setup_s": 0.00083,
+      "aborted": false
+     },
+     {
+      "tau": 2.893717209247749e-09,
+      "cert": 7.04362894759703e-05,
+      "visited": 914201,
+      "traversal_s": 0.710385,
+      "setup_s": 0.000762,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.511205599749211e-07
+   },
+   "adaptive": {
+    "nodes": 359019,
+    "cert_f": 7.37309e-05,
+    "temporal_bound_step": 4.07167e-06,
+    "total_s": 8.153846999999999,
+    "peak_rss_kb": 67128,
+    "hit_maxn": false,
+    "observed_err": 9.409321263115222e-09
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 8.707668987657429e-05,
+    "nodes": 867857,
+    "total_s": 15.767976,
+    "peak_rss_kb": 103232,
+    "temporal_bound_step": 4.07167e-06,
+    "observed_err": 9.412304390749027e-09
+   },
+   "reference": {
+    "tau": 2.8937172092477492e-11,
+    "cert_f": 2.7056268622582023e-05,
+    "aborted": false,
+    "prefixes": 17977613,
+    "time_s": 14.144413,
+    "peak_step": 0.031165280460725406
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 7,
+   "actuator": 1234567,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 6.550301329936908e-09,
+    "cert_f": 6.4356897519448e-05,
+    "prefixes": 952196,
+    "final_s": 1.83631,
+    "total_s": 2.212771,
+    "peak_rss_kb": 6012,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.00020609738880715024,
+      "visited": 25495,
+      "traversal_s": 0.040557,
+      "setup_s": 0.0036030000000000003,
+      "aborted": false
+     },
+     {
+      "tau": 2.426037529606262e-07,
+      "cert": 0.0001448243961017062,
+      "visited": 33827,
+      "traversal_s": 0.059723,
+      "setup_s": 0.003371,
+      "aborted": false
+     },
+     {
+      "tau": 7.278112588818787e-08,
+      "cert": 0.00014331903131025405,
+      "visited": 35379,
+      "traversal_s": 0.076929,
+      "setup_s": 0.004381,
+      "aborted": false
+     },
+     {
+      "tau": 2.183433776645636e-08,
+      "cert": 0.00012167097197234234,
+      "visited": 108917,
+      "traversal_s": 0.179839,
+      "setup_s": 0.004394,
+      "aborted": false
+     },
+     {
+      "tau": 6.550301329936908e-09,
+      "cert": 6.4356897519448e-05,
+      "visited": 952196,
+      "traversal_s": 1.83631,
+      "setup_s": 0.003664,
+      "aborted": false
+     }
+    ],
+    "observed_err": 3.873310873425684e-11
+   },
+   "adaptive": {
+    "nodes": 272662,
+    "cert_f": 8.85489e-05,
+    "temporal_bound_step": 4.56296e-06,
+    "total_s": 12.168439,
+    "peak_rss_kb": 54376,
+    "hit_maxn": false,
+    "observed_err": 1.6143178644539846e-08
+   },
+   "reference": {
+    "tau": 6.550301329936908e-11,
+    "cert_f": 2.484687401772458e-05,
+    "aborted": false,
+    "prefixes": 33732474,
+    "time_s": 64.176333,
+    "peak_step": 0.011887032776554311
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 7,
+   "actuator": 987654321,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 4.351163626305155e-09,
+    "cert_f": 7.251809818982186e-05,
+    "prefixes": 1064943,
+    "final_s": 1.963692,
+    "total_s": 2.428288,
+    "peak_rss_kb": 6088,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0002905669802036294,
+      "visited": 21581,
+      "traversal_s": 0.040727,
+      "setup_s": 0.005065,
+      "aborted": false
+     },
+     {
+      "tau": 1.7207736393502112e-07,
+      "cert": 0.00017388466740195707,
+      "visited": 33866,
+      "traversal_s": 0.061038,
+      "setup_s": 0.00362,
+      "aborted": false
+     },
+     {
+      "tau": 4.948031546025904e-08,
+      "cert": 0.0001705761482783257,
+      "visited": 38144,
+      "traversal_s": 0.074437,
+      "setup_s": 0.004503,
+      "aborted": false
+     },
+     {
+      "tau": 1.4503878754350519e-08,
+      "cert": 0.00013963494658959035,
+      "visited": 158677,
+      "traversal_s": 0.267201,
+      "setup_s": 0.003394,
+      "aborted": false
+     },
+     {
+      "tau": 4.351163626305155e-09,
+      "cert": 7.251809818982186e-05,
+      "visited": 1064943,
+      "traversal_s": 1.963692,
+      "setup_s": 0.0046110000000000005,
+      "aborted": false
+     }
+    ],
+    "observed_err": 5.609482184310011e-10
+   },
+   "adaptive": {
+    "nodes": 490091,
+    "cert_f": 8.88754e-05,
+    "temporal_bound_step": 5.30508e-06,
+    "total_s": 21.647766999999998,
+    "peak_rss_kb": 81164,
+    "hit_maxn": false,
+    "observed_err": 1.5874739963533946e-08
+   },
+   "reference": {
+    "tau": 4.351163626305155e-11,
+    "cert_f": 2.966139531121811e-05,
+    "aborted": false,
+    "prefixes": 34565722,
+    "time_s": 66.190028,
+    "peak_step": 0.015804025018426506
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 7,
+   "actuator": 1099511640121,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 4.563809137778946e-09,
+    "cert_f": 7.024462617411717e-05,
+    "prefixes": 1057336,
+    "final_s": 2.006648,
+    "total_s": 2.4764170000000005,
+    "peak_rss_kb": 6088,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.00029377975797053094,
+      "visited": 20412,
+      "traversal_s": 0.059899,
+      "setup_s": 0.00304,
+      "aborted": false
+     },
+     {
+      "tau": 1.7019552451607477e-07,
+      "cert": 0.0001678159268279709,
+      "visited": 33883,
+      "traversal_s": 0.094891,
+      "setup_s": 0.006595999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 5.070899041976606e-08,
+      "cert": 0.0001647918480812996,
+      "visited": 37690,
+      "traversal_s": 0.066778,
+      "setup_s": 0.003516,
+      "aborted": false
+     },
+     {
+      "tau": 1.521269712592982e-08,
+      "cert": 0.00013646406270552945,
+      "visited": 143960,
+      "traversal_s": 0.227691,
+      "setup_s": 0.0038680000000000003,
+      "aborted": false
+     },
+     {
+      "tau": 4.563809137778946e-09,
+      "cert": 7.024462617411717e-05,
+      "visited": 1057336,
+      "traversal_s": 2.006648,
+      "setup_s": 0.00349,
+      "aborted": false
+     }
+    ],
+    "observed_err": 6.856486853973331e-10
+   },
+   "adaptive": {
+    "nodes": 439308,
+    "cert_f": 8.95014e-05,
+    "temporal_bound_step": 5.20539e-06,
+    "total_s": 19.545775,
+    "peak_rss_kb": 76208,
+    "hit_maxn": false,
+    "observed_err": 1.611577405032094e-08
+   },
+   "reference": {
+    "tau": 4.563809137778946e-11,
+    "cert_f": 2.8613086235331872e-05,
+    "aborted": false,
+    "prefixes": 34530719,
+    "time_s": 69.644446,
+    "peak_step": 0.015530588233621754
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 11,
+   "actuator": 1234567,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=11",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.6761399763809456e-09,
+    "cert_f": 9.15606340698975e-05,
+    "prefixes": 1082456,
+    "final_s": 2.101908,
+    "total_s": 3.8259749999999997,
+    "peak_rss_kb": 6116,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0003145796968038661,
+      "visited": 25242,
+      "traversal_s": 0.045009,
+      "setup_s": 0.0034029999999999998,
+      "aborted": false
+     },
+     {
+      "tau": 1.589422346960108e-07,
+      "cert": 0.0002218071709876831,
+      "visited": 34145,
+      "traversal_s": 0.061353,
+      "setup_s": 0.003408,
+      "aborted": false
+     },
+     {
+      "tau": 3.5828921578202e-08,
+      "cert": 0.00020082425748141323,
+      "visited": 67715,
+      "traversal_s": 0.114,
+      "setup_s": 0.0037870000000000004,
+      "aborted": false
+     },
+     {
+      "tau": 8.920466587936485e-09,
+      "cert": 0.00011926945912246464,
+      "visited": 668485,
+      "traversal_s": 1.485833,
+      "setup_s": 0.003301,
+      "aborted": false
+     },
+     {
+      "tau": 2.6761399763809456e-09,
+      "cert": 9.15606340698975e-05,
+      "visited": 1082456,
+      "traversal_s": 2.101908,
+      "setup_s": 0.003973,
+      "aborted": false
+     }
+    ],
+    "observed_err": 1.2921099003249115e-08
+   },
+   "adaptive": {
+    "nodes": 985089,
+    "cert_f": 7.39524e-05,
+    "temporal_bound_step": 7.75046e-06,
+    "total_s": 67.887544,
+    "peak_rss_kb": 177244,
+    "hit_maxn": false,
+    "observed_err": 1.3430075457981916e-08
+   },
+   "reference": {
+    "tau": 2.6761399763809456e-11,
+    "cert_f": 3.755340417359368e-05,
+    "aborted": false,
+    "prefixes": 34682414,
+    "time_s": 80.58512,
+    "peak_step": 0.017691050812752622
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 11,
+   "actuator": 987654321,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=11",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 5.35290065069566e-09,
+    "cert_f": 7.502395618333306e-05,
+    "prefixes": 1065340,
+    "final_s": 2.558445,
+    "total_s": 3.218065,
+    "peak_rss_kb": 6120,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.000219450821653608,
+      "visited": 29173,
+      "traversal_s": 0.103443,
+      "setup_s": 0.004101,
+      "aborted": false
+     },
+     {
+      "tau": 2.2784148003292727e-07,
+      "cert": 0.00018132808117788128,
+      "visited": 33894,
+      "traversal_s": 0.113199,
+      "setup_s": 0.007152,
+      "aborted": false
+     },
+     {
+      "tau": 6.282575720012632e-08,
+      "cert": 0.00017605153158959205,
+      "visited": 40749,
+      "traversal_s": 0.136144,
+      "setup_s": 0.005464,
+      "aborted": false
+     },
+     {
+      "tau": 1.7843002168985535e-08,
+      "cert": 0.0001418257514471783,
+      "visited": 168286,
+      "traversal_s": 0.281337,
+      "setup_s": 0.005163,
+      "aborted": false
+     },
+     {
+      "tau": 5.35290065069566e-09,
+      "cert": 7.502395618333306e-05,
+      "visited": 1065340,
+      "traversal_s": 2.558445,
+      "setup_s": 0.003617,
+      "aborted": false
+     }
+    ],
+    "observed_err": 2.8025264869196986e-09
+   },
+   "adaptive": {
+    "nodes": 506809,
+    "cert_f": 8.88285e-05,
+    "temporal_bound_step": 6.41352e-06,
+    "total_s": 26.491653,
+    "peak_rss_kb": 82132,
+    "hit_maxn": false,
+    "observed_err": 2.0230983785798906e-08
+   },
+   "reference": {
+    "tau": 5.35290065069566e-11,
+    "cert_f": 3.0505518096651518e-05,
+    "aborted": false,
+    "prefixes": 34570423,
+    "time_s": 78.640761,
+    "peak_step": 0.012871907382665493
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 11,
+   "actuator": 1099511640121,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=11",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 2.2230774516203473e-09,
+    "cert_f": 9.839452757018699e-05,
+    "prefixes": 1084165,
+    "final_s": 1.918688,
+    "total_s": 4.035124,
+    "peak_rss_kb": 6128,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0003350080597582705,
+      "visited": 25517,
+      "traversal_s": 0.076174,
+      "setup_s": 0.005181000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 1.4925014053715057e-07,
+      "cert": 0.0002382380073328706,
+      "visited": 34157,
+      "traversal_s": 0.081337,
+      "setup_s": 0.005068,
+      "aborted": false
+     },
+     {
+      "tau": 3.1323746829492134e-08,
+      "cert": 0.0002113539508485929,
+      "visited": 77557,
+      "traversal_s": 0.156271,
+      "setup_s": 0.0034960000000000004,
+      "aborted": false
+     },
+     {
+      "tau": 7.410258172067824e-09,
+      "cert": 0.00011246033110638877,
+      "visited": 858917,
+      "traversal_s": 1.781643,
+      "setup_s": 0.0037349999999999996,
+      "aborted": false
+     },
+     {
+      "tau": 2.2230774516203473e-09,
+      "cert": 9.839452757018699e-05,
+      "visited": 1084165,
+      "traversal_s": 1.918688,
+      "setup_s": 0.0035309999999999994,
+      "aborted": false
+     }
+    ],
+    "observed_err": 1.5129201672708925e-08
+   },
+   "adaptive": {
+    "nodes": 985089,
+    "cert_f": 7.9698e-05,
+    "temporal_bound_step": 7.01541e-06,
+    "total_s": 75.60563099999999,
+    "peak_rss_kb": 172192,
+    "hit_maxn": false,
+    "observed_err": 1.1366881907948212e-08
+   },
+   "reference": {
+    "tau": 2.2230774516203475e-11,
+    "cert_f": 4.039344166051037e-05,
+    "aborted": false,
+    "prefixes": 34716808,
+    "time_s": 67.415796,
+    "peak_step": 0.018814390031436364
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 23,
+   "actuator": 1234567,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=23",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 3.4880943971735667e-09,
+    "cert_f": 8.193494109807503e-05,
+    "prefixes": 1081139,
+    "final_s": 2.19749,
+    "total_s": 3.2662820000000004,
+    "peak_rss_kb": 6112,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.00028856629137294864,
+      "visited": 24743,
+      "traversal_s": 0.058266,
+      "setup_s": 0.003923,
+      "aborted": false
+     },
+     {
+      "tau": 1.7327041132250284e-07,
+      "cert": 0.0001987224136689803,
+      "visited": 33994,
+      "traversal_s": 0.070198,
+      "setup_s": 0.004965,
+      "aborted": false
+     },
+     {
+      "tau": 4.359609168473722e-08,
+      "cert": 0.00018747811865440128,
+      "visited": 51054,
+      "traversal_s": 0.099236,
+      "setup_s": 0.004334,
+      "aborted": false
+     },
+     {
+      "tau": 1.162698132391189e-08,
+      "cert": 0.00013371821647657203,
+      "visited": 364950,
+      "traversal_s": 0.819388,
+      "setup_s": 0.004791999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 3.4880943971735667e-09,
+      "cert": 8.193494109807503e-05,
+      "visited": 1081139,
+      "traversal_s": 2.19749,
+      "setup_s": 0.00369,
+      "aborted": false
+     }
+    ],
+    "observed_err": 5.748035405289675e-09
+   },
+   "adaptive": {
+    "nodes": 620146,
+    "cert_f": 8.90221e-05,
+    "temporal_bound_step": 6.12644e-06,
+    "total_s": 32.136134,
+    "peak_rss_kb": 110716,
+    "hit_maxn": false,
+    "observed_err": 1.6488937833181172e-08
+   },
+   "reference": {
+    "tau": 3.488094397173567e-11,
+    "cert_f": 3.3645409421152946e-05,
+    "aborted": false,
+    "prefixes": 34651027,
+    "time_s": 71.997929,
+    "peak_step": 0.01621181926956332
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 23,
+   "actuator": 987654321,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=23",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 5.590315053890571e-09,
+    "cert_f": 6.463569347174751e-05,
+    "prefixes": 997566,
+    "final_s": 1.973411,
+    "total_s": 2.380245,
+    "peak_rss_kb": 6088,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0002414890729746027,
+      "visited": 22449,
+      "traversal_s": 0.053403,
+      "setup_s": 0.003631,
+      "aborted": false
+     },
+     {
+      "tau": 2.0704870569965078e-07,
+      "cert": 0.00014926077284330844,
+      "visited": 33825,
+      "traversal_s": 0.086245,
+      "setup_s": 0.0047020000000000005,
+      "aborted": false
+     },
+     {
+      "tau": 6.211461170989523e-08,
+      "cert": 0.00014774327117756628,
+      "visited": 35447,
+      "traversal_s": 0.086162,
+      "setup_s": 0.0044399999999999995,
+      "aborted": false
+     },
+     {
+      "tau": 1.863438351296857e-08,
+      "cert": 0.0001253497351584149,
+      "visited": 113335,
+      "traversal_s": 0.16101,
+      "setup_s": 0.0035659999999999997,
+      "aborted": false
+     },
+     {
+      "tau": 5.590315053890571e-09,
+      "cert": 6.463569347174751e-05,
+      "visited": 997566,
+      "traversal_s": 1.973411,
+      "setup_s": 0.003675,
+      "aborted": false
+     }
+    ],
+    "observed_err": 3.313681273819924e-11
+   },
+   "adaptive": {
+    "nodes": 313250,
+    "cert_f": 8.88944e-05,
+    "temporal_bound_step": 5.45831e-06,
+    "total_s": 14.334733,
+    "peak_rss_kb": 58208,
+    "hit_maxn": false,
+    "observed_err": 1.4849682036105483e-08
+   },
+   "reference": {
+    "tau": 5.5903150538905705e-11,
+    "cert_f": 2.5574364108961734e-05,
+    "aborted": false,
+    "prefixes": 34116709,
+    "time_s": 67.674858,
+    "peak_step": 0.013367086456265635
+   }
+  },
+  {
+   "deg": 32,
+   "seed": 23,
+   "actuator": 1099511640121,
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=23",
+   "mu": 0.5714285714285714,
+   "eps": 0.0001,
+   "walker": {
+    "target_reached": true,
+    "tau": 4.484698730188026e-09,
+    "cert_f": 7.214711451603594e-05,
+    "prefixes": 1060490,
+    "final_s": 2.243279,
+    "total_s": 2.884384,
+    "peak_rss_kb": 6128,
+    "attempts": [
+     {
+      "tau": 1.0000000000000002e-06,
+      "cert": 0.0002853867602498982,
+      "visited": 21791,
+      "traversal_s": 0.045217,
+      "setup_s": 0.005176999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 1.7520083957720267e-07,
+      "cert": 0.00017292266736221206,
+      "visited": 33869,
+      "traversal_s": 0.123153,
+      "setup_s": 0.004152,
+      "aborted": false
+     },
+     {
+      "tau": 5.0658725732647486e-08,
+      "cert": 0.00016943855801833393,
+      "visited": 38300,
+      "traversal_s": 0.103847,
+      "setup_s": 0.004536999999999999,
+      "aborted": false
+     },
+     {
+      "tau": 1.494899576729342e-08,
+      "cert": 0.00013901386917203077,
+      "visited": 154068,
+      "traversal_s": 0.346638,
+      "setup_s": 0.004782000000000001,
+      "aborted": false
+     },
+     {
+      "tau": 4.484698730188026e-09,
+      "cert": 7.214711451603594e-05,
+      "visited": 1060490,
+      "traversal_s": 2.243279,
+      "setup_s": 0.0036019999999999997,
+      "aborted": false
+     }
+    ],
+    "observed_err": 7.725652947238038e-10
+   },
+   "adaptive": {
+    "nodes": 477140,
+    "cert_f": 8.88611e-05,
+    "temporal_bound_step": 6.29506e-06,
+    "total_s": 23.149813,
+    "peak_rss_kb": 81552,
+    "hit_maxn": false,
+    "observed_err": 1.657944072135098e-08
+   },
+   "reference": {
+    "tau": 4.484698730188026e-11,
+    "cert_f": 2.9433878311130478e-05,
+    "aborted": false,
+    "prefixes": 34541913,
+    "time_s": 67.560991,
+    "peak_step": 0.0154959254854205
+   }
+  }
+ ]
+}

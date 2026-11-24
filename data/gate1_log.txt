@@ -1,0 +1,42 @@
+PASS  DD kernel vs 60-digit, nodes=[-1.0, -2.0, -3.5]                err=2.69e-16 tol=1e-12 
+PASS  DD kernel vs 60-digit, nodes=[-1.0, -1.0, -1.0, -1.0]          err=3.71e-16 tol=1e-12 
+PASS  DD kernel vs 60-digit, nodes=[(-1+2j), (-1-2j), (-1+2j), (-0.5+0j)] err=8.01e-17 tol=1e-12 
+PASS  DD kernel vs 60-digit, nodes=[-2.0, -2.0, -2.0, -1.0]          err=1.56e-16 tol=1e-12 
+PASS  DD kernel vs 60-digit, nodes=[(0.3+0j), (-0.7+0.1j), 0j, 0j]   err=3.87e-17 tol=1e-12 
+PASS  walk expansion (e^tA)_ij, complex=False, Q=9                   err=3.33e-13 tol=1e-06 (truncation, decreasing with Q)
+PASS  walk expansion (e^tA)_ij, complex=True, Q=9                    err=4.67e-10 tol=1e-06 (truncation, decreasing with Q)
+PASS  orientation: (e^A)_{01} via edge 1->0 weight R[0,1]            err=5.55e-17 tol=1e-13 
+PASS  orientation: (e^A)_{10} must vanish (no walk 0->1)             err=0.00e+00 tol=1e-15 
+PASS  repeated diagonal, triangular (finite walk set, exact)         err=1.25e-16 tol=1e-13 
+PASS  forcing: nodes=[-1.0, -2.0], gamma=-0.5, m=0                   err=1.20e-16 tol=1e-10 
+PASS  forcing: nodes=[-1.0, -2.0], gamma=-1.0, m=0                   err=0.00e+00 tol=1e-10 
+PASS  forcing: nodes=[(-1+1j), -2.0], gamma=0.7j, m=0                err=3.78e-17 tol=1e-10 
+PASS  forcing: nodes=[-1.0, -1.0], gamma=-1.0, m=2                   err=0.00e+00 tol=1e-10 
+PASS  forcing: nodes=[-0.5], gamma=0.0, m=3                          err=0.00e+00 tol=1e-10 
+PASS  A=0, step: f_t[0,0]=t                                          err=0.00e+00 tol=1e-13 
+PASS  A=0, ramp s: f_t[0,0,0]=t^2/2                                  err=0.00e+00 tol=1e-13 
+PASS  A=0, s^2/2!: f_t[0,0,0,0]=t^3/6                                err=0.00e+00 tol=1e-13 
+PASS  forced output via walks vs augmented expm, u=step              err=4.41e-11 tol=1e-05 (Q=8 truncation)
+PASS  forced output via walks vs augmented expm, u=exp(-0.3 s)       err=4.85e-11 tol=1e-05 (Q=8 truncation)
+PASS  forced output via walks vs augmented expm, u=ramp s            err=1.25e-10 tol=1e-05 (Q=8 truncation)
+PASS  sinusoid u=cos(2s) via conjugate pair                          err=8.82e-11 tol=1e-05 
+PASS  sinusoid: imaginary residue of conjugate-pair sum              err=0.00e+00 tol=1e-12 
+PASS  finite pulse [a,b) as difference of delayed step kernels       err=1.05e-12 tol=1e-06 
+PASS  piecewise-linear input via truncated-power basis               err=1.86e-12 tol=1e-06 
+PASS  sensitivity identity, node -1.0 multiplicity 2                 err=3.02e-11 tol=1e-08 
+PASS  sensitivity identity, node -2.0 multiplicity 1                 err=2.57e-10 tol=1e-08 
+PASS  TD regression e^t sigma_x: corrected walk sum vs exp(e^t-1)    err=0.00e+00 tol=1e-12 
+PASS  TD regression: draft convention reproduces exp(1-e^{-t}) (wrong) err=1.18e-16 tol=1e-12 draft=1.881596 vs exact=5.574942
+   [A(t1),A(t2)] norm: 0.5422349419160324
+PASS  TD noncommuting, nonzero start s=0.35: walk sum vs ODE         err=2.01e-12 tol=1e-09 
+PASS  TD cocycle Phi(t,s)Phi(s,r)=Phi(t,r) (walk sums)               err=7.47e-12 tol=1e-09 
+PASS  TD: Phi(t,s) != Phi(t-s,0) (draft Eq.39 assumption fails)      err=-4.32e-02 tol=0e+00 |diff|=0.043
+PASS  TD forcing: appended node gamma+Lambda_p (corrected)           err=7.48e-13 tol=1e-09 
+PASS  TD forcing: appended node gamma (draft Eq.41) is wrong         err=-3.96e-02 tol=0e+00 |diff|=3.96e-02
+PASS  draft (C3): int t f_t[X] dt                                    err=2.78e-17 tol=1e-12 
+PASS  draft (C4): int t^2/2 f_t[X] dt                                err=0.00e+00 tol=1e-12 
+PASS  draft (C5): int e^{bt} f_t[X] dt = e^{b tau} f_tau[-b,X]       err=1.11e-16 tol=1e-12 
+PASS  draft Identity 2 (B9): f_t[x] = e^{tx} f_t[x - shift]          err=5.55e-17 tol=1e-13 
+
+38/38 checks passed
+EXIT 0

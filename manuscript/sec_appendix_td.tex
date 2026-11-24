@@ -1,0 +1,30 @@
+\section{Time-dependent generators}\label{app:td}
+
+The walk representation extends to $\dot\bx=A(t)\bx+\bb(t)$ when the time dependence is a sum of exponentials, through the integral-free Dyson series of Ref.~\cite{kalev2021}. We record the resulting formulas and their numerical checks; they are not used elsewhere in the paper.
+
+Let $A(t)=E+V(t)$ with $E=\mathrm{diag}(E_1,\dots,E_N)$ constant and
+\begin{equation}
+V(t)=\sum_{i}\sum_{k}e^{\lambda_{ik}t}D_{ik}P_i ,
+\end{equation}
+where each $P_i$ is a permutation, $D_{ik}$ is diagonal, and $P_0=I$ is included, so that time-dependent diagonal terms are events too. Neither $E$ nor $V$ needs to be diagonalizable; $E$ is simply the diagonal in the coordinate basis. With the interaction picture
+\begin{equation}
+\Phi(t,0)=e^{Et}\Phi_I(t),\qquad \dot\Phi_I(t)=e^{-Et}V(t)e^{Et}\Phi_I(t),
+\end{equation}
+an event sequence that visits states $u_0,u_1,\dots,u_q$ through terms $(i_r,k_r)$ has amplitude $d_r=(D_{i_rk_r})_{u_ru_r}$, evaluated at the destination $u_r$, and rate $\lambda_r=\lambda_{i_rk_r}$. The number of events $q$ counts both genuine hops ($i_r\neq0$) and diagonal events ($i_r=0$), so it can exceed the number of off-diagonal hops.
+
+\begin{proposition}
+The contribution of the sequence to $\Phi(t,s)\be_{u_0}$ is $\be_{u_q}$ times
+\begin{equation}\label{eq:td_path}
+\begin{gathered}
+\Big(\prod_{r=1}^qd_r\Big)\,e^{s\Lambda_p}\,f_{t-s}[y_0,\dots,y_q],\\
+y_j=E_{u_j}+\sum_{r=j+1}^q\lambda_r,\qquad \Lambda_p=\sum_{r=1}^q\lambda_r .
+\end{gathered}
+\end{equation}
+Consequently a forcing $\bb(t)=\be_{u_0}e^{\gamma t}$ contributes $\big(\prod_rd_r\big)f_t[y_0,\dots,y_q,\gamma+\Lambda_p]$ to $\int_0^t\Phi(t,s)\bb(s)ds$.
+\end{proposition}
+\begin{proof}
+Take $s=0$ first. The contribution obeys $c_q(t)=\int_0^te^{E_{u_q}(t-\sigma)}d_qe^{\lambda_q\sigma}c_{q-1}(\sigma)d\sigma$ with $c_0(t)=e^{E_{u_0}t}$. Suppose $c_{q-1}(\sigma)=\prod_{r<q}d_r\,f_\sigma[y'_0,\dots,y'_{q-1}]$ with $y'_j=E_{u_j}+\sum_{j<r<q}\lambda_r$. By (D3), $e^{\lambda_q\sigma}f_\sigma[y']=f_\sigma[y'+\lambda_q]$, and $y'_j+\lambda_q=y_j$. Proposition~\ref{prop:forcing} with $m=0$ then gives $c_q(t)=\prod_rd_r\,f_t[y_0,\dots,y_{q-1},E_{u_q}]$, and $y_q=E_{u_q}$. For a start time $s$, write the event times as $s+\tau_r$; each factor $e^{\lambda_r(s+\tau_r)}$ releases $e^{\lambda_rs}$, and the remaining integral is $c_q(t-s)$. The forcing statement follows from Proposition~\ref{prop:forcing} applied to $\int_0^te^{s\Lambda_p}f_{t-s}[y]e^{\gamma s}ds$.
+\end{proof}
+The factor $e^{s\Lambda_p}$ makes $\Phi(t,s)$ depend on $s$ and not only on $t-s$, and it shifts the node appended for an exponential forcing from $\gamma$ to $\gamma+\Lambda_p$. The signs matter: the interaction picture must be taken as written above, so that the rate shifts enter the nodes with a positive sign, and diagonal events ($i_r=0$) must be included.
+
+The regression case $A(t)=e^t\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$, $\bx_0=(1,1)^\top$, has the exact solution $\bx(t)=\exp(e^t-1)\bx_0$. Equation~\eqref{eq:td_path} gives nodes $(q,q-1,\dots,0)$ for the $q$-event sequences and $\sum_qf_t[0,1,\dots,q]=\sum_q(e^t-1)^q/q!$, which reproduces it; reversing the signs of the rate shifts would give nodes $(-q,\dots,0)$ and $\exp(1-e^{-t})$ instead (at $t=1$, $1.8816$ instead of $5.5749$). We also checked, against a high-accuracy ODE solution, a three-state example with noncommuting $A(t)$ at different times, a cyclic permutation with two rates and a diagonal event term, start time $s=0.35$, and exponential forcing: the walk sums agree to $2\times10^{-12}$, satisfy the cocycle property $\Phi(t,s)\Phi(s,r)=\Phi(t,r)$ to $7\times10^{-12}$, and the forced response with the appended node $\gamma+\Lambda_p$ agrees to $7\times10^{-13}$, while the unshifted node $\gamma$ is off by $4\times10^{-2}$ (script \texttt{verify\_formulas.py}).

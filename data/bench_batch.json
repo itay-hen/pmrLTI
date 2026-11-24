@@ -1,0 +1,141 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "cores": 2,
+  "memtotal": "8220244 kB",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "kernel": "6.18.44-fc-v153"
+ },
+ "records": {
+  "times": [
+   {
+    "T": 10,
+    "run_s": 0.006166,
+    "peak_kb": 4576,
+    "dd_bytes": 3688,
+    "out_bytes": 264,
+    "visited": 18824,
+    "rowcomp": 1230,
+    "Slev": 5
+   },
+   {
+    "T": 30,
+    "run_s": 0.007277,
+    "peak_kb": 4532,
+    "dd_bytes": 4848,
+    "out_bytes": 744,
+    "visited": 18824,
+    "rowcomp": 1230,
+    "Slev": 4
+   },
+   {
+    "T": 100,
+    "run_s": 0.00866,
+    "peak_kb": 4584,
+    "dd_bytes": 9568,
+    "out_bytes": 2424,
+    "visited": 18824,
+    "rowcomp": 1230,
+    "Slev": 2
+   },
+   {
+    "T": 300,
+    "run_s": 0.006886,
+    "peak_kb": 4608,
+    "dd_bytes": 24688,
+    "out_bytes": 7224,
+    "visited": 18824,
+    "rowcomp": 1230,
+    "Slev": 0
+   },
+   {
+    "T": 1000,
+    "run_s": 0.012859,
+    "peak_kb": 4668,
+    "dd_bytes": 80688,
+    "out_bytes": 24024,
+    "visited": 18824,
+    "rowcomp": 1230,
+    "Slev": 0
+   }
+  ],
+  "patterns": [
+   {
+    "npat": 1,
+    "names": [
+     "step"
+    ],
+    "run_s": 0.0053,
+    "peak_kb": 4564,
+    "rowcomp": 1230,
+    "scalar": "real"
+   },
+   {
+    "npat": 2,
+    "names": [
+     "step",
+     "ramp"
+    ],
+    "run_s": 0.006276,
+    "peak_kb": 4572,
+    "rowcomp": 1571,
+    "scalar": "real"
+   },
+   {
+    "npat": 4,
+    "names": [
+     "step",
+     "ramp",
+     "quad",
+     "exp1"
+    ],
+    "run_s": 0.007648,
+    "peak_kb": 4592,
+    "rowcomp": 2253,
+    "scalar": "real"
+   },
+   {
+    "npat": 8,
+    "names": [
+     "step",
+     "ramp",
+     "quad",
+     "exp1",
+     "exp2",
+     "cos+",
+     "cos-",
+     "kernel"
+    ],
+    "run_s": 0.078709,
+    "peak_kb": 4624,
+    "rowcomp": 22975,
+    "scalar": "complex"
+   }
+  ],
+  "zoh": {
+   "nwave": 100,
+   "nseg": 20,
+   "walker_kernel_s": 0.048762,
+   "cert_f": 1.2955971620239511e-07,
+   "convolution_s_total": 0.012618459999430343,
+   "per_waveform_state_propagation": [
+    {
+     "dev": 4.403708397937578e-09,
+     "run_s": 46.98590453200086
+    },
+    {
+     "dev": 3.5640024126371017e-09,
+     "run_s": 47.882330002001254
+    },
+    {
+     "dev": 3.295763141564212e-09,
+     "run_s": 46.862545249001414
+    }
+   ],
+   "N": 262144
+  }
+ }
+}

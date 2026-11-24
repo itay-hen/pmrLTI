@@ -1,0 +1,44 @@
+=== bench_crossover.py Sun Oct 25 09:51:11 PDT 2026
+=== done bench_crossover.py rc=143 Sun Oct 25 09:56:47 PDT 2026
+=== bench_crossover.py Sun Oct 25 09:56:49 PDT 2026
+=== done bench_crossover.py rc=143 Sun Oct 25 10:13:37 PDT 2026
+=== bench_scaling.py Sun Oct 25 10:13:58 PDT 2026
+=== crossover part2 Sun Oct 25 10:19:54 PDT 2026
+=== done crossover part2 Sun Oct 25 10:55:53 PDT 2026
+=== bench_scaling.py Sun Oct 25 10:55:53 PDT 2026
+=== done bench_scaling.py rc=143 Sun Oct 25 11:01:22 PDT 2026
+=== bench_stiff.py Sun Oct 25 11:01:22 PDT 2026
+=== done bench_stiff.py rc=1 Sun Oct 25 11:09:54 PDT 2026
+=== bench_batch.py Sun Oct 25 11:09:54 PDT 2026
+=== done bench_batch.py rc=0 Sun Oct 25 11:12:18 PDT 2026
+=== bench_io.py Sun Oct 25 11:12:18 PDT 2026
+=== done bench_io.py rc=0 Sun Oct 25 11:12:20 PDT 2026
+=== bench_hard.py Sun Oct 25 11:12:20 PDT 2026
+=== done bench_hard.py rc=0 Sun Oct 25 11:57:35 PDT 2026
+=== scaling (centered grid hash) Sun Oct 25 11:57:57 PDT 2026
+=== extra Sun Oct 25 12:19:32 PDT 2026
+=== accuracy Sun Oct 25 13:55:22 PDT 2026
+=== tests Sun Oct 25 14:07:18 PDT 2026
+=== all done Sun Oct 25 14:10:28 PDT 2026
+=== stiff sC=3 Sun Oct 25 14:10:51 PDT 2026
+=== queue3 done Sun Oct 25 14:17:24 PDT 2026
+=== nonnormal Sun Oct 25 14:17:47 PDT 2026
+=== queue4 done Sun Oct 25 15:03:56 PDT 2026
+=== scaling globals Sun Oct 25 15:04:05 PDT 2026
+=== scaling globals (loader chunk 2^16) Sun Oct 25 15:08:19 PDT 2026
+=== queue6 done Sun Oct 25 15:47:29 PDT 2026
+=== v7: crossover v2 (r=3) Sun Oct 25 17:08:56 PDT 2026
+=== v7: noncollocated Sun Oct 25 20:39:03 PDT 2026
+=== queue7 done Sun Oct 25 20:55:49 PDT 2026
+=== v7: adaptive rerun deg16 mu.57 1e-5 Sun Oct 25 20:56:12 PDT 2026
+=== queue8 done Sun Oct 25 21:27:17 PDT 2026
+=== v7: noncollocated (rerun, peak fix) Sun Oct 25 21:27:39 PDT 2026
+=== queue9 done Sun Oct 25 21:46:24 PDT 2026
+=== v7: noncollocated (resume, 10% peak criterion) Sun Oct 25 21:47:40 PDT 2026
+=== queue10 done Sun Oct 25 22:01:40 PDT 2026
+=== v8: ensemble Mon Oct 26 08:23:42 PDT 2026
+=== queue11 done Mon Oct 26 08:53:13 PDT 2026
+=== v8: timing repeats (idle machine) Mon Oct 26 08:53:29 PDT 2026
+=== queue12 done Mon Oct 26 09:26:20 PDT 2026
+=== v8: noncollocated and stiff-local re-timed on idle machine Mon Oct 26 09:33:11 PDT 2026
+=== queue13 done Mon Oct 26 09:45:33 PDT 2026

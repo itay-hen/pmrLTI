@@ -1,0 +1,35 @@
+# Whitelist: this folder also holds old drafts (diffEqPMR_v*.tex), PDFs, zips and
+# a duplicate snapshot (pmr_lti/). Only the live code, data and manuscript source are tracked.
+/*
+!/.gitignore
+!/README.md
+!/code/
+!/tests/
+!/bench/
+!/data/
+!/figures/
+!/docs/
+!/manuscript/
+
+# build products
+/code/walker
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# internal review notes (not part of the code deposit)
+/docs/assessment.md
+/docs/response_to_review_v*.md
+
+# manuscript: sources only
+/manuscript/*.aux
+/manuscript/*.bbl
+/manuscript/*.blg
+/manuscript/*.log
+/manuscript/*.out
+/manuscript/*.pdf
+/manuscript/*.synctex.gz
+/manuscript/*Notes.bib
+/manuscript/*.zip
+/manuscript/refs_v6.bib

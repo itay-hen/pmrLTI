@@ -1,0 +1,268 @@
+[
+ {
+  "check": "DD kernel vs 60-digit, nodes=[-1.0, -2.0, -3.5]",
+  "err": 2.6936985523017014e-16,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "DD kernel vs 60-digit, nodes=[-1.0, -1.0, -1.0, -1.0]",
+  "err": 3.7109520231319106e-16,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "DD kernel vs 60-digit, nodes=[(-1+2j), (-1-2j), (-1+2j), (-0.5+0j)]",
+  "err": 8.006393197630087e-17,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "DD kernel vs 60-digit, nodes=[-2.0, -2.0, -2.0, -1.0]",
+  "err": 1.564529284223388e-16,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "DD kernel vs 60-digit, nodes=[(0.3+0j), (-0.7+0.1j), 0j, 0j]",
+  "err": 3.8735589565994566e-17,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "walk expansion (e^tA)_ij, complex=False, Q=9",
+  "err": 3.3342772987055014e-13,
+  "tol": 1e-06,
+  "ok": true,
+  "note": "(truncation, decreasing with Q)"
+ },
+ {
+  "check": "walk expansion (e^tA)_ij, complex=True, Q=9",
+  "err": 4.666597045548782e-10,
+  "tol": 1e-06,
+  "ok": true,
+  "note": "(truncation, decreasing with Q)"
+ },
+ {
+  "check": "orientation: (e^A)_{01} via edge 1->0 weight R[0,1]",
+  "err": 5.551115123125783e-17,
+  "tol": 1e-13,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "orientation: (e^A)_{10} must vanish (no walk 0->1)",
+  "err": 0.0,
+  "tol": 1e-15,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "repeated diagonal, triangular (finite walk set, exact)",
+  "err": 1.249000902703301e-16,
+  "tol": 1e-13,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "forcing: nodes=[-1.0, -2.0], gamma=-0.5, m=0",
+  "err": 1.1980762283105606e-16,
+  "tol": 1e-10,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "forcing: nodes=[-1.0, -2.0], gamma=-1.0, m=0",
+  "err": 0.0,
+  "tol": 1e-10,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "forcing: nodes=[(-1+1j), -2.0], gamma=0.7j, m=0",
+  "err": 3.7841722904122225e-17,
+  "tol": 1e-10,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "forcing: nodes=[-1.0, -1.0], gamma=-1.0, m=2",
+  "err": 0.0,
+  "tol": 1e-10,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "forcing: nodes=[-0.5], gamma=0.0, m=3",
+  "err": 0.0,
+  "tol": 1e-10,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "A=0, step: f_t[0,0]=t",
+  "err": 0.0,
+  "tol": 1e-13,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "A=0, ramp s: f_t[0,0,0]=t^2/2",
+  "err": 0.0,
+  "tol": 1e-13,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "A=0, s^2/2!: f_t[0,0,0,0]=t^3/6",
+  "err": 0.0,
+  "tol": 1e-13,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "forced output via walks vs augmented expm, u=step",
+  "err": 4.414923981954644e-11,
+  "tol": 1e-05,
+  "ok": true,
+  "note": "(Q=8 truncation)"
+ },
+ {
+  "check": "forced output via walks vs augmented expm, u=exp(-0.3 s)",
+  "err": 4.846609918951472e-11,
+  "tol": 1e-05,
+  "ok": true,
+  "note": "(Q=8 truncation)"
+ },
+ {
+  "check": "forced output via walks vs augmented expm, u=ramp s",
+  "err": 1.2518115710680178e-10,
+  "tol": 1e-05,
+  "ok": true,
+  "note": "(Q=8 truncation)"
+ },
+ {
+  "check": "sinusoid u=cos(2s) via conjugate pair",
+  "err": 8.818767417706486e-11,
+  "tol": 1e-05,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "sinusoid: imaginary residue of conjugate-pair sum",
+  "err": 0.0,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "finite pulse [a,b) as difference of delayed step kernels",
+  "err": 1.0525035704089802e-12,
+  "tol": 1e-06,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "piecewise-linear input via truncated-power basis",
+  "err": 1.8554064534770376e-12,
+  "tol": 1e-06,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "sensitivity identity, node -1.0 multiplicity 2",
+  "err": 3.021213880770686e-11,
+  "tol": 1e-08,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "sensitivity identity, node -2.0 multiplicity 1",
+  "err": 2.5663038914240236e-10,
+  "tol": 1e-08,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "TD regression e^t sigma_x: corrected walk sum vs exp(e^t-1)",
+  "err": 0.0,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "TD regression: draft convention reproduces exp(1-e^{-t}) (wrong)",
+  "err": 1.180086262901038e-16,
+  "tol": 1e-12,
+  "ok": true,
+  "note": "draft=1.881596 vs exact=5.574942"
+ },
+ {
+  "check": "TD noncommuting, nonzero start s=0.35: walk sum vs ODE",
+  "err": 2.013278432855259e-12,
+  "tol": 1e-09,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "TD cocycle Phi(t,s)Phi(s,r)=Phi(t,r) (walk sums)",
+  "err": 7.466693929814028e-12,
+  "tol": 1e-09,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "TD: Phi(t,s) != Phi(t-s,0) (draft Eq.39 assumption fails)",
+  "err": -0.04320434379706062,
+  "tol": 0.0,
+  "ok": true,
+  "note": "|diff|=0.043"
+ },
+ {
+  "check": "TD forcing: appended node gamma+Lambda_p (corrected)",
+  "err": 7.482903185973555e-13,
+  "tol": 1e-09,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "TD forcing: appended node gamma (draft Eq.41) is wrong",
+  "err": -0.03960691047251075,
+  "tol": 0.0,
+  "ok": true,
+  "note": "|diff|=3.96e-02"
+ },
+ {
+  "check": "draft (C3): int t f_t[X] dt",
+  "err": 2.7755575615628914e-17,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "draft (C4): int t^2/2 f_t[X] dt",
+  "err": 0.0,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "draft (C5): int e^{bt} f_t[X] dt = e^{b tau} f_tau[-b,X]",
+  "err": 1.1102230246251565e-16,
+  "tol": 1e-12,
+  "ok": true,
+  "note": ""
+ },
+ {
+  "check": "draft Identity 2 (B9): f_t[x] = e^{tx} f_t[x - shift]",
+  "err": 5.551115123125783e-17,
+  "tol": 1e-13,
+  "ok": true,
+  "note": ""
+ }
+]

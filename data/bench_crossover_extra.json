@@ -1,0 +1,50 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "cores": 2,
+  "memtotal": "8220244 kB",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "kernel": "6.18.44-fc-v153"
+ },
+ "records": [
+  {
+   "family": "permnet K=16 l0=40.0",
+   "model": "permnet nbits=64 K=16 g0=1.0 ag=0.5 l0=40.0 al=0.5 C0=1.0 aC=0.5 seed=7",
+   "eps": 0.0001,
+   "mu": 0.5714285714285714,
+   "walker": {
+    "target_reached": true,
+    "tau": 1e-12,
+    "cert_f": 5.7664527276200514e-05,
+    "visited": 1108378753,
+    "traversal_s": 1332.574916,
+    "peak_rss_kb": 4712,
+    "search_attempts": [
+     {
+      "tau": 1e-12,
+      "cert": 5.7664527276200514e-05,
+      "visited": 1108378753,
+      "traversal_s": 1332.574916,
+      "aborted": false
+     }
+    ],
+    "search_total_s": 1332.574916
+   },
+   "ball": {
+    "R": 5,
+    "cert_f": 3.339592082292222e-05,
+    "status": "run",
+    "nodes": 30537761,
+    "nnz": 61075520,
+    "local_build_s": 559.526078,
+    "local_solve_s": 3857.145037,
+    "local_peak_kb": 3011104,
+    "local_matvecs": 12052,
+    "diff_step": 2.867808143736106e-10
+   }
+  }
+ ]
+}

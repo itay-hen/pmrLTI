@@ -1,0 +1,58 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "cores": 2,
+  "memtotal": "8220244 kB",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "kernel": "6.18.44-fc-v153"
+ },
+ "model": "grid L=101 k0=1.0 ak=0.5 l0=8.0 al=0.5 C0=1.0 aC=0.5 seed=1",
+ "sensor": [
+  [
+   0,
+   5103,
+   1.0
+  ]
+ ],
+ "source": [
+  [
+   0,
+   5100,
+   1.0
+  ]
+ ],
+ "walker_cert": {
+  "homogeneous": 7.200045847074331e-07,
+  "forced_per_unit_input": 4.946176527997965e-08,
+  "max_branch_h": 9.999977920928148e-13,
+  "max_branch_f": 6.869630711183729e-14,
+  "valid": true
+ },
+ "forward_vs_adjoint_maxdev": {
+  "kernel": 6.776263578034403e-20,
+  "step": 7.453889935837843e-20
+ },
+ "records": [
+  {
+   "method": "expmv",
+   "run_s": 1.0032328400011465,
+   "peak_kb": 63364,
+   "dev_kernel_vs_walker": 1.937260476507268e-09,
+   "scale_kernel": 0.00012124943446820922,
+   "dev_step_vs_walker": 1.5996459097858038e-09,
+   "scale_step": 4.694634045438718e-05
+  },
+  {
+   "method": "expmv_adjoint",
+   "run_s": 0.9769018679980945,
+   "peak_kb": 63368,
+   "dev_kernel_vs_walker": 1.9372604765068445e-09,
+   "scale_kernel": 0.00012124943446820915,
+   "dev_step_vs_walker": 1.5996459097451462e-09,
+   "scale_step": 4.694634045438714e-05
+  }
+ ]
+}

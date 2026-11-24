@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Time [s] and memory [MB] versus state dimension at fixed query and pruning threshold ($\tau=10^{-10}$). Walk sum: peak memory of the C++ process. Python methods: peak minus the high-water mark after importing NumPy and SciPy (about 57~MB). Ball: certified ball at the walk sum's certificate, solved by \texttt{expm\_multiply}. n.r.: not run (state-vector methods beyond the tested range, or Krylov beyond $10^6$).}\label{tab:scaling}
+\begin{ruledtabular}
+\begin{tabular}{ll|cc|cc|cc|cc}
+model & $N$ & \multicolumn{2}{c|}{walk sum} & \multicolumn{2}{c|}{ball + expm\_multiply} & \multicolumn{2}{c|}{expm\_multiply (full)} & \multicolumn{2}{c}{Arnoldi $m=30$ (full)}\\
+ & & time [s] & mem. [MB] & time [s] & mem. [MB] & time [s] & mem. [MB] & time [s] & mem. [MB]\\\hline
+thermal grid & 1.0e4 & 0.07 & 4.5 & 0.22 & 0.9 & 0.51 & 4.9 & 1.20 & 5.4 \\
+thermal grid & 1.0e5 & 0.07 & 4.5 & 0.19 & 1.0 & 5.28 & 33.0 & 19 & 35.6 \\
+thermal grid & 1.0e6 & 0.07 & 4.5 & 0.18 & 1.0 & 50 & 311.0 & 227 & 342.3 \\
+thermal grid & 1.0e7 & 0.07 & 4.5 & 0.23 & 0.9 & 634 & 2943.6 & n.r. & n.r. \\
+thermal grid & 1.0e10 & 0.07 & 4.5 & 0.26 & 1.0 & n.r. & n.r. & n.r. & n.r. \\
+thermal grid & 1.0e12 & 0.07 & 4.5 & 0.31 & 0.9 & n.r. & n.r. & n.r. & n.r. \\
+random net, $\Delta=4$ & $2^{16}$ & 0.02 & 4.5 & 0.30 & 1.2 & 4.59 & 21.6 & 8.65 & 23.6 \\
+random net, $\Delta=4$ & $2^{18}$ & 0.02 & 4.5 & 0.28 & 1.2 & 27 & 82.6 & 39 & 88.9 \\
+random net, $\Delta=4$ & $2^{20}$ & 0.03 & 4.5 & 0.29 & 1.2 & 161 & 325.5 & 243 & 357.9 \\
+random net, $\Delta=4$ & $2^{22}$ & 0.02 & 4.5 & 0.29 & 1.2 & 911 & 1281.6 & n.r. & n.r. \\
+random net, $\Delta=4$ & $2^{24}$ & 0.02 & 4.5 & 0.32 & 1.2 & n.r. & n.r. & n.r. & n.r. \\
+random net, $\Delta=4$ & $2^{32}$ & 0.02 & 4.5 & 0.31 & 1.2 & n.r. & n.r. & n.r. & n.r. \\
+random net, $\Delta=4$ & $2^{48}$ & 0.02 & 4.5 & 0.30 & 1.2 & n.r. & n.r. & n.r. & n.r. \\
+random net, $\Delta=4$ & $2^{64}$ & 0.02 & 4.5 & 0.28 & 1.2 & n.r. & n.r. & n.r. & n.r. \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}

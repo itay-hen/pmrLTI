@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\footnotesize\setlength{\tabcolsep}{2.4pt}
+\caption{Robustness of the comparison at $\mu=0.57$, target $10^{-4}$ (step response, collocated), over three graph seeds and three actuator states ($a_1=1\,234\,567$, $a_2=987\,654\,321$, $a_3=2^{40}+12\,345$), with the radius-3 distance map. Peak: maximum of the step response. Diff.: maximum over the grid of the difference from a reference walk sum at one hundredth of the final threshold; for the walk sum it is a lower bound on its truncation error (the reference retains a superset of its walks, and all contributions are positive), for the adaptive set it is only a difference. Walk sum: certificate, difference, prefixes, total time of a threshold search started from scratch at $\varepsilon/100$, peak memory. Adaptive set: states, time, peak memory, difference. The ball was run at degree 16 only; at degree 32 one ball takes about 30~min and 3~GB (Table~\ref{tab:crossover}). n.r.: not run.}\label{tab:ensemble}
+\begin{ruledtabular}
+\begin{tabular}{rrrc|cccrc|crcc|crc}
+ & & & & \multicolumn{5}{c|}{walk sum} & \multicolumn{4}{c|}{adaptive set} & \multicolumn{3}{c}{certified ball}\\
+$\Delta$ & seed & act. & peak & cert. & diff. & prefixes & [s] & MB & states & [s] & MB & diff. & states & [s] & MB\\\hline
+16 & 7 & $a_1$ & $2.4\times10^{-2}$ & $6.6\times10^{-5}$ & $2.5\times10^{-7}$ & $7.9\times10^{5}$ & 0.95 & 4.8 & 57857 & 1.39 & 14.3 & $9.2\times10^{-9}$ & $8.7\times10^{5}$ & 14 & 100.8 \\
+16 & 7 & $a_2$ & $3.2\times10^{-2}$ & $7.0\times10^{-5}$ & $2.6\times10^{-7}$ & $9.5\times10^{5}$ & 0.91 & 4.8 & $3.7\times10^{5}$ & 8.47 & 64.8 & $9.0\times10^{-9}$ & $8.7\times10^{5}$ & 15 & 107.5 \\
+16 & 7 & $a_3$ & $3.1\times10^{-2}$ & $7.0\times10^{-5}$ & $2.5\times10^{-7}$ & $8.9\times10^{5}$ & 0.94 & 4.8 & $3.3\times10^{5}$ & 8.20 & 55.7 & $8.9\times10^{-9}$ & $8.7\times10^{5}$ & 15 & 94.2 \\
+16 & 11 & $a_1$ & $3.6\times10^{-2}$ & $7.9\times10^{-5}$ & $2.1\times10^{-7}$ & $1.1\times10^{6}$ & 1.42 & 4.8 & $5.4\times10^{5}$ & 13 & 98.9 & $1.4\times10^{-8}$ & $8.7\times10^{5}$ & 16 & 100.8 \\
+16 & 11 & $a_2$ & $2.6\times10^{-2}$ & $6.9\times10^{-5}$ & $2.8\times10^{-7}$ & $1.0\times10^{6}$ & 1.16 & 4.7 & $3.9\times10^{5}$ & 9.16 & 68.1 & $1.3\times10^{-8}$ & $8.7\times10^{5}$ & 15 & 100.8 \\
+16 & 11 & $a_3$ & $3.8\times10^{-2}$ & $8.3\times10^{-5}$ & $1.9\times10^{-7}$ & $1.1\times10^{6}$ & 1.59 & 4.8 & $5.8\times10^{5}$ & 15 & 98.4 & $1.4\times10^{-8}$ & $1.3\times10^{7}$ & 471 & 1274.4 \\
+16 & 23 & $a_1$ & $3.3\times10^{-2}$ & $7.3\times10^{-5}$ & $2.7\times10^{-7}$ & $1.1\times10^{6}$ & 1.18 & 4.8 & $4.7\times10^{5}$ & 11 & 80.0 & $1.2\times10^{-8}$ & $8.7\times10^{5}$ & 14 & 100.8 \\
+16 & 23 & $a_2$ & $2.6\times10^{-2}$ & $6.7\times10^{-5}$ & $2.4\times10^{-7}$ & $8.0\times10^{5}$ & 0.79 & 4.8 & $2.4\times10^{5}$ & 5.98 & 43.4 & $8.7\times10^{-9}$ & $8.7\times10^{5}$ & 14 & 100.8 \\
+16 & 23 & $a_3$ & $3.1\times10^{-2}$ & $7.0\times10^{-5}$ & $2.5\times10^{-7}$ & $9.1\times10^{5}$ & 0.91 & 4.8 & $3.6\times10^{5}$ & 8.15 & 65.6 & $9.4\times10^{-9}$ & $8.7\times10^{5}$ & 16 & 100.8 \\
+32 & 7 & $a_1$ & $1.2\times10^{-2}$ & $6.4\times10^{-5}$ & $3.9\times10^{-11}$ & $9.5\times10^{5}$ & 2.21 & 5.9 & $2.7\times10^{5}$ & 12 & 53.1 & $1.6\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 7 & $a_2$ & $1.6\times10^{-2}$ & $7.3\times10^{-5}$ & $5.6\times10^{-10}$ & $1.1\times10^{6}$ & 2.43 & 5.9 & $4.9\times10^{5}$ & 22 & 79.3 & $1.6\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 7 & $a_3$ & $1.6\times10^{-2}$ & $7.0\times10^{-5}$ & $6.9\times10^{-10}$ & $1.1\times10^{6}$ & 2.48 & 5.9 & $4.4\times10^{5}$ & 20 & 74.4 & $1.6\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 11 & $a_1$ & $1.8\times10^{-2}$ & $9.2\times10^{-5}$ & $1.3\times10^{-8}$ & $1.1\times10^{6}$ & 3.83 & 6.0 & $9.9\times10^{5}$ & 68 & 173.1 & $1.3\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 11 & $a_2$ & $1.3\times10^{-2}$ & $7.5\times10^{-5}$ & $2.8\times10^{-9}$ & $1.1\times10^{6}$ & 3.22 & 6.0 & $5.1\times10^{5}$ & 26 & 80.2 & $2.0\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 11 & $a_3$ & $1.9\times10^{-2}$ & $9.8\times10^{-5}$ & $1.5\times10^{-8}$ & $1.1\times10^{6}$ & 4.04 & 6.0 & $9.9\times10^{5}$ & 76 & 168.2 & $1.1\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 23 & $a_1$ & $1.6\times10^{-2}$ & $8.2\times10^{-5}$ & $5.7\times10^{-9}$ & $1.1\times10^{6}$ & 3.27 & 6.0 & $6.2\times10^{5}$ & 32 & 108.1 & $1.6\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 23 & $a_2$ & $1.3\times10^{-2}$ & $6.5\times10^{-5}$ & $3.3\times10^{-11}$ & $1.0\times10^{6}$ & 2.38 & 5.9 & $3.1\times10^{5}$ & 14 & 56.8 & $1.5\times10^{-8}$ & n.r. & n.r. & n.r. \\
+32 & 23 & $a_3$ & $1.5\times10^{-2}$ & $7.2\times10^{-5}$ & $7.7\times10^{-10}$ & $1.1\times10^{6}$ & 2.88 & 6.0 & $4.8\times10^{5}$ & 23 & 79.6 & $1.7\times10^{-8}$ & n.r. & n.r. & n.r. \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}

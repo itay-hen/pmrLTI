@@ -1,0 +1,50 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.17, pytest-9.1.1, pluggy-1.7.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/pmr_lti/tests
+plugins: platformdirs-4.12.4, anyio-4.15.1
+collecting ... collected 32 items
+
+test_walker.py::test_pure_diagonal_no_spurious_events PASSED             [  3%]
+test_walker.py::test_A_zero_polynomial_normalization PASSED              [  6%]
+test_walker.py::test_two_state_distinct_diagonal PASSED                  [  9%]
+test_walker.py::test_repeated_diagonal_and_resonant_forcing PASSED       [ 12%]
+test_walker.py::test_near_coincident_complex_nodes_and_sinusoid PASSED   [ 15%]
+test_walker.py::test_jordan_triangular_analytic PASSED                   [ 18%]
+test_walker.py::test_cyclic_directed_repeated_visits PASSED              [ 21%]
+test_walker.py::test_random_sparse[False-0] PASSED                       [ 25%]
+test_walker.py::test_random_sparse[False-1] PASSED                       [ 28%]
+test_walker.py::test_random_sparse[False-2] PASSED                       [ 31%]
+test_walker.py::test_random_sparse[False-3] PASSED                       [ 34%]
+test_walker.py::test_random_sparse[True-0] PASSED                        [ 37%]
+test_walker.py::test_random_sparse[True-1] PASSED                        [ 40%]
+test_walker.py::test_random_sparse[True-2] PASSED                        [ 43%]
+test_walker.py::test_random_sparse[True-3] PASSED                        [ 46%]
+test_walker.py::test_stable_nonnormal_transient_growth PASSED            [ 50%]
+test_walker.py::test_initial_state_plus_forcing PASSED                   [ 53%]
+test_walker.py::test_delayed_steps_pulses_piecewise_polynomial PASSED    [ 56%]
+test_walker.py::test_stiff_wide_spread_long_horizon PASSED               [ 59%]
+test_walker.py::test_complex_pattern_on_real_model_and_multiple_patterns_share_prefix PASSED [ 62%]
+test_walker.py::test_certificate_dominates_error[0.001-uniform] PASSED   [ 65%]
+test_walker.py::test_certificate_dominates_error[0.001-horizon] PASSED   [ 68%]
+test_walker.py::test_certificate_dominates_error[0.001-auto] PASSED      [ 71%]
+test_walker.py::test_certificate_dominates_error[1e-06-uniform] PASSED   [ 75%]
+test_walker.py::test_certificate_dominates_error[1e-06-horizon] PASSED   [ 78%]
+test_walker.py::test_certificate_dominates_error[1e-06-auto] PASSED      [ 81%]
+test_walker.py::test_certificate_dominates_error[1e-09-uniform] PASSED   [ 84%]
+test_walker.py::test_certificate_dominates_error[1e-09-horizon] PASSED   [ 87%]
+test_walker.py::test_certificate_dominates_error[1e-09-auto] PASSED      [ 90%]
+test_walker.py::test_grid_model_matches_export_and_dense PASSED          [ 93%]
+test_walker.py::test_permnet_model_matches_export_and_dense PASSED       [ 96%]
+test_walker.py::test_feistel_is_bijection PASSED                         [100%]
+
+============================= slowest 8 durations ==============================
+53.01s call     test_walker.py::test_stable_nonnormal_transient_growth
+31.78s call     test_walker.py::test_random_sparse[False-0]
+30.20s call     test_walker.py::test_random_sparse[False-3]
+26.33s call     test_walker.py::test_permnet_model_matches_export_and_dense
+15.70s call     test_walker.py::test_certificate_dominates_error[1e-09-horizon]
+13.39s call     test_walker.py::test_near_coincident_complex_nodes_and_sinusoid
+13.21s call     test_walker.py::test_grid_model_matches_export_and_dense
+0.92s call     test_walker.py::test_random_sparse[True-3]
+======================== 32 passed in 188.64s (0:03:08) ========================

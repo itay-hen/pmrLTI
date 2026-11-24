@@ -1,0 +1,32 @@
+\begin{table*}[t]
+\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Walk sum versus certified ball truncation at matched targets for the step response (forced certificate, unit input; collocated sensor and actuator, $t\le5$, $T=100$). Walk sum: certificate reached, visited states, time of the traversal at the final pruning threshold (earlier, cheaper attempts of the threshold search are not included; they are listed in the data files), peak memory of the process. Ball: radius, number of states, certificate, build-plus-solve time and peak memory of the compiled local solver. A process that does nothing has a peak of about 4.0~MB. The row $\Delta=32$, $\mu=0.57$, $10^{-4}$ is from a supplementary run with an 1800~s budget. $^\dagger$Target not reached within the 900~s search budget; the best certificate is shown. $^\ddagger$Not run: the ball would not fit in memory; the number of states is the tree count.}\label{tab:crossover}
+\begin{ruledtabular}
+\begin{tabular}{lcc|cccc|ccccc}
+graph & $\mu$ & target & cert. & visited & time [s] & mem. [MB] & $R$ & states & cert. & time [s] & mem. [MB]\\\hline
+net, $\Delta=4$ & 0.36 & $1\times10^{-3}$ & $6.9\times10^{-5}$ & $2.4\times10^{2}$ & $<0.01$ & 4.5 & 2 & 17 & $1.7\times10^{-4}$ & $<0.01$ & 4.0 \\
+net, $\Delta=4$ & 0.36 & $1\times10^{-4}$ & $6.9\times10^{-5}$ & $2.4\times10^{2}$ & $<0.01$ & 4.4 & 3 & 53 & $2.2\times10^{-5}$ & $<0.01$ & 3.9 \\
+net, $\Delta=4$ & 0.36 & $1\times10^{-5}$ & $9.8\times10^{-6}$ & $1.5\times10^{3}$ & $<0.01$ & 4.4 & 4 & 161 & $2.8\times10^{-6}$ & $<0.01$ & 4.0 \\
+net, $\Delta=4$ & 0.53 & $1\times10^{-3}$ & $6.0\times10^{-4}$ & $1.1\times10^{3}$ & $<0.01$ & 4.5 & 4 & 161 & $2.9\times10^{-4}$ & $<0.01$ & 4.0 \\
+net, $\Delta=4$ & 0.53 & $1\times10^{-4}$ & $8.3\times10^{-5}$ & $2.1\times10^{4}$ & $<0.01$ & 4.5 & 5 & 485 & $8.0\times10^{-5}$ & $<0.01$ & 4.0 \\
+net, $\Delta=4$ & 0.53 & $1\times10^{-5}$ & $9.0\times10^{-6}$ & $6.8\times10^{5}$ & 0.34 & 4.5 & 7 & 4373 & $6.1\times10^{-6}$ & 0.10 & 4.5 \\
+net, $\Delta=16$ & 0.40 & $1\times10^{-3}$ & $2.6\times10^{-4}$ & $2.7\times10^{2}$ & $<0.01$ & 4.5 & 1 & 17 & $6.5\times10^{-4}$ & $<0.01$ & 3.9 \\
+net, $\Delta=16$ & 0.40 & $1\times10^{-4}$ & $7.6\times10^{-5}$ & $4.3\times10^{3}$ & $<0.01$ & 4.5 & 3 & 3857 & $1.7\times10^{-5}$ & 0.17 & 4.4 \\
+net, $\Delta=16$ & 0.40 & $1\times10^{-5}$ & $6.4\times10^{-6}$ & $1.1\times10^{6}$ & 0.67 & 4.5 & 4 & 57857 & $2.7\times10^{-6}$ & 3.08 & 10.5 \\
+net, $\Delta=16$ & 0.57 & $1\times10^{-3}$ & $9.6\times10^{-4}$ & $2.9\times10^{4}$ & 0.03 & 4.5 & 3 & 3857 & $6.3\times10^{-4}$ & 0.17 & 4.4 \\
+net, $\Delta=16$ & 0.57 & $1\times10^{-4}$ & $7.5\times10^{-5}$ & $1.5\times10^{8}$ & 101 & 4.5 & 5 & $8.7\times10^{5}$ & $6.7\times10^{-5}$ & 61 & 100.6 \\
+net, $\Delta=16$ & 0.57 & $1\times10^{-5}$ & $5.1\times10^{-5}$$^{\dagger}$ & $4.0\times10^{8}$ & 271 & 4.5 & 7 & $2.0\times10^{8}$$^{\ddagger}$ & $7.2\times10^{-6}$ & -- & -- \\
+net, $\Delta=32$ & 0.40 & $1\times10^{-3}$ & $1.3\times10^{-4}$ & $1.1\times10^{3}$ & $<0.01$ & 4.6 & 1 & 33 & $3.3\times10^{-4}$ & $<0.01$ & 3.9 \\
+net, $\Delta=32$ & 0.40 & $1\times10^{-4}$ & $3.7\times10^{-5}$ & $3.3\times10^{4}$ & 0.04 & 4.6 & 2 & 1025 & $5.2\times10^{-5}$ & 0.11 & 4.0 \\
+net, $\Delta=32$ & 0.40 & $1\times10^{-5}$ & $3.9\times10^{-6}$ & $2.8\times10^{7}$ & 34 & 4.6 & 3 & 31777 & $8.3\times10^{-6}$ & 2.80 & 7.4 \\
+net, $\Delta=32$ & 0.57 & $1\times10^{-3}$ & $7.8\times10^{-4}$ & $2.6\times10^{4}$ & 0.05 & 4.6 & 2 & 1025 & $9.6\times10^{-4}$ & 0.07 & 4.1 \\
+net, $\Delta=32$ & 0.57 & $1\times10^{-4}$ & $5.8\times10^{-5}$ & $1.1\times10^{9}$ & 1333 & 4.6 & 5 & $3.1\times10^{7}$ & $3.3\times10^{-5}$ & 4417 & 2940.5 \\
+grid & 0.45 & $1\times10^{-3}$ & $1.1\times10^{-4}$ & $2.6\times10^{2}$ & $<0.01$ & 4.5 & 2 & 13 & $9.3\times10^{-4}$ & $<0.01$ & 3.9 \\
+grid & 0.45 & $1\times10^{-4}$ & $6.0\times10^{-5}$ & $5.3\times10^{2}$ & $<0.01$ & 4.4 & 4 & 41 & $4.0\times10^{-5}$ & $<0.01$ & 3.9 \\
+grid & 0.45 & $1\times10^{-5}$ & $5.7\times10^{-6}$ & $7.7\times10^{3}$ & $<0.01$ & 4.4 & 5 & 61 & $8.2\times10^{-6}$ & $<0.01$ & 3.9 \\
+grid & 0.62 & $1\times10^{-3}$ & $7.5\times10^{-4}$ & $3.2\times10^{3}$ & $<0.01$ & 4.5 & 5 & 61 & $8.5\times10^{-4}$ & $<0.01$ & 3.9 \\
+grid & 0.62 & $1\times10^{-4}$ & $6.8\times10^{-5}$ & $2.6\times10^{5}$ & 0.22 & 4.5 & 8 & 145 & $5.0\times10^{-5}$ & $<0.01$ & 4.0 \\
+grid & 0.62 & $1\times10^{-5}$ & $9.9\times10^{-6}$ & $9.6\times10^{6}$ & 9.27 & 4.5 & 10 & 221 & $7.7\times10^{-6}$ & $<0.01$ & 4.0 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
