@@ -3,6 +3,7 @@
 /*
 !/.gitignore
 !/README.md
+!/LICENSE
 !/code/
 !/tests/
 !/bench/
@@ -32,4 +33,3 @@ __pycache__/
 /manuscript/*.synctex.gz
 /manuscript/*Notes.bib
 /manuscript/*.zip
-/manuscript/refs_v6.bib

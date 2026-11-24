@@ -4,7 +4,7 @@ Revision package for the manuscript by A. Kalev, I. Bermejo-Moreno and I. Hen
 (previous draft: "A memory-efficient method for solving high-dimensional differential equations", v5).
 
 ```
-manuscript/      revised LaTeX source (v9: selected_responses_v9.tex), bibliography, figures, compiled PDF
+manuscript/      revised LaTeX source (v9: selected_responses_v9.tex), bibliography (refs_v6.bib), figures; build the PDF with build.sh
 code/src/        walker.cpp  (C++17, single file: walker, certificates, models, exports, local solver)
 code/walker      compiled binary (built locally, not tracked)
 code/python/     pmrlti.py (harness), reference.py (dense/mpmath references), verify_formulas.py (audit checks),
